@@ -14,7 +14,7 @@ function getTitle(type: NotificationTypes):string {
       case NotificationTypes.Warning:
           return "Advarsel"
       case NotificationTypes.Error:
-          return "Feil"
+          return "Noe gikk galt"
       default: 
         return "Melding"
     }

@@ -6,7 +6,7 @@ Forked from https://github.com/sw-yx/react-typescript-storybook-starter
 # Usage
 
 ```bash
-yarn
+npm install
 npm run storybook
 ```
 
@@ -22,7 +22,7 @@ You can also build your storybook for static file hosting so your designers can 
 npm run build-storybook
 ```
 
-Happy to take contribution/improvement suggestions.
+
 
 
 
