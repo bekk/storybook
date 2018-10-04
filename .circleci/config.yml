@@ -11,6 +11,8 @@ jobs:
       - deploy:
           name: Deploy storybook to github pages
           command: |
+              cd ..
+              npm install
               npm run deploy-storybook
 workflows:
   version: 2
