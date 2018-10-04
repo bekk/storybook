@@ -1,11 +1,22 @@
 {
-  "name": "react-typescript-storybook-starter",
-  "version": "0.0.1",
+  "name": "komponent-bibliotek",
+  "version": "1.0.1",
+  "description": "",
   "main": "build/lib/index.js",
   "types": "build/lib/index.d.ts",
+  "keywords": ["Bekk", "Storybook", "Typescript"],
+  "author": "Morten Holst Øvrebø",
+  "license": "MIT",
   "files": [
     "build/lib"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bekk/komponent-bibliotek"
+  },
+  "bugs": {
+    "url": "https://github.com/bekk/komponent-bibliotek/issues"
+  },
   "scripts": {
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build": "npm run build-lib && build-storybook",
@@ -13,8 +24,6 @@
     "build-storybook": "build-storybook",
     "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib"
   },
-  "author": "Morten Holst Øvrebø",
-  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
