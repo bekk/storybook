@@ -5,7 +5,7 @@ jobs:
       APP_NAME: komponent.bibliotek
     working_directory: /app
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: circleci/node:9.11
     steps:
       - checkout
       - deploy:
