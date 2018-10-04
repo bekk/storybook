@@ -1,8 +1,7 @@
 version: 2
 jobs:
   build:
-    branches:
-      only: master
+    working_directory: /app
     docker:
       - image: node:9.11.1-alpine
     steps:
@@ -10,7 +9,7 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Npm install
+          name: npm install
           command: npm install
       - run:
           name: Install AWS CLI
@@ -37,4 +36,14 @@ jobs:
       - run:
           name: Deploying storybook to s3 bucket
           command: |
-            aws s3 put-object storybook-static s3://bekk-komponent-bibliotek
+            aws s3 sync storybook-static s3://storybook.bekk.no
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build:
+          filters:
+              branches:
+                only: master
+              tags:
+                only: /.*/
