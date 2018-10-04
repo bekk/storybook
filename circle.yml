@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only: master
+    docker:
+      - image: node:9.11.1-alpine
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Npm install
+          command: npm install
+      - run:
+          name: Install AWS CLI
+          command: |
+            apk add --no-cache \
+              py-pip
+            pip install \
+              awscli==1.15.8
+      - run:
+           name: Install ZIP
+           command: |
+            apk update \
+            && apk add zip unzip \
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish --access public
+      - run:
+          name: Deploying storybook to s3 bucket
+          command: |
+            aws s3 put-object storybook-static s3://bekk-komponent-bibliotek

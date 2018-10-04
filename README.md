@@ -1,9 +1,12 @@
 ## this
-Using https://github.com/storybooks/storybook
+Using https://github.com/storybooks/storybook     
 Forked from https://github.com/sw-yx/react-typescript-storybook-starter
 
-
 # Usage
+
+This is how you use it
+
+# Run local
 
 ```bash
 npm install
@@ -16,13 +19,14 @@ You can also build your design system for publishing to private npm or your own 
 npm run build
 ```
 
-You can also build your storybook for static file hosting so your designers can see it:
+## Static file
 
 ```bash
 npm run build-storybook
 ```
 
+# Contribute
 
-
+Clone the repository and make a pull request
 
 
