@@ -2,18 +2,49 @@ version: 2
 jobs:
   build_and_deploy:
     environment:
-      APP_NAME: komponent.bibliotek
+      APP_NAME: komponent-bibliotek
+      ECR_ENDPOINT: 882089634282.dkr.ecr.eu-central-1.amazonaws.com
+      AWS_DEFAULT_REGION: eu-central-1
     working_directory: /app
     docker:
-      - image: circleci/node:9.11
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
-      - deploy:
-          name: Deploy storybook to github pages
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
           command: |
-              cd ..
-              npm install
-              npm run deploy-storybook
+            apk add --no-cache \
+              py-pip=9.0.0-r1
+            pip install \
+              awscli==1.11.76
+      - restore_cache:
+          keys:
+            - v1-{{ .Branch }}
+          paths:
+            - /caches/app.tar
+      - run:
+          name: Load Docker image layer cache
+          command: |
+            set +o pipefail
+            docker load -i /caches/app.tar | true
+      - run:
+          name: Build application Docker image
+          command: |
+            docker build --cache-from=app -t app .
+      - run:
+          name: Save Docker image layer cache
+          command: |
+            mkdir -p /caches
+            docker save -o /caches/app.tar app
+      - save_cache:
+          key: v1-{{ .Branch }}-{{ epoch }}
+          paths:
+            - /caches/app.tar
+      - deploy:
+          name: Deploy app to github pages
+          command: |
+             echo "good world"
 workflows:
   version: 2
   build_and_test:
@@ -23,4 +54,4 @@ workflows:
               branches:
                 only: /.*/
               tags:
-                only: /[0-9]+\.[0-9]+\.[0-9]+/
+                only: /[0-9]+(\.[0-9]+)/

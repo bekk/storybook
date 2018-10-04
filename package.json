@@ -27,6 +27,7 @@
     "build-lib": "tsc && npm run copy-css-to-lib",
     "build-storybook": "build-storybook",
     "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
