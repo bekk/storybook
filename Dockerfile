@@ -1,6 +1,6 @@
 FROM node:10.4.0
 
-COPY app /app
+COPY app .
 
 WORKDIR /app
 RUN npm install
