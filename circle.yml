@@ -9,9 +9,6 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: npm install
-          command: npm install
-      - run:
           name: Install AWS CLI
           command: |
             apk add --no-cache \
@@ -23,24 +20,27 @@ jobs:
            command: |
             apk update \
             && apk add zip unzip \
-      - run: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - attach_workspace:
           at: ~/app
+      - run: npm install
+      - run: npm run build
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
           name: Publish package
           command: |
+            ls
             cd build/lib
             npm publish --access public
       - run:
           name: Deploying storybook to s3 bucket
           command: |
+            ls
             cd ../../
             aws s3 sync storybook-static s3://storybook.bekk.no
 workflows:
