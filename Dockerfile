@@ -4,4 +4,4 @@ COPY . /app
 
 WORKDIR /app
 RUN npm install
-RUN npm run deploy-storybook
+RUN npm run build

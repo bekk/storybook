@@ -1,0 +1,9 @@
+/node_modules/
+/.storybook/
+/docs/
+
+*.md
+*.yml
+
+.babelrc
+.eslintrc

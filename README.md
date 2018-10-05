@@ -1,32 +1,53 @@
-## this
-Using https://github.com/storybooks/storybook     
-Forked from https://github.com/sw-yx/react-typescript-storybook-starter
+[![CircleCI](https://circleci.com/gh/bekk/komponent-bibliotek/tree/master.svg?style=svg)](https://circleci.com/gh/bekk/komponent-bibliotek/tree/master)
 
-# Usage
+This component library uses https://github.com/storybooks/storybook.
+
+
+Welcome!
+
+This package is maintained by employees of Bekk.Check us out at Bekk.no.
+
+You can see the app live at storybook.bekk.no
+
+
+# How to use it
+
+In your project, run:
+
+```
+npm i --save @bekk/storybook
+```
 
 This is how you use it
 
-# Run local
+# Run it
+
+Clone the the repository    
+Go to root of project    
+Run:
 
 ```bash
 npm install
 npm run storybook
 ```
 
-You can also build your design system for publishing to private npm or your own github instance:
+Changed made to code will automatically be reflected in the app.
+
+
+You can also create a static build:
 
 ```bash
 npm run build
 ```
 
-## Static file
-
-```bash
-npm run build-storybook
-```
+Go to folder `storyboard-static` and open index.html in browser.        
 
 # Contribute
 
 Clone the repository and make a pull request
 
 
+## Thanks!
+
+This repository is forked from https://github.com/sw-yx/react-typescript-storybook-starter    
+Using https://github.com/storybooks/storybook     

@@ -35,10 +35,13 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
           name: Publish package
-          command: npm publish --access public
+          command: |
+            cd build/lib
+            npm publish --access public
       - run:
           name: Deploying storybook to s3 bucket
           command: |
+            cd ../../
             aws s3 sync storybook-static s3://storybook.bekk.no
 workflows:
   version: 2
