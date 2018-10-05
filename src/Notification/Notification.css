@@ -1,85 +1,72 @@
+@import '../constants/styles.css';
 
-:root {
-    --light-grey: #e7e7e7;
-    --white: #FFFFFF;
-    --black: #000000;
-    --bekk-red: #FD5158;
-    --red: #FD5158;
-    --light-red: #FCE2E4;
-    --light-dirty-red: #EDD3D5;
-    --light-green: #C4EDE9;
-    --light-dirty-green: #B7E0DD;
-    --bekk-yellow: #FFF9AE;
-    --bekk-green: #28BCB3;
-}
-
-.notification{
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    right: 50px;
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
-    height: auto;
-    min-width: calc(100% - 1.5rem);
-    max-width: 40rem;
-    -webkit-transition: ease 0.05s;
-    transition: ease 0.05s;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: space-around;
-    -webkit-animation: notificationSlideIn 0.4s;
-    animation: notificationSlideIn 0.4s;
-    z-index: 100;
+.notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  right: 50px;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+  height: auto;
+  min-width: calc(100% - 1.5rem);
+  max-width: 40rem;
+  -webkit-transition: ease 0.05s;
+  transition: ease 0.05s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-around;
+  -webkit-animation: notificationSlideIn 0.4s;
+  animation: notificationSlideIn 0.4s;
+  z-index: 100;
 }
 
 .notification.information {
-    background-color: var(--light-green);
+  background-color: var(--light-green);
 }
 
 .notification.warning {
-    background-color: var(--bekk-yellow);
+  background-color: var(--bekk-yellow);
 }
 
 .notification.error {
-    background-color: var(--bekk-red);
+  background-color: var(--bekk-red);
 }
 
-.notification .content{
-    padding-left: 10px;
+.notification .content {
+  padding-left: 10px;
 }
 
-.notification .check{
-    display: flex;
-    align-items: center;
-    font-size: 50px;
+.notification .check {
+  display: flex;
+  align-items: center;
+  font-size: 50px;
 }
 
 @keyframes notificationSlideIn {
-    0% {
-      transform: translate3d(-50%, 100%, 0);
-    }
-  
-    50% {
-      transform: translate3d(-50%, -10%, 0);
-    }
-  
-    100% {
-      transform: translate3d(-50%, 0%, 0);
-    }
+  0% {
+    transform: translate3d(-50%, 100%, 0);
   }
-  
-  @keyframes notificationSlideOut {
-    0% {
-      transform: translate3d(-50%, 0%, 0);
-    }
-  
-    20% {
-      transform: translate3d(-50%, -10%, 0);
-    }
-  
-    100% {
-      transform: translate3d(-50%, 150%, 0);
-    }
+
+  50% {
+    transform: translate3d(-50%, -10%, 0);
   }
+
+  100% {
+    transform: translate3d(-50%, 0%, 0);
+  }
+}
+
+@keyframes notificationSlideOut {
+  0% {
+    transform: translate3d(-50%, 0%, 0);
+  }
+
+  20% {
+    transform: translate3d(-50%, -10%, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 150%, 0);
+  }
+}

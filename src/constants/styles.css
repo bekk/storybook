@@ -1,4 +1,15 @@
 :root {
   --grey: #777;
   --cloudy: #cecece;
+  --light-grey: #e7e7e7;
+  --white: #ffffff;
+  --black: #000000;
+  --bekk-red: #fd5158;
+  --red: #fd5158;
+  --light-red: #fce2e4;
+  --light-dirty-red: #edd3d5;
+  --light-green: #c4ede9;
+  --light-dirty-green: #b7e0dd;
+  --bekk-yellow: #fff9ae;
+  --bekk-green: #28bcb3;
 }
