@@ -1,0 +1,66 @@
+@import '../constants/styles.css';
+
+.container {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.label {
+  color: var(--grey);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input {
+  background: var(--cloudy);
+  color: #222;
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: FFDINWebProLight, sans-serif;
+  padding: 5px;
+  padding-left: 10px;
+  border: none;
+  background-position: 0 0, calc(100%) 0, 0 calc(100%), 0 0, 0 calc(100%);
+  background-repeat: no-repeat;
+  background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%, 0% 1px;
+  background-image: linear-gradient(0deg, red, red),
+    linear-gradient(0deg, red, red), linear-gradient(0deg, red, red),
+    linear-gradient(0deg, red, red), linear-gradient(0deg, #777, #777);
+  transition: all 0s linear;
+}
+
+.input:focus {
+  background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%, 100% 1px;
+  transition: all 0.1s linear;
+  outline: 0;
+}
+
+@keyframes invalidAnim {
+  0% {
+    background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%, 100% 1px;
+  }
+
+  25% {
+    background-size: 50% 1px, 1px 0%, 0% 1px, 1px 100%, 100% 1px;
+  }
+
+  75% {
+    background-size: 100% 1px, 1px 0%, 50% 1px, 1px 100%, 100% 1px;
+  }
+
+  100% {
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+  }
+}
+
+.invalid:focus {
+  animation: invalidAnim 0.2s linear forwards;
+}
+
+.invalid {
+  background-size: 0% 1px, 1px 0%, 100% 1px, 1px 0%, 0% 1px;
+  transition: all 0s linear;
+}
