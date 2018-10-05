@@ -34,14 +34,10 @@ jobs:
       - run:
           name: Publish package
           command: |
-            ls
-            cd build/lib
             npm publish --access public
       - run:
           name: Deploying storybook to s3 bucket
           command: |
-            ls
-            cd ../../
             aws s3 sync storybook-static s3://storybook.bekk.no
 workflows:
   version: 2
