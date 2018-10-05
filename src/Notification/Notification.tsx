@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {NotificationTypes} from "./NotificationTypes";
-import './Notification.scss';
+import './Notification.css';
+
 
 export interface Props {
   message: string;

@@ -1,14 +1,17 @@
-$light-grey: #e7e7e7;
-$white: #FFFFFF;
-$black: #000000;
-$bekk-red: #FD5158;
-$red: #FD5158;
-$light-red: #FCE2E4;
-$light-dirty-red: #EDD3D5;
-$light-green: #C4EDE9;
-$light-dirty-green: #B7E0DD;
-$bekk-yellow: #FFF9AE;
-$bekk-green: #28BCB3;
+
+:root {
+    --light-grey: #e7e7e7;
+    --white: #FFFFFF;
+    --black: #000000;
+    --bekk-red: #FD5158;
+    --red: #FD5158;
+    --light-red: #FCE2E4;
+    --light-dirty-red: #EDD3D5;
+    --light-green: #C4EDE9;
+    --light-dirty-green: #B7E0DD;
+    --bekk-yellow: #FFF9AE;
+    --bekk-green: #28BCB3;
+}
 
 .notification{
     position: fixed;
@@ -29,24 +32,28 @@ $bekk-green: #28BCB3;
     -webkit-animation: notificationSlideIn 0.4s;
     animation: notificationSlideIn 0.4s;
     z-index: 100;
-    &.information {
-        background-color: $light-green;
-    }
-    &.warning {
-        background-color: $bekk-yellow;
-    }
-    &.error {
-        background-color: $bekk-red;
-    }
-        .content{
-            padding-left: 10px;
-        }
+}
 
-		.check{
-            display: flex;
-            align-items: center;
-			font-size: 50px;
-		}
+.notification.information {
+    background-color: var(--light-green);
+}
+
+.notification.warning {
+    background-color: var(--bekk-yellow);
+}
+
+.notification.error {
+    background-color: var(--bekk-red);
+}
+
+.notification .content{
+    padding-left: 10px;
+}
+
+.notification .check{
+    display: flex;
+    align-items: center;
+    font-size: 50px;
 }
 
 @keyframes notificationSlideIn {
