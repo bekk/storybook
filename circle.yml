@@ -26,7 +26,7 @@ jobs:
             - node_modules
       - attach_workspace:
           at: ~/app
-      - run: npm install --production
+      - run: npm install
       - run: npm run build
       - run:
           name: Authenticate with registry
