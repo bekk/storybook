@@ -1,20 +1,26 @@
-const path = require("path");
-const TSDocgenPlugin = require("react-docgen-typescript-webpack-plugin");
+const path = require('path');
+const TSDocgenPlugin = require('react-docgen-typescript-webpack-plugin');
 module.exports = (baseConfig, env, defaultConfig) => {
-  defaultConfig.module.rules.push(
-    {
+  defaultConfig.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: require.resolve("ts-loader")
-    }
-  );
-  defaultConfig.module.rules.push(
-    {
-        test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"],
-        include: path.resolve(__dirname, "../"),
-    });
+    loader: require.resolve('ts-loader'),
+  });
+  defaultConfig.module.rules.push({
+    test: /\.scss$/,
+    loaders: [
+      'style-loader',
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[name]__[local]__[hash:base64:5]',
+        },
+      },
+    ],
+    include: path.resolve(__dirname, '../'),
+  });
   defaultConfig.plugins.push(new TSDocgenPlugin());
-  defaultConfig.resolve.extensions.push(".ts", ".tsx");
+  defaultConfig.resolve.extensions.push('.ts', '.tsx');
   return defaultConfig;
 };
-

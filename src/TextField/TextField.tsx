@@ -40,11 +40,11 @@ export class TextField extends React.Component<IProps, IState> {
       passedRef,
     } = this.props;
     return (
-      <div className={'container'}>
-        <label className={'label'}>{label}</label>
+      <div className={'textFieldContainer'}>
+        <label className={'textFieldLabel'}>{label}</label>
         <input
-          className={`input ${className} ${
-            this.state.isValid ? '' : 'invalid'
+          className={`textFieldInput ${className ? className : ''} ${
+            this.state.isValid ? '' : 'textFieldInvalid'
           }`}
           size={size}
           maxLength={maxLength}
