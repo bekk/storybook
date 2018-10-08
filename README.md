@@ -7,7 +7,7 @@ Welcome!
 This package is maintained by employees at Bekk.
 Check us out at [bekk.no](https://bekk.no)!
 
-You can see the app live at [storybook.bekk.no](https://storybook.bekk.no)
+You can see the app live at [storybook.bekk.no](http://storybook.bekk.no)
 
 # How to use it
 
