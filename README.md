@@ -5,9 +5,9 @@ This component library uses https://github.com/storybooks/storybook.
 Welcome!
 
 This package is maintained by employees at Bekk.
-Check us out at bekk.no!
+Check us out at [bekk.no](https://bekk.no)!
 
-You can see the app live at [http://storybook.bekk.no](storybook.bekk.no)
+You can see the app live at [storybook.bekk.no](https://storybook.bekk.no)
 
 # How to use it
 
