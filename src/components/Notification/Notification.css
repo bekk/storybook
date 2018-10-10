@@ -1,6 +1,7 @@
-@import '../constants/styles.css';
+@import '../../constants/styles.css';
 
 .notification {
+  color: black;
   position: fixed;
   bottom: 30px;
   left: 50%;

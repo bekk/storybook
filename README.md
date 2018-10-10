@@ -9,6 +9,8 @@ Check us out at [bekk.no](https://bekk.no)!
 
 You can see the app live at [storybook.bekk.no](http://storybook.bekk.no)
 
+https://semver.org/
+
 # How to use it
 
 In your project, run:
@@ -43,6 +45,7 @@ Go to folder `storyboard-static` and open index.html in browser.
 # Contribute
 
 Clone the repository and make a pull request
+
 
 ## Thanks!
 
