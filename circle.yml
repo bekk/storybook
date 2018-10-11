@@ -26,7 +26,8 @@ jobs:
             - node_modules
       - attach_workspace:
           at: ~/app
-      - run: sudo npm install -g json
+      - run: npm config set unsafe-perm tru
+      - run: npm install -g json
       - run: npm install
       - run: npm run build
       - run:
