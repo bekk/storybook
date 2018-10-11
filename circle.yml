@@ -22,14 +22,14 @@ jobs:
             && apk add zip unzip \
       - run:
            name: Install Json tool
-           command: |
-            npm install -g json
+           command: npm install -g json
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - attach_workspace:
           at: ~/app
+      - run: npm install -g json
       - run: npm install
       - run: npm run build
       - run:
