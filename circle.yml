@@ -29,7 +29,7 @@ jobs:
             - node_modules
       - attach_workspace:
           at: ~/app
-      - run: npm install -g json
+      - run: sudo npm install -g json
       - run: npm install
       - run: npm run build
       - run:
