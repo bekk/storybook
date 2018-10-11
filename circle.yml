@@ -20,9 +20,6 @@ jobs:
            command: |
             apk update \
             && apk add zip unzip \
-      - run:
-           name: Install Json tool
-           command: npm install -g json
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
