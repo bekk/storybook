@@ -1,15 +1,22 @@
 :root {
-  --grey: #777;
-  --cloudy: #cecece;
-  --light-grey: #e7e7e7;
-  --white: #ffffff;
-  --black: #000000;
-  --bekk-red: #fd5158;
-  --red: #fd5158;
-  --light-red: #fce2e4;
-  --light-dirty-red: #edd3d5;
-  --light-green: #c4ede9;
-  --light-dirty-green: #b7e0dd;
-  --bekk-yellow: #fff9ae;
-  --bekk-green: #28bcb3;
+  --hvit: #ffffff;
+  --svart: #0e0e0e;
+  --overskyet: #e7e7e7;
+  --overskyet-kontrast: #cecece;
+  --soloppgang: #ffb88d;
+  --soloppgang-kontrast: #ff8034;
+  --skyfritt:#b1e8ff;
+  --skyfritt-kontrast: #43cbff;
+  --solnedgang: #ff9999;
+  --solnedgang-kontrast: #ff5b5b;
+  --kveld: #e5b1ff;
+  --kveld-kontrast: #8e24c9;
+  --natt: #6d7abb;
+  --natt-kontrast: #162365;
+  --regn: #bccedd;
+  --regn-kontrast: #7e9cb9;
+  --gul: #fff2ad;
+  --gul-kontrast: #fff02b;
+  --grønn: #a1f5e3;
+  --grønn-kontrast: #16dbc4;
 }

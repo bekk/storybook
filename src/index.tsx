@@ -1,4 +1,6 @@
 export { Notification } from './components/Notification/Notification';
 export { TextField } from './components/TextField/TextField';
-export { Icon } from './core/Icon/Icon';
+export { Icon } from './basic/Icon/Icon';
+export { Color } from './basic/Color/Color';
+
 

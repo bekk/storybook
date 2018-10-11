@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {NotificationTypes} from "./NotificationTypes";
+import { Icon } from "../../"
 import './Notification.css';
 
 
@@ -11,7 +12,7 @@ export interface Props {
 function getTitle(type: NotificationTypes):string {
     switch(type) {
       case NotificationTypes.Information:
-          return "Info";
+          return "Informasjon";
       case NotificationTypes.Warning:
           return "Advarsel"
       case NotificationTypes.Error:
@@ -21,16 +22,16 @@ function getTitle(type: NotificationTypes):string {
     }
 }
 
-function getIcon(type: NotificationTypes):string {
+function getIcon(type: NotificationTypes):any {
   switch(type) {
     case NotificationTypes.Information:
-        return "👍";
+        return <Icon type="light" name="emoji_1" />
     case NotificationTypes.Warning:
-        return "⚠️"
+        return <Icon type="light" name="emoji_3" />
     case NotificationTypes.Error:
-        return "☹️"
+        return <Icon type="light" name="emoji_2" />
     default: 
-      return "Melding"
+    return <Icon type="light" name="emoji_4" />
   }
 }
 

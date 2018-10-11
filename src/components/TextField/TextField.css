@@ -1,4 +1,6 @@
 @import '../../constants/styles.css';
+@import '../../fonts/webfonts.css';
+
 
 .textFieldContainer {
   margin-bottom: 20px;
@@ -6,14 +8,14 @@
 }
 
 .textFieldLabel {
-  color: var(--grey);
+  color: var(--overskyet);
   font-size: 14px;
   display: block;
   margin-bottom: 5px;
 }
 
 .textFieldInput {
-  background: var(--cloudy);
+  background: var(--overskyet-kontrast);
   color: #222;
   height: 48px;
   width: 100%;
@@ -26,9 +28,9 @@
   background-position: 0 0, calc(100%) 0, 0 calc(100%), 0 0, 0 calc(100%);
   background-repeat: no-repeat;
   background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%, 0% 1px;
-  background-image: linear-gradient(0deg, red, red),
-    linear-gradient(0deg, red, red), linear-gradient(0deg, red, red),
-    linear-gradient(0deg, red, red), linear-gradient(0deg, #777, #777);
+  background-image: linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)),
+    linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)), linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)),
+    linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)), linear-gradient(0deg, var(--overskyet-kontrast), var(--overskyet-kontrast));
   transition: all 0s linear;
 }
 

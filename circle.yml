@@ -20,6 +20,10 @@ jobs:
            command: |
             apk update \
             && apk add zip unzip \
+      - run:
+           name: Install Json tool
+           command: |
+            npm install -g json
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -28,6 +32,9 @@ jobs:
           at: ~/app
       - run: npm install
       - run: npm run build
+      - run:
+          name: Update version to release tag i package.json
+          command: json -f package.json -I -e "this.version=\"${CIRCLE_TAG}\""
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
@@ -46,6 +53,6 @@ workflows:
       - build:
           filters:
               branches:
-                only: master
+                ignore: /.*/
               tags:
-                only: /.*/
+                only: /[1-9]+\.(0|[1-9]+)\.(0|[1-9]+)/

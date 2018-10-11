@@ -1,4 +1,5 @@
 @import '../../constants/styles.css';
+@import '../../fonts/webfonts.css';
 
 .notification {
   color: black;
@@ -6,6 +7,7 @@
   bottom: 30px;
   left: 50%;
   right: 50px;
+  font-family: FFDINWebProLight, sans-serif;
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
   height: auto;
@@ -15,7 +17,7 @@
   transition: ease 0.05s;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex;
   align-content: space-around;
   -webkit-animation: notificationSlideIn 0.4s;
   animation: notificationSlideIn 0.4s;
@@ -23,25 +25,25 @@
 }
 
 .notification.information {
-  background-color: var(--light-green);
+  background-color: var(--grønn);
 }
 
 .notification.warning {
-  background-color: var(--bekk-yellow);
+  background-color: var(--soloppgang);
 }
 
 .notification.error {
-  background-color: var(--bekk-red);
+  background-color: var(--solnedgang);
 }
 
 .notification .content {
-  padding-left: 10px;
+  padding-left: 2rem;
 }
 
 .notification .check {
   display: flex;
   align-items: center;
-  font-size: 50px;
+  padding-left: 1rem;
 }
 
 @keyframes notificationSlideIn {

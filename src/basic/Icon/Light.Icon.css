@@ -118,3 +118,19 @@
 .light.verktøy {
     background: url('./svg/light/verktøy.svg') no-repeat top left;
 }
+
+.light.emoji_1 {
+    background: url('./svg/light/emoji_1.svg') no-repeat top left;
+}
+
+.light.emoji_2 {
+    background: url('./svg/light/emoji_2.svg') no-repeat top left;
+}
+
+.light.emoji_3 {
+    background: url('./svg/light/emoji_3.svg') no-repeat top left;
+}
+
+.light.emoji_4 {
+    background: url('./svg/light/emoji_4.svg') no-repeat top left;
+}
