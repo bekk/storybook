@@ -1,7 +1,7 @@
 {
   "name": "@bekk/storybook",
-  "version": "1.9.4",
-  "description": "",
+  "version": "This will be overrided in deployment process",
+  "description": "Storybokk for Bekk Consulting As",
   "main": "build/lib/index.js",
   "types": "build/lib/index.d.ts",
   "keywords": [
@@ -24,9 +24,12 @@
   "scripts": {
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build": "npm run build-lib && build-storybook",
-    "build-lib": "tsc && npm run copy-css-to-lib",
+    "build-lib": "tsc && npm run copy-assets-to-lib",
     "build-storybook": "build-storybook",
-    "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib"
+    "copy-assets-to-lib": "npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-fonts-to-lib", 
+    "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
+    "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
+    "copy-fonts-to-lib": "cpx \"./src/**/*.{eot,ttf,woff,woff2}\" ./build/lib"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
