@@ -1,6 +1,6 @@
 {
   "name": "@bekk/storybook",
-  "version": "This will be overrided in deployment process",
+  "version": "1.9.56",
   "description": "Storybokk for Bekk Consulting As",
   "main": "build/lib/index.js",
   "types": "build/lib/index.d.ts",
