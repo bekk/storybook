@@ -1,6 +1,8 @@
 @import '../../constants/styles.css';
 @import '../../fonts/webfonts.css';
 
+
+
 .notification {
   color: black;
   position: fixed;
@@ -8,20 +10,20 @@
   left: 50%;
   right: 50px;
   font-family: FFDINWebProLight, sans-serif;
-  -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
   height: auto;
   min-width: calc(100% - 1.5rem);
   max-width: 40rem;
-  -webkit-transition: ease 0.05s;
   transition: ease 0.05s;
   display: flex;
   flex-direction: row;
-  justify-content: flex;
-  align-content: space-around;
-  -webkit-animation: notificationSlideIn 0.4s;
+  justify-content: space-between;
   animation: notificationSlideIn 0.4s;
   z-index: 100;
+}
+
+.notification.autoClose {
+  animation: notificationSlideIn 0.4s ease-in, notificationSlideOut 0.4s ease-out 2s;
 }
 
 .notification.information {
@@ -36,15 +38,63 @@
   background-color: var(--solnedgang);
 }
 
-.notification .content {
-  padding-left: 2rem;
-}
-
 .notification .check {
   display: flex;
   align-items: center;
   padding-left: 1rem;
 }
+
+.notification .content {
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.notification .content .title {
+  display: block;
+  font-size: 1.2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.notification .content .message {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.notification .close {
+  padding-right: 1em;
+  padding-top: 0.5em;
+}
+
+
+.notification .close button {
+  background:var(--natt)!important;
+  color: var(--hvit);
+  border:none; 
+  padding:0.3em;
+  font: inherit;
+}
+
+@media (max-width: 25em) { 
+
+
+  .notification {
+    flex-direction: column;
+  }
+
+  .notification .check {
+    display: none;
+  }
+
+}
+
+
 
 @keyframes notificationSlideIn {
   0% {

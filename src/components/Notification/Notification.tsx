@@ -7,6 +7,7 @@ import './Notification.css';
 export interface Props {
   message: string;
   type: NotificationTypes;
+  closeFunc?: Function;
 }
 
 function getTitle(type: NotificationTypes):string {
@@ -36,15 +37,27 @@ function getIcon(type: NotificationTypes):any {
 }
 
 export const Notification = (props: Props) => {
-  const { message, type } = props;
-  const notificationClass = `notification ${NotificationTypes[type].toLocaleLowerCase()}`;
+  const { message, type, closeFunc } = props;
+  const close = () => {
+      if(closeFunc) {
+        closeFunc();
+      }
+  }
+  const autoCloseClass = closeFunc ? '' : 'autoClose';
+  const notificationClass = `notification ${NotificationTypes[type].toLocaleLowerCase()} ${autoCloseClass}`;
   return (
     <div className={notificationClass} >
         <div className="check">{getIcon(type)}</div>
         <div className="content">
-            <h1>{getTitle(type)}</h1>
-            <p>{message}</p>
+            <span className="title">{getTitle(type)}</span>
+            <span className="message">{message}</span>
         </div>
+        { closeFunc ?
+        <div className="close">
+            <button onClick={close}>Lukk</button>
+        </div> :
+        null
+        }
       </div> 
   );
 };

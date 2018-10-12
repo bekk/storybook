@@ -4,6 +4,11 @@ import { Notification } from "./Notification";
 import {NotificationTypes} from "./NotificationTypes";
 import { text } from "@storybook/addon-knobs/react";
 
+
+const close = () => {
+  alert('Du trykte på lukk. Flinkis <3')
+}
+
 (storiesOf("Components/Notification", module) as any)
   .addWithJSX(
     "Infomation",
@@ -28,6 +33,7 @@ import { text } from "@storybook/addon-knobs/react";
     <Notification
       message={text("message", "Timekoden ADM1001 krever at du legger til kommentar før du låser")}
       type={NotificationTypes.Error}
+      closeFunc={close}
     />
   ))
 );

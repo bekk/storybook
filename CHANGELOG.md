@@ -1,5 +1,9 @@
 
 
+### 1.9.57
+
+- Notifications adapt to smaller screens
+
 ### 1.9.4
 
 - Added fonts
