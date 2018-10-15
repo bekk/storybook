@@ -1,6 +1,4 @@
 @import '../../constants/styles.css';
-@import '../../fonts/webfonts.css';
-
 
 
 .notification {
@@ -23,7 +21,7 @@
 }
 
 .notification.autoClose {
-  animation: notificationSlideIn 0.4s ease-in, notificationSlideOut 0.4s ease-out 2s;
+  animation: notificationSlideIn 0.4s ease-in, notificationSlideOut 0.4s ease-out 2s normal forwards;
 }
 
 .notification.information {
