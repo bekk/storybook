@@ -32,7 +32,9 @@ jobs:
       - run: npm run build
       - run:
           name: Update version to release tag i package.json
-          command: json -f package.json -I -e "this.version=\"${CIRCLE_TAG}\""
+          command: |
+            echo "setting package.json to version ${CIRCLE_TAG}"
+            json -f package.json -I -e "this.version=\"${CIRCLE_TAG}\""
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
