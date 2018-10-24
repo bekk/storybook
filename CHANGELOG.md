@@ -1,6 +1,10 @@
+### 1.9.63
+
+- Add DatePicker
+
 ### 1.9.62
 
-- Added DatePicker
+- Make TextField a fully controlled component
 
 ### 1.9.57
 

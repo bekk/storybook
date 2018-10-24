@@ -63,7 +63,6 @@ export class TextField extends React.Component<IProps, IState> {
                 this.setState({ isValid: false, value: event.target.value });
               }
             } else {
-              this.setState({ value: event.target.value });
               onChange(event.target.value);
             }
           }}
