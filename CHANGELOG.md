@@ -1,4 +1,6 @@
+### 1.9.62
 
+- Make TextField a fully controlled component
 
 ### 1.9.57
 
@@ -9,7 +11,6 @@
 - Added fonts
 - Added colors
 - Updated Notification
-
 
 ### 1.9.2
 
