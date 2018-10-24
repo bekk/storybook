@@ -3,7 +3,6 @@ import 'moment/locale/nb';
 import * as React from 'react';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
-// import { DatePickerWrapper } from './DatePickerWrapper';
 import { DatePickerHeader } from './DatePickerHeader/DatePickerHeader';
 import { SingleDatePicker } from 'react-dates';
 import { ThemedStyledFunction } from 'styled-components';
@@ -34,6 +33,10 @@ function withProps<U>() {
 interface IWrapProps {
   invalid: boolean;
 }
+
+/* Constructs a div used as a wrapper around the react-dates DatePicker.
+   This is seems to be the best/only way to overwrite the default CSS.
+   Standard usage of SASS and CSS failed. */
 
 const DatePickerWrapper = withProps<IWrapProps>()(styled.div)`
   .DateInput_input {
