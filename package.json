@@ -26,7 +26,7 @@
     "build": "npm run build-lib && build-storybook",
     "build-lib": "tsc && npm run copy-assets-to-lib",
     "build-storybook": "build-storybook",
-    "copy-assets-to-lib": "npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-fonts-to-lib", 
+    "copy-assets-to-lib": "npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-fonts-to-lib",
     "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
     "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
     "copy-fonts-to-lib": "cpx \"./src/**/*.{eot,ttf,woff,woff2}\" ./build/lib"
@@ -60,10 +60,16 @@
     "webpack": "^4.20.2"
   },
   "dependencies": {
+    "@types/react-dates": "^17.1.2",
+    "@types/react-select": "^2.0.5",
+    "@types/styled-components": "^4.0.1",
     "autoprefixer": "^9.1.5",
     "css-loader": "^1.0.0",
     "postcss-loader": "^3.0.0",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dates": "^18.1.1",
+    "react-dom": "^16.3.1",
+    "react-select": "^2.1.0",
+    "styled-components": "^4.0.2"
   }
 }
