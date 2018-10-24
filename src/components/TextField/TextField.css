@@ -10,11 +10,12 @@
   font-size: 14px;
   display: block;
   margin-bottom: 5px;
+  font-family: FFDINWebProLight, sans-serif;
 }
 
 .textFieldInput {
   background: var(--overskyet-kontrast);
-  color: #222;
+  color: var(--svart);
   height: 48px;
   width: 100%;
   box-sizing: border-box;
@@ -26,9 +27,27 @@
   background-position: 0 0, calc(100%) 0, 0 calc(100%), 0 0, 0 calc(100%);
   background-repeat: no-repeat;
   background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%, 0% 1px;
-  background-image: linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)),
-    linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)), linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)),
-    linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)), linear-gradient(0deg, var(--overskyet-kontrast), var(--overskyet-kontrast));
+  background-image: linear-gradient(
+      0deg,
+      var(--solnedgang-kontrast),
+      var(--solnedgang-kontrast)
+    ),
+    linear-gradient(
+      0deg,
+      var(--solnedgang-kontrast),
+      var(--solnedgang-kontrast)
+    ),
+    linear-gradient(
+      0deg,
+      var(--solnedgang-kontrast),
+      var(--solnedgang-kontrast)
+    ),
+    linear-gradient(
+      0deg,
+      var(--solnedgang-kontrast),
+      var(--solnedgang-kontrast)
+    ),
+    linear-gradient(0deg, var(--overskyet-kontrast), var(--overskyet-kontrast));
   transition: all 0s linear;
 }
 

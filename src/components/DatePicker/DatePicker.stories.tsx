@@ -25,5 +25,6 @@ import { boolean, date, text } from '@storybook/addon-knobs';
       label={text('label', 'Velg dato')}
       onChange={date => void date}
       initialDate={moment()}
+      isDateRequired={true}
     />
   ));

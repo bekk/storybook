@@ -9,7 +9,7 @@
 .DatePickerHeaderWeekDayContainer {
   margin-top: 10px;
   caption-side: top;
-  color: #757575;
+  color: var(--morgendis);
   display: block;
   font-family: FFDINWebProLight, sans-serif;
   font-size: 18px;

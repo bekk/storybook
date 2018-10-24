@@ -41,7 +41,7 @@ interface IWrapProps {
 const DatePickerWrapper = withProps<IWrapProps>()(styled.div)`
   .DateInput_input {
     background-color: var(--overskyet);
-    color: #222;
+    color: var(--svart);
     font-family: FFDINWebProLight, sans-serif;
     border: none;
     box-sizing: border-box;
@@ -49,9 +49,9 @@ const DatePickerWrapper = withProps<IWrapProps>()(styled.div)`
     background-position: 0 0, calc(100%) 0, 0 calc(100%), 0 0, 0 calc(100%);
     background-repeat: no-repeat;
     background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%, 0% 1px;
-    background-image: linear-gradient(0deg, red, red),
-      linear-gradient(0deg, red, red), linear-gradient(0deg, red, red),
-      linear-gradient(0deg, red, red), linear-gradient(0deg, #777, #777);
+    background-image: linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)),
+      linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)), linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)),
+      linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)), linear-gradient(0deg, var(--morgendis), var(--morgendis));
     transition: all 0s linear;
   }
 
