@@ -34,7 +34,10 @@ export const DatePickerHeader = ({
           value: month.month()
         }}
         onChange={(e: { value: number; label: string }) => {
-          onMonthSelect(month, e.value.toString());
+          if (e.value !== undefined) {
+            console.log(e.value);
+            onMonthSelect(month, e.value.toString());
+          }
         }}
         options={moment.months().map((label, value) => ({ label, value }))}
         styles={{
