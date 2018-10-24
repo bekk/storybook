@@ -1,0 +1,70 @@
+.DatePickerHeaderNavigationHeaderContainer {
+  padding-top: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+.DatePickerHeaderWeekDayContainer {
+  margin-top: 10px;
+  caption-side: top;
+  color: var(--morgendis);
+  display: block;
+  font-family: FFDINWebProLight, sans-serif;
+  font-size: 18px;
+  height: 16px;
+  left: 0;
+  line-height: 18px;
+  padding: 0 13px;
+  position: 0 13px;
+  position: absolute;
+  text-align: left;
+  top: 60px;
+  user-select: none;
+  width: 273px;
+  z-index: 2;
+}
+
+.DatePickerHeaderWeekDays {
+  font-size: 14px;
+  line-height: 14px;
+  display: flex;
+}
+
+.DatePickerHeaderWeekDay {
+  text-align: center;
+  width: 100%;
+}
+
+.DatePickerHeaderMonthDropdown {
+  z-index: 5;
+  width: 150px;
+  position: absolute;
+}
+
+.DatePickerHeaderYearButton {
+  border: none;
+  cursor: pointer;
+  background: inherit;
+}
+
+.DatePickerHeaderYearButton:focus {
+  outline: 0;
+}
+
+.DatePickerHeaderYearSelectContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.DatePickerHeaderYear {
+  text-align: center;
+  line-height: 38px;
+}
+
+.DatePickerHeaderMonthSelectContainer {
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+}

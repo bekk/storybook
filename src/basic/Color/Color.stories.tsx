@@ -1,8 +1,8 @@
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { wInfo } from "../../utils";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { wInfo } from '../../utils';
 
-function createDivStyle(color:string):any {
+function createDivStyle(color: string): any {
   return {
     height: '100px',
     width: '100px',
@@ -10,9 +10,9 @@ function createDivStyle(color:string):any {
   };
 }
 
-(storiesOf("Basic/Color", module) as any)
+(storiesOf('Basic/Color', module) as any)
   .addWithJSX(
-    "Om fargepaletten",
+    'Om fargepaletten',
     wInfo(`
     Fargepaletten er delt inn i primær ogsekundærfarger.  
     Fargene bygger  på  et  Nordisk, rent, minimalistisk og usminket utrykk.
@@ -31,98 +31,83 @@ function createDivStyle(color:string):any {
     }
     ~~~
 
-  `)
-    (() => (
-      <div style={createDivStyle('var(--svart)')}></div>
-    ))
-  ).addWithJSX(
-    "Overskyet",
-    (() => (
-      <div>
-        <h3>Oveskyet</h3>
-        <div style={createDivStyle('var(--overskyet)')}></div>
-        <h3>Oveskyet-kontrast</h3>
-        <div style={createDivStyle('var(--overskyet-kontrast)')}></div>
-      </div>
-    ))
-  ).addWithJSX(
-    "Soloppgang",
-    (() => (
-      <div>
-        <h3>Soloppgang</h3>
-        <div style={createDivStyle('var(--soloppgang)')}></div>
-        <h3>Soloppgang-kontrast</h3>
-        <div style={createDivStyle('var(--soloppgang-kontrast)')}></div>
-      </div>
-    ))
-  ).addWithJSX(
-    "Skyfritt",
-    (() => (
-      <div>
-        <h3>Skyfritt</h3>
-        <div style={createDivStyle('var(--skyfritt)')}></div>
-        <h3>Skyfritt-kontast</h3>
-        <div style={createDivStyle('var(--skyfritt-kontrast)')}></div>
-      </div>
-    ))
-  ).addWithJSX(
-    "Solnegang",
-    (() => (
-      <div>
-        <h3>Solnedgang</h3>
-        <div style={createDivStyle('var(--solnedgang)')}></div>
-        <h3>Solnedgang-kontraskt</h3>
-        <div style={createDivStyle('var(--solnedgang-kontrast)')}></div>
-      </div>
-    ))
-  ).addWithJSX(
-    "Kveld",
-    (() => (
-      <div>
-        <h3>Kveld</h3>
-        <div style={createDivStyle('var(--kveld)')}></div>
-        <h3>Kveld-kontraskt</h3>
-        <div style={createDivStyle('var(--kveld-kontrast)')}></div>
-      </div>
-    ))
-  ).addWithJSX(
-    "Natt",
-    (() => (
-      <div>
-        <h3>Natt</h3>
-        <div style={createDivStyle('var(--natt)')}></div>
-        <h3>Natt-kontraskt</h3>
-        <div style={createDivStyle('var(--natt-kontrast)')}></div>
-      </div>
-    ))
-  ).addWithJSX(
-    "Regn",
-    (() => (
-      <div>
-        <h3>Regn</h3>
-        <div style={createDivStyle('var(--regn)')}></div>
-        <h3>Regn-kontraskt</h3>
-        <div style={createDivStyle('var(--regn-kontrast)')}></div>
-      </div>
-    ))
-  ).addWithJSX(
-    "Gul",
-    (() => (
-      <div>
-        <h3>Gul</h3>
-        <div style={createDivStyle('var(--gul)')}></div>
-        <h3>Gul-kontraskt</h3>
-        <div style={createDivStyle('var(--gul-kontrast)')}></div>
-      </div>
-    ))
-  ).addWithJSX(
-    "Grønn",
-    (() => (
-      <div>
-        <h3>Grønn</h3>
-        <div style={createDivStyle('var(--grønn)')}></div>
-        <h3>Grønn-kontraskt</h3>
-        <div style={createDivStyle('var(--grønn-kontrast)')}></div>
-      </div>
-    ))
-  );
+  `)(() => <div style={createDivStyle('var(--svart)')} />)
+  )
+  .addWithJSX('Overskyet', () => (
+    <div>
+      <h3>Oveskyet</h3>
+      <div style={createDivStyle('var(--overskyet)')} />
+      <h3>Oveskyet-kontrast</h3>
+      <div style={createDivStyle('var(--overskyet-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Soloppgang', () => (
+    <div>
+      <h3>Soloppgang</h3>
+      <div style={createDivStyle('var(--soloppgang)')} />
+      <h3>Soloppgang-kontrast</h3>
+      <div style={createDivStyle('var(--soloppgang-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Skyfritt', () => (
+    <div>
+      <h3>Skyfritt</h3>
+      <div style={createDivStyle('var(--skyfritt)')} />
+      <h3>Skyfritt-kontast</h3>
+      <div style={createDivStyle('var(--skyfritt-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Solnegang', () => (
+    <div>
+      <h3>Solnedgang</h3>
+      <div style={createDivStyle('var(--solnedgang)')} />
+      <h3>Solnedgang-kontrast</h3>
+      <div style={createDivStyle('var(--solnedgang-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Kveld', () => (
+    <div>
+      <h3>Kveld</h3>
+      <div style={createDivStyle('var(--kveld)')} />
+      <h3>Kveld-kontrast</h3>
+      <div style={createDivStyle('var(--kveld-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Natt', () => (
+    <div>
+      <h3>Natt</h3>
+      <div style={createDivStyle('var(--natt)')} />
+      <h3>Natt-kontrast</h3>
+      <div style={createDivStyle('var(--natt-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Regn', () => (
+    <div>
+      <h3>Regn</h3>
+      <div style={createDivStyle('var(--regn)')} />
+      <h3>Regn-kontrast</h3>
+      <div style={createDivStyle('var(--regn-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Gul', () => (
+    <div>
+      <h3>Gul</h3>
+      <div style={createDivStyle('var(--gul)')} />
+      <h3>Gul-kontrast</h3>
+      <div style={createDivStyle('var(--gul-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Grønn', () => (
+    <div>
+      <h3>Grønn</h3>
+      <div style={createDivStyle('var(--grønn)')} />
+      <h3>Grønn-kontrast</h3>
+      <div style={createDivStyle('var(--grønn-kontrast)')} />
+    </div>
+  ))
+  .addWithJSX('Morgendis', () => (
+    <div>
+      <h3>Morgendis</h3>
+      <div style={createDivStyle('var(--morgendis)')} />
+    </div>
+  ));

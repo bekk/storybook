@@ -5,7 +5,7 @@
   --overskyet-kontrast: #cecece;
   --soloppgang: #ffb88d;
   --soloppgang-kontrast: #ff8034;
-  --skyfritt:#b1e8ff;
+  --skyfritt: #b1e8ff;
   --skyfritt-kontrast: #43cbff;
   --solnedgang: #ff9999;
   --solnedgang-kontrast: #ff5b5b;
@@ -19,4 +19,5 @@
   --gul-kontrast: #fff02b;
   --grønn: #a1f5e3;
   --grønn-kontrast: #16dbc4;
+  --morgendis: #707070;
 }

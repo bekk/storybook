@@ -1,0 +1,13 @@
+@import '../../constants/styles.css';
+
+.DatePickerLabel {
+  color: var(--overskyet-kontrast);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.DatePickerContainer {
+  margin-bottom: 20px;
+  font-family: FFDINWebProLight, sans-serif;
+}
