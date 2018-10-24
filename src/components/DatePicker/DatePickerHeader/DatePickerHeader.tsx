@@ -9,6 +9,33 @@ interface IDatePickerHeaderInput {
   onYearSelect: (currentMonth: moment.Moment, newYearVal: string) => void;
 }
 
+const CustomStyles = {
+  control: (base: React.CSSProperties) => ({
+    ...base,
+    '& input': {
+      'font-family': 'FFDINWebProLight',
+      'font-size': '18px'
+    },
+    '&:focus-within': {
+      'border-color': 'var(--regn-kontrast)',
+      'box-shadow': 'none',
+      outline: 0,
+      transition: 'all 0.1s linear'
+    },
+    '&:hover': {
+      'border-color': 'var(--regn-kontrast)',
+      'box-shadow': 'none',
+      outline: 0,
+      transition: 'all 0.1s linear'
+    }
+  }),
+  menuList: (base: React.CSSProperties) => ({
+    ...base,
+    maxHeight: '200px',
+    overflow: 'auto'
+  })
+};
+
 export const DatePickerHeader = ({
   month,
   onMonthSelect,
@@ -40,13 +67,7 @@ export const DatePickerHeader = ({
           }
         }}
         options={moment.months().map((label, value) => ({ label, value }))}
-        styles={{
-          menuList: base => ({
-            ...base,
-            maxHeight: '200px',
-            overflow: 'auto'
-          })
-        }}
+        styles={CustomStyles}
       />
     </div>
     <div className={'DatePickerHeaderYearSelectContainer'}>
