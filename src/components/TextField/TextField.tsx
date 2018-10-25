@@ -52,7 +52,7 @@ export class TextField extends React.Component<IProps, IState> {
           onBlur={onBlur}
           onFocus={onFocus}
           ref={passedRef}
-          value={this.state.value}
+          value={validateInput ? this.state.value : this.props.value}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             if (validateInput) {
               const formatted = validateInput(event.target.value);
