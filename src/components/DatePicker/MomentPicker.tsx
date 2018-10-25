@@ -40,7 +40,7 @@ interface IWrapProps {
 
 const DatePickerWrapper = withProps<IWrapProps>()(styled.div)`
   .DateInput_input {
-    background-color: var(--overskyet);
+    background-color: var(--overskyet-kontrast);
     color: var(--svart);
     font-family: FFDINWebProLight, sans-serif;
     border: none;

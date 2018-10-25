@@ -1,7 +1,7 @@
 @import '../../constants/styles.css';
 
 .DatePickerLabel {
-  color: var(--overskyet-kontrast);
+  color: var(--morgendis);
   font-size: 14px;
   display: block;
   margin-bottom: 5px;
