@@ -6,7 +6,7 @@
 }
 
 .textFieldLabel {
-  color: var(--overskyet);
+  color: var(--morgendis);
   font-size: 14px;
   display: block;
   margin-bottom: 5px;
@@ -47,7 +47,7 @@
       var(--solnedgang-kontrast),
       var(--solnedgang-kontrast)
     ),
-    linear-gradient(0deg, var(--overskyet-kontrast), var(--overskyet-kontrast));
+    linear-gradient(0deg, var(--morgendis), var(--morgendis));
   transition: all 0s linear;
 }
 
