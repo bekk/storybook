@@ -5,6 +5,7 @@ import { MomentPicker } from './MomentPicker';
 import * as moment from 'moment';
 import { boolean, date, text } from '@storybook/addon-knobs';
 import { DateRangePicker } from './DateRangePicker';
+import { MomentRangePicker } from './MomentRangePicker';
 
 const todayDate = new Date();
 const todayMoment = moment();
@@ -51,5 +52,14 @@ const todayMoment = moment();
           todayDate.getDate() + 7
         )
       }
+    />
+  ))
+  .addWithJSX('MomentRangePicker', () => (
+    <MomentRangePicker
+      label={text('label', 'Velg periode')}
+      onChange={(startDate, endDate) => void startDate}
+      isDateRequired={true}
+      initialStartDate={moment().subtract(7, 'days')}
+      initialEndDate={moment().add(7, 'days')}
     />
   ));
