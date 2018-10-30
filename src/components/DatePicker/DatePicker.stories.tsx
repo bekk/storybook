@@ -4,13 +4,17 @@ import { DatePicker } from './DatePicker';
 import { MomentPicker } from './MomentPicker';
 import * as moment from 'moment';
 import { boolean, date, text } from '@storybook/addon-knobs';
+import { DateRangePicker } from './DateRangePicker';
+
+const todayDate = new Date();
+const todayMoment = moment();
 
 (storiesOf('Components/DatePicker', module) as any)
   .addWithJSX('Standard', () => (
     <DatePicker
       label={text('label', 'Velg dato')}
       onChange={date => void date}
-      initialDate={date('initialDate', new Date())}
+      initialDate={date('initialDate', todayDate)}
     />
   ))
   .addWithJSX('Required', () => (
@@ -24,7 +28,28 @@ import { boolean, date, text } from '@storybook/addon-knobs';
     <MomentPicker
       label={text('label', 'Velg dato')}
       onChange={date => void date}
-      initialDate={moment()}
+      initialDate={todayMoment}
       isDateRequired={true}
+    />
+  ))
+  .addWithJSX('DateRangePicker', () => (
+    <DateRangePicker
+      label={text('label', 'Velg periode')}
+      onChange={(startDate, endDate) => void startDate}
+      isDateRequired={true}
+      initialStartDate={
+        new Date(
+          todayDate.getFullYear(),
+          todayDate.getMonth(),
+          todayDate.getDate() - 7
+        )
+      }
+      initialEndDate={
+        new Date(
+          todayDate.getFullYear(),
+          todayDate.getMonth(),
+          todayDate.getDate() + 7
+        )
+      }
     />
   ));
