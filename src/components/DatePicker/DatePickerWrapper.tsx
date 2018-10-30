@@ -16,8 +16,6 @@ interface IWrapProps {
    Storybook requires imports of those dependencies.
    TS does not allow unused imports. */
 try {
-  let _useless = 1;
-  _useless = _useless;
 } catch {
   withProps<HTMLAttributes<ClassAttributes<number>>>();
 }
