@@ -91,28 +91,13 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
   .DayPickerNavigation_button {
     visibility: hidden;
   }
-  @keyframes invalidAnim {
-    0% {
-      box-shadow: 0 1px 1px -1px red;
-    }
 
-    25% {
-      box-shadow: 0 1px 1px -1px red, -1px 0 1px -1px red;
-    }
-
-    75% {
-      box-shadow: 0 1px 1px -1px red, -1px 0 1px -1px red, 0px -1px 1px -1px red;
-    }
-
-    100% {
-      box-shadow: 0 1px 1px -1px red, -1px 0 1px -1px red, 0px -1px 1px -1px red, 1px 0 1px -1px red;
-    }
-  }
   ${props => {
     return props.startDateInvalid
       ? `
   #${props.startDateId}:focus {
-    animation: invalidAnim 0.2s linear forwards;
+    background-size: 0% 1px, 1px 0%, 100% 1px, 1px 0%, 0% 1px;
+    transition: all 0.2s linear;
   }
   #${props.startDateId}{
     background-size: 0% 1px, 1px 0%, 100% 1px, 1px 0%, 0% 1px;
@@ -123,7 +108,8 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
   props.endDateInvalid
     ? `
     #${props.endDateId}:focus {
-      animation: invalidAnim 0.2s linear forwards;
+      background-size: 0% 1px, 1px 0%, 100% 1px, 1px 0%, 0% 1px;
+      transition: all 0.2s linear;
     }
     #${props.endDateId}{
       background-size: 0% 1px, 1px 0%, 100% 1px, 1px 0%, 0% 1px;
