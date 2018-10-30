@@ -8,7 +8,6 @@ import { DateRangePicker } from './DateRangePicker';
 import { MomentRangePicker } from './MomentRangePicker';
 
 const todayDate = new Date();
-const todayMoment = moment();
 
 (storiesOf('Components/DatePicker', module) as any)
   .addWithJSX('Standard', () => (
@@ -29,7 +28,7 @@ const todayMoment = moment();
     <MomentPicker
       label={text('label', 'Velg dato')}
       onChange={date => void date}
-      initialDate={todayMoment}
+      initialDate={moment()}
       isDateRequired={true}
     />
   ))
