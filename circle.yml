@@ -16,8 +16,8 @@ jobs:
             pip install \
               awscli==1.15.8
       - run:
-           name: Install ZIP
-           command: |
+          name: Install ZIP
+          command: |
             apk update \
             && apk add zip unzip \
       - save_cache:
@@ -52,7 +52,7 @@ workflows:
     jobs:
       - build:
           filters:
-              branches:
-                ignore: /.*/
-              tags:
-                only: /[1-9]+\.(0|[1-9]+)\.(0|[1-9]+)/
+            branches:
+              ignore: /.*/
+            tags:
+              only: /[1-9][0-9]*\.[1-9][0-9]*\.[1-9][0-9]*/
