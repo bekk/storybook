@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/bekk/komponent-bibliotek/tree/master.svg?style=svg)](https://circleci.com/gh/bekk/komponent-bibliotek/tree/master)
+[![CircleCI](https://circleci.com/gh/bekk/storybook/tree/master.svg?style=svg)](https://circleci.com/gh/bekk/storybook/tree/master)
 
 This component library uses https://github.com/storybooks/storybook.
 
