@@ -1,10 +1,24 @@
 .FFDINWebProLight {
-    font-size: 1.2em;
-    font-family: FFDINWebProLight;
+  font-size: 1.2em;
+  font-family: FFDINWebProLight;
 }
 
-
 .NewZaldBook {
-    font-size: 1.2em;
-    font-family: NewZaldBook;
+  font-size: 1.2em;
+  font-family: NewZaldBook;
+}
+
+.DINW01LightItalic {
+  font-size: 1.2em;
+  font-family: DINW01LightItalic;
+}
+
+.DINW01Regular {
+  font-size: 1.2em;
+  font-family: DINW01Regular;
+}
+
+.DINW01Medium {
+  font-size: 1.2em;
+  font-family: DINW01Medium;
 }
