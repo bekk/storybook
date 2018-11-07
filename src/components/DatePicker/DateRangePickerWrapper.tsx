@@ -53,7 +53,7 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
     width: 100%;
     background-color: var(--overskyet-kontrast);
     color: var(--svart);
-    font-family: FFDINWebProLight, sans-serif;
+    font-family: DINW01Regular;
     border: none;
     box-sizing: border-box;
     outline: none;
