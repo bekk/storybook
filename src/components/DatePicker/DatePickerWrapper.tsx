@@ -26,7 +26,7 @@ try {
 
 export const DatePickerWrapper = withProps<IWrapProps>()(styled.div)`
   .DateInput_input {
-    background-color: var(--overskyet-kontrast);
+    background-color: var(--overskyet);
     color: var(--svart);
     font-family: DINW01Regular;
     border: none;

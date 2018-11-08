@@ -14,7 +14,7 @@
 }
 
 .textFieldInput {
-  background: var(--overskyet-kontrast);
+  background: var(--overskyet);
   color: var(--svart);
   height: 48px;
   width: 100%;
