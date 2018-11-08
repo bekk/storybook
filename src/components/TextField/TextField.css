@@ -16,7 +16,7 @@
 .textFieldInput {
   background: var(--overskyet);
   color: var(--svart);
-  height: 48px;
+  height: 44px;
   width: 100%;
   box-sizing: border-box;
   font-size: 18px;
