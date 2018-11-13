@@ -21,6 +21,7 @@ interface IProps {
   onChange: (selectedDate: moment.Moment | null) => void;
   onFocusChange?: (focused: boolean | null) => void;
   isDateRequired?: boolean;
+  isDateOutsideRange?: (date: moment.Moment) => boolean;
 }
 
 export class MomentPicker extends React.Component<IProps, IState> {
@@ -35,7 +36,13 @@ export class MomentPicker extends React.Component<IProps, IState> {
   }
 
   public render() {
-    const { label, onChange, onFocusChange, isDateRequired } = this.props;
+    const {
+      label,
+      onChange,
+      onFocusChange,
+      isDateRequired,
+      isDateOutsideRange
+    } = this.props;
     return (
       <DatePickerWrapper
         invalid={isDateRequired === true && this.state.date === null}
@@ -59,7 +66,9 @@ export class MomentPicker extends React.Component<IProps, IState> {
               }
             }}
             id={label}
-            isOutsideRange={() => false}
+            isOutsideRange={
+              isDateOutsideRange ? isDateOutsideRange : () => false
+            }
             hideKeyboardShortcutsPanel={true}
             placeholder={'dd.mm.yyyy'}
             renderMonthElement={DatePickerHeader}

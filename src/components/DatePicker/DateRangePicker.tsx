@@ -26,6 +26,7 @@ interface IProps {
   initialStartDate?: Date | null;
   initialEndDate?: Date | null;
   isDateRequired?: boolean;
+  isDateOutsideRange?: (date: Date) => boolean;
 }
 
 function generateRandomHexId(): string {
@@ -52,7 +53,7 @@ export class DateRangePicker extends React.Component<IProps, IState> {
   }
 
   public render() {
-    const { label, onChange, isDateRequired } = this.props;
+    const { label, onChange, isDateRequired, isDateOutsideRange } = this.props;
     return (
       <DateRangePickerWrapper
         startDateInvalid={
@@ -80,7 +81,9 @@ export class DateRangePicker extends React.Component<IProps, IState> {
             }}
             focusedInput={this.state.focusedInput}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
-            isOutsideRange={() => false}
+            isOutsideRange={
+              isDateOutsideRange ? isDateOutsideRange : () => false
+            }
             renderMonthElement={DatePickerHeader}
             hideKeyboardShortcutsPanel={true}
           />

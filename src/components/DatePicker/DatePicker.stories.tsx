@@ -24,6 +24,14 @@ const todayDate = new Date();
       isDateRequired={boolean('isDateRequired', true)}
     />
   ))
+  .addWithJSX('Block before today', () => (
+    <DatePicker
+      label={text('label', 'Velg dato')}
+      onChange={date => void date}
+      isDateOutsideRange={date => date < new Date()}
+      isDateRequired={true}
+    />
+  ))
   .addWithJSX('MomentPicker', () => (
     <MomentPicker
       label={text('label', 'Velg dato')}
