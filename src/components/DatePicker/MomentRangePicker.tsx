@@ -5,32 +5,9 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import { DateRangePicker as ReactDatesRangePicker } from 'react-dates';
 import { DateRangePickerWrapper } from './DateRangePickerWrapper';
-
 import './DatePicker.css';
 import { DatePickerHeader } from './DatePickerHeader/DatePickerHeader';
-
-type InputType = 'endDate' | 'startDate' | null;
-
-interface IState {
-  startDate: moment.Moment | null;
-  endDate: moment.Moment | null;
-  focusedInput: InputType;
-  timeZone: string;
-  endDateId: string;
-  startDateId: string;
-}
-
-interface IProps {
-  label: string;
-  onChange: (
-    startDate: moment.Moment | null,
-    endDate: moment.Moment | null
-  ) => void;
-  initialStartDate?: moment.Moment | null;
-  initialEndDate?: moment.Moment | null;
-  isDateRequired?: boolean;
-  isDateOutsideRange?: (date: moment.Moment) => boolean;
-}
+import { IRangePickerProps, IRangePickerState } from './types';
 
 function generateRandomHexId(): string {
   /* Generate a random 8 digit hexadecimal number */
@@ -41,8 +18,11 @@ function generateRandomHexId(): string {
   return id;
 }
 
-export class MomentRangePicker extends React.Component<IProps, IState> {
-  public constructor(props: IProps) {
+export class MomentRangePicker extends React.Component<
+  IRangePickerProps<moment.Moment>,
+  IRangePickerState
+> {
+  public constructor(props: IRangePickerProps<moment.Moment>) {
     super(props);
     const _timeZone = moment.locale('nb');
     this.state = {

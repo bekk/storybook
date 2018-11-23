@@ -6,26 +6,15 @@ import 'react-dates/lib/css/_datepicker.css';
 import { DatePickerHeader } from './DatePickerHeader/DatePickerHeader';
 import { SingleDatePicker } from 'react-dates';
 import { DatePickerWrapper } from './DatePickerWrapper';
+import { ISinglePickerProps, ISinglePickerState } from './types';
 
 import './DatePicker.css';
 
-interface IState {
-  focused: boolean | null;
-  date: moment.Moment | null;
-  timeZone: string;
-}
-
-interface IProps {
-  initialDate?: Date | null;
-  label: string;
-  onChange: (selectedDate: Date | null) => void;
-  onFocusChange?: (focused: boolean | null) => void;
-  isDateRequired?: boolean;
-  isDateOutsideRange?: (date: Date) => boolean;
-}
-
-export class DatePicker extends React.Component<IProps, IState> {
-  public constructor(props: IProps) {
+export class DatePicker extends React.Component<
+  ISinglePickerProps<Date>,
+  ISinglePickerState
+> {
+  public constructor(props: ISinglePickerProps<Date>) {
     super(props);
     const _timeZone = moment.locale('nb');
     this.state = {
