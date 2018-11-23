@@ -26,6 +26,7 @@ export class DatePicker extends React.Component<
 
   public render() {
     const {
+      disabled,
       label,
       onChange,
       onFocusChange,
@@ -62,6 +63,7 @@ export class DatePicker extends React.Component<
             hideKeyboardShortcutsPanel={true}
             placeholder={'dd.mm.yyyy'}
             renderMonthElement={DatePickerHeader}
+            disabled={disabled}
           />
         </div>
       </DatePickerWrapper>

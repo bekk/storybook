@@ -36,7 +36,13 @@ export class MomentRangePicker extends React.Component<
   }
 
   public render() {
-    const { label, onChange, isDateRequired, isDateOutsideRange } = this.props;
+    const {
+      label,
+      onChange,
+      isDateRequired,
+      isDateOutsideRange,
+      disabled
+    } = this.props;
     return (
       <DateRangePickerWrapper
         startDateInvalid={
@@ -66,6 +72,7 @@ export class MomentRangePicker extends React.Component<
             }
             renderMonthElement={DatePickerHeader}
             hideKeyboardShortcutsPanel={true}
+            disabled={disabled}
           />
         </div>
       </DateRangePickerWrapper>

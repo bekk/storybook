@@ -4,6 +4,7 @@ interface ICommonDatePickerProps<T> {
   label: string;
   isDateRequired?: boolean;
   isDateOutsideRange?: (date: T) => boolean;
+  disabled?: boolean;
 }
 
 export interface ISinglePickerProps<T> extends ICommonDatePickerProps<T> {

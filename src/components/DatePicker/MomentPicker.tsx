@@ -26,6 +26,7 @@ export class MomentPicker extends React.Component<
 
   public render() {
     const {
+      disabled,
       label,
       onChange,
       onFocusChange,
@@ -61,6 +62,7 @@ export class MomentPicker extends React.Component<
             hideKeyboardShortcutsPanel={true}
             placeholder={'dd.mm.yyyy'}
             renderMonthElement={DatePickerHeader}
+            disabled={disabled}
           />
         </div>
       </DatePickerWrapper>

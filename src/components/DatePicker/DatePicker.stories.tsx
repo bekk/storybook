@@ -15,6 +15,7 @@ const todayDate = new Date();
       label={text('label', 'Velg dato')}
       onChange={date => void date}
       initialDate={date('initialDate', todayDate)}
+      disabled={boolean('disabled', false)}
     />
   ))
   .addWithJSX('Required', () => (
