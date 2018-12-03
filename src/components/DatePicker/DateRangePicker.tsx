@@ -8,15 +8,7 @@ import { DateRangePickerWrapper } from './DateRangePickerWrapper';
 import './DatePicker.css';
 import { DatePickerHeader } from './DatePickerHeader/DatePickerHeader';
 import { IRangePickerProps, IRangePickerState } from './types';
-
-function generateRandomHexId(): string {
-  /* Generate a random 8 digit hexadecimal number */
-  let id = '';
-  for (let i = 0; i < 8; i++) {
-    id += Math.floor(Math.random() * 16).toString(16);
-  }
-  return id;
-}
+import { getDateAtMidnightUtc, generateRandomHexId } from './utils';
 
 export class DateRangePicker extends React.Component<
   IRangePickerProps<Date>,
@@ -63,8 +55,8 @@ export class DateRangePicker extends React.Component<
             endDatePlaceholderText={'dd.mm.yyyy'}
             onDatesChange={({ startDate, endDate }) => {
               onChange(
-                startDate ? startDate.toDate() : null,
-                endDate ? endDate.toDate() : null
+                startDate ? getDateAtMidnightUtc(startDate.toDate()) : null,
+                endDate ? getDateAtMidnightUtc(endDate.toDate()) : null
               );
               this.setState({ startDate, endDate });
             }}

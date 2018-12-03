@@ -7,6 +7,7 @@ import { DatePickerHeader } from './DatePickerHeader/DatePickerHeader';
 import { SingleDatePicker } from 'react-dates';
 import { DatePickerWrapper } from './DatePickerWrapper';
 import { ISinglePickerProps, ISinglePickerState } from './types';
+import { getMomentAtMidnightUtc } from './utils';
 
 import './DatePicker.css';
 
@@ -45,7 +46,7 @@ export class MomentPicker extends React.Component<
             displayFormat={'DD.MM.YYYY'}
             date={this.state.date}
             onDateChange={date => {
-              onChange(date);
+              onChange(getMomentAtMidnightUtc(date));
               this.setState({ date });
             }}
             focused={this.state.focused || false}

@@ -9,6 +9,7 @@ import { DatePickerWrapper } from './DatePickerWrapper';
 import { ISinglePickerProps, ISinglePickerState } from './types';
 
 import './DatePicker.css';
+import { getDateAtMidnightUtc } from './utils';
 
 export class DatePicker extends React.Component<
   ISinglePickerProps<Date>,
@@ -45,7 +46,9 @@ export class DatePicker extends React.Component<
             displayFormat={'DD.MM.YYYY'}
             date={this.state.date}
             onDateChange={date => {
-              const dateAsDateObject = date ? date.toDate() : null;
+              const dateAsDateObject = date
+                ? getDateAtMidnightUtc(date.toDate())
+                : null;
               onChange(dateAsDateObject);
               this.setState({ date });
             }}

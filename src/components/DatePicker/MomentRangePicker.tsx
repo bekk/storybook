@@ -8,15 +8,7 @@ import { DateRangePickerWrapper } from './DateRangePickerWrapper';
 import './DatePicker.css';
 import { DatePickerHeader } from './DatePickerHeader/DatePickerHeader';
 import { IRangePickerProps, IRangePickerState } from './types';
-
-function generateRandomHexId(): string {
-  /* Generate a random 8 digit hexadecimal number */
-  let id = '';
-  for (let i = 0; i < 8; i++) {
-    id += Math.floor(Math.random() * 16).toString(16);
-  }
-  return id;
-}
+import { generateRandomHexId, getMomentAtMidnightUtc } from './utils';
 
 export class MomentRangePicker extends React.Component<
   IRangePickerProps<moment.Moment>,
@@ -62,7 +54,10 @@ export class MomentRangePicker extends React.Component<
             endDateId={this.state.endDateId}
             endDatePlaceholderText={'dd.mm.yyyy'}
             onDatesChange={({ startDate, endDate }) => {
-              onChange(startDate, endDate);
+              onChange(
+                getMomentAtMidnightUtc(startDate),
+                getMomentAtMidnightUtc(endDate)
+              );
               this.setState({ startDate, endDate });
             }}
             focusedInput={this.state.focusedInput}
