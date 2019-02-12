@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.textFieldContainer:first-child {
+  margin-top: 0;
+}
+
 .textFieldLabel {
   color: var(--morgendis);
   font-size: 14px;
