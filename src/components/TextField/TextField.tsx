@@ -12,6 +12,7 @@ interface IProps {
   onFocus?: any;
   onBlur?: any;
   passedRef?: any;
+  disabled?: boolean;
 }
 
 interface IState {
@@ -24,7 +25,7 @@ export class TextField extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       isValid: true,
-      value: props.value,
+      value: props.value
     };
   }
   public render() {
@@ -37,7 +38,7 @@ export class TextField extends React.Component<IProps, IState> {
       maxLength,
       onFocus,
       onBlur,
-      passedRef,
+      passedRef
     } = this.props;
     return (
       <div className={'textFieldContainer'}>
@@ -66,6 +67,7 @@ export class TextField extends React.Component<IProps, IState> {
               onChange(event.target.value);
             }
           }}
+          disabled={this.props.disabled}
         />
       </div>
     );

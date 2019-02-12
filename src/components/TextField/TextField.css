@@ -18,13 +18,13 @@
 }
 
 .textFieldInput {
-  background: var(--overskyet-kontrast);
+  background: var(--overskyet);
   color: var(--svart);
-  height: 48px;
+  height: 44px;
   width: 100%;
   box-sizing: border-box;
   font-size: 18px;
-  font-family: FFDINWebProLight, sans-serif;
+  font-family: DINW01Regular;
   padding: 5px;
   padding-left: 10px;
   border: none;
@@ -59,6 +59,10 @@
   background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%, 100% 1px;
   transition: all 0.1s linear;
   outline: 0;
+}
+
+.textFieldInput:disabled {
+  color: hsl(0, 0%, 60%);
 }
 
 @keyframes invalidAnim {

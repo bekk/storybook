@@ -6,25 +6,16 @@ import 'react-dates/lib/css/_datepicker.css';
 import { DatePickerHeader } from './DatePickerHeader/DatePickerHeader';
 import { SingleDatePicker } from 'react-dates';
 import { DatePickerWrapper } from './DatePickerWrapper';
+import { ISinglePickerProps, ISinglePickerState } from './types';
+import { getMomentAtMidnightUtc } from './utils';
 
 import './DatePicker.css';
 
-interface IState {
-  focused: boolean | null;
-  date: moment.Moment | null;
-  timeZone: string;
-}
-
-interface IProps {
-  initialDate?: moment.Moment | null;
-  label: string;
-  onChange: (selectedDate: moment.Moment | null) => void;
-  onFocusChange?: (focused: boolean | null) => void;
-  isDateRequired?: boolean;
-}
-
-export class MomentPicker extends React.Component<IProps, IState> {
-  public constructor(props: IProps) {
+export class MomentPicker extends React.Component<
+  ISinglePickerProps<moment.Moment>,
+  ISinglePickerState
+> {
+  public constructor(props: ISinglePickerProps<moment.Moment>) {
     super(props);
     const _timeZone = moment.locale('nb');
     this.state = {
@@ -35,7 +26,14 @@ export class MomentPicker extends React.Component<IProps, IState> {
   }
 
   public render() {
-    const { label, onChange, onFocusChange, isDateRequired } = this.props;
+    const {
+      disabled,
+      label,
+      onChange,
+      onFocusChange,
+      isDateRequired,
+      isDateOutsideRange
+    } = this.props;
     return (
       <DatePickerWrapper
         invalid={isDateRequired === true && this.state.date === null}
@@ -48,7 +46,7 @@ export class MomentPicker extends React.Component<IProps, IState> {
             displayFormat={'DD.MM.YYYY'}
             date={this.state.date}
             onDateChange={date => {
-              onChange(date);
+              onChange(getMomentAtMidnightUtc(date));
               this.setState({ date });
             }}
             focused={this.state.focused || false}
@@ -59,10 +57,13 @@ export class MomentPicker extends React.Component<IProps, IState> {
               }
             }}
             id={label}
-            isOutsideRange={() => false}
+            isOutsideRange={
+              isDateOutsideRange ? isDateOutsideRange : () => false
+            }
             hideKeyboardShortcutsPanel={true}
             placeholder={'dd.mm.yyyy'}
             renderMonthElement={DatePickerHeader}
+            disabled={disabled}
           />
         </div>
       </DatePickerWrapper>

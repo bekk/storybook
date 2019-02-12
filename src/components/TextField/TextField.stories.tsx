@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs/react';
+import { boolean, text } from '@storybook/addon-knobs/react';
 import { TextField } from './TextField';
 
 class TextFieldWrapper extends React.Component<{}, { value: string }> {
@@ -15,6 +15,7 @@ class TextFieldWrapper extends React.Component<{}, { value: string }> {
         label={text('label', 'Navn')}
         value={text('value', this.state.value)}
         onChange={v => this.setState({ value: v })}
+        disabled={boolean('disabled', false)}
       />
     );
   }

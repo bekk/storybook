@@ -33,7 +33,7 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
       border: none;
   }
   .DateRangePickerInput_arrow {
-      background-color: var(--overskyet-kontrast);
+      background-color: var(--overskyet);
       top: 10px;
   }
   .DateRangePickerInput_arrow_svg {
@@ -51,9 +51,9 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
   }
   .DateInput_input {
     width: 100%;
-    background-color: var(--overskyet-kontrast);
+    background-color: var(--overskyet);
     color: var(--svart);
-    font-family: FFDINWebProLight, sans-serif;
+    font-family: DINW01Regular;
     border: none;
     box-sizing: border-box;
     outline: none;
