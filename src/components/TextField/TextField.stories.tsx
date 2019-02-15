@@ -14,7 +14,7 @@ class TextFieldWrapper extends React.Component<{}, { value: string }> {
       <TextField
         label={text('label', 'Navn')}
         value={text('value', this.state.value)}
-        onChange={v => this.setState({ value: v })}
+        onChange={(v: string) => this.setState({ value: v })}
         disabled={boolean('disabled', false)}
       />
     );
@@ -23,7 +23,7 @@ class TextFieldWrapper extends React.Component<{}, { value: string }> {
 
 (storiesOf('Components/TextField', module) as any)
   .addWithJSX('Basic', () => <TextFieldWrapper />)
-  .addWithJSX('Custom Validation', () => (
+  .addWithJSX('Length Validation', () => (
     <TextField
       label={text('label', 'Navn')}
       value={text('value', 'Tarjei')}
@@ -36,6 +36,20 @@ class TextFieldWrapper extends React.Component<{}, { value: string }> {
           // Return undefined if it is invalid
           return undefined;
         }
+      }}
+    />
+  ))
+  .addWithJSX('Numeric Validation', () => (
+    <TextField
+      label={text('label', 'Tall')}
+      value={text('value', '42')}
+      onChange={v => void v}
+      validateInput={input => {
+        const numberMaybe = Number(input);
+        if (!isNaN(numberMaybe)) {
+          return numberMaybe;
+        }
+        return undefined;
       }}
     />
   ));

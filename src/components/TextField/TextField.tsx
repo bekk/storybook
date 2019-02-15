@@ -1,11 +1,11 @@
 import * as React from 'react';
 import './TextField.css';
 
-interface IProps {
+interface IProps<T> {
   label: string;
   value: string;
-  onChange: (newValue: string) => void;
-  validateInput?: (input: string) => string | undefined;
+  onChange: (newValue: T) => void;
+  validateInput?: (input: string) => T | undefined;
   className?: any;
   size?: any;
   maxLength?: number;
@@ -20,25 +20,26 @@ interface IState {
   value: string;
 }
 
-export class TextField extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export class TextField<T> extends React.Component<IProps<T>, IState> {
+  constructor(props: IProps<T>) {
     super(props);
     this.state = {
       isValid: true,
-      value: props.value
+      value: props.value,
     };
   }
   public render() {
     const {
       label,
       onChange,
-      validateInput,
+      validateInput = (s: string) => s,
       className,
       size,
       maxLength,
       onFocus,
       onBlur,
-      passedRef
+      passedRef,
+      disabled,
     } = this.props;
     return (
       <div className={'textFieldContainer'}>
@@ -58,16 +59,16 @@ export class TextField extends React.Component<IProps, IState> {
             if (validateInput) {
               const formatted = validateInput(event.target.value);
               if (formatted !== undefined) {
-                onChange(formatted);
-                this.setState({ isValid: true, value: formatted });
+                onChange(formatted as T);
+                this.setState({ isValid: true, value: event.target.value });
               } else {
                 this.setState({ isValid: false, value: event.target.value });
               }
             } else {
-              onChange(event.target.value);
+              onChange(event.target.value as any);
             }
           }}
-          disabled={this.props.disabled}
+          disabled={disabled}
         />
       </div>
     );
