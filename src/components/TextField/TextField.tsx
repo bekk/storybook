@@ -4,6 +4,7 @@ import './TextField.css';
 interface IProps<T> {
   label: string;
   value: string;
+  placeholder?: string;
   onChange: (newValue: T) => void;
   validateInput?: (input: string) => T | undefined;
   className?: any;
@@ -31,6 +32,7 @@ export class TextField<T> extends React.Component<IProps<T>, IState> {
   public render() {
     const {
       label,
+      placeholder,
       onChange,
       validateInput = (s: string) => s,
       className,
@@ -54,6 +56,7 @@ export class TextField<T> extends React.Component<IProps<T>, IState> {
           onBlur={onBlur}
           onFocus={onFocus}
           ref={passedRef}
+          placeholder={placeholder}
           value={validateInput ? this.state.value : this.props.value}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             if (validateInput) {
