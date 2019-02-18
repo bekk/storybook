@@ -69,7 +69,8 @@ function themeTransform(theme: Theme): Theme {
     colors: {
       ...theme.colors,
       primary: REGN_KONTRAST,
-      primary25: REGN
+      primary25: REGN,
+      primary50: REGN_KONTRAST
     }
   };
 }
