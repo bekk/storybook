@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs/react';
+import { text, object, boolean } from '@storybook/addon-knobs/react';
 import { SingleSelect } from './SingleSelect';
 import { ISelectOption } from './types';
 
@@ -27,12 +27,13 @@ class SingleSelectWrapper extends React.Component<
     return (
       <SingleSelect
         label={text('label', 'Velg farge')}
-        selectedOption={this.state.selected}
-        options={options}
-        placeholder={text('placeholder', 'Ta et valg!')}
-        updateSelectedOptions={(s: ISelectOption) =>
+        selectedOption={object('selectedOption', this.state.selected)}
+        options={object('options', options)}
+        placeholder={text('placeholder', 'Velg!')}
+        updateSelectedOption={(s: ISelectOption) =>
           this.setState({ selected: s })
         }
+        disabled={boolean('disabled', false)}
       />
     );
   }

@@ -74,16 +74,14 @@ function themeTransform(theme: Theme): Theme {
   };
 }
 
-interface IOwnProps {
+interface IProps {
   selectedOption?: ISelectOption;
   options: ISelectOption[];
-  updateSelectedOptions: (option: ISelectOption) => void;
+  updateSelectedOption: (option: ISelectOption) => void;
   label: string;
   placeholder: string;
   disabled?: boolean;
 }
-
-type IProps = IOwnProps;
 
 export class SingleSelect extends React.PureComponent<IProps, {}> {
   constructor(props: IProps) {
@@ -91,7 +89,7 @@ export class SingleSelect extends React.PureComponent<IProps, {}> {
     this.handleChange = this.handleChange.bind(this);
   }
   public handleChange(e: ISelectOption) {
-    this.props.updateSelectedOptions(e);
+    this.props.updateSelectedOption(e);
   }
 
   public render() {
