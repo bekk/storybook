@@ -1,0 +1,23 @@
+@import '../../constants/styles.css';
+
+.container {
+  margin-top: 20px;
+}
+
+.select {
+  border-radius: 0;
+  outline: 0;
+  font-family: DINW01Regular;
+}
+
+.label {
+  color: var(--morgendis);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+  font-family: FFDINWebProLight, sans-serif;
+}
+
+.flex {
+  display: flex;
+}
