@@ -11,3 +11,7 @@ export {
   SingleSelect
 } from './components/SelectField/SingleSelect/SingleSelect';
 export { MultiSelect } from './components/SelectField/MultiSelect/MultiSelect';
+export {
+  IMultiSelectOption,
+  ISelectOption
+} from './components/SelectField/types';
