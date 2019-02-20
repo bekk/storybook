@@ -7,8 +7,8 @@ import {
   OVERSKYET,
   REGN_KONTRAST,
   REGN
-} from '../../constants/styles';
-import { ISelectOption } from './types';
+} from '../../../constants/styles';
+import { ISelectOption } from '../types';
 import './SingleSelect.css';
 import { Theme } from 'react-select/lib/types';
 

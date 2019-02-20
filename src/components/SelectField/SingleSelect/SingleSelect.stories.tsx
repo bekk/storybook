@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, object, boolean } from '@storybook/addon-knobs/react';
 import { SingleSelect } from './SingleSelect';
-import { ISelectOption } from './types';
+import { ISelectOption } from '../types';
 
 const options: ISelectOption[] = [
   { label: 'Rød', value: 0 },
@@ -39,7 +39,7 @@ class SingleSelectWrapper extends React.Component<
   }
 }
 
-(storiesOf('Components/SelectField', module) as any).addWithJSX(
+(storiesOf('Components/SingleSelect', module) as any).addWithJSX(
   'SingleSelect',
   () => <SingleSelectWrapper />
 );

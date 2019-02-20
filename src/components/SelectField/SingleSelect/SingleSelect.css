@@ -1,4 +1,4 @@
-@import '../../constants/styles.css';
+@import '../../../constants/styles.css';
 
 .container:not(:first-child) {
   margin-top: 20px;
