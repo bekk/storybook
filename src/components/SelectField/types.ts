@@ -2,7 +2,7 @@ export interface ISelectOption {
   label: string;
   value: number;
 }
-export interface IMultiSelectOption {
+export interface IMultiSelectOption extends ISelectOption {
   shorthand: string;
   label: string;
   value: number;

@@ -37,7 +37,6 @@
 
 .multiSelectSelectedValuesContainer {
   margin-bottom: 10px;
-  max-width: 520px;
 }
 
 .multiSelectPlaceholder {
@@ -47,7 +46,7 @@
   line-height: 44px;
   vertical-align: middle;
   margin-left: 10px;
-  color: hsl(0, 0, 50%);
+  color: hsl(0, 0%, 50%);
   font-family: FFDINWebProLight;
   pointer-events: none;
   z-index: 2;
