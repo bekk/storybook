@@ -1,11 +1,9 @@
 import * as React from 'react';
 import Select from 'react-select';
-
-import { CSSProperties } from 'react';
-import { BEKK_SORT, OVERSKYET } from '../../../constants/styles';
 import { IMultiSelectOption } from '../types';
 import './MultiSelect.css';
 import { SelectedValue } from './SelectedValue';
+import { customStylesMultiSelect, themeTransform } from '../constants';
 
 interface IProps {
   label: string;
@@ -20,7 +18,7 @@ interface IState {
   inputField: string;
 }
 
-class MultiSelect extends React.Component<IProps, IState> {
+export class MultiSelect extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = { inputField: '' };
@@ -44,54 +42,26 @@ class MultiSelect extends React.Component<IProps, IState> {
     this.props.updateSelection(filteredValues);
   }
   public render() {
-    const customStyles = {
-      control: (base: CSSProperties) => ({
-        ...base,
-        '& input': {
-          'font-family': 'FFDINWebProLight',
-          'font-size': '18px'
-        },
-        '&:focus-within': {
-          'background-size': '100% 1px',
-          border: 'none',
-          'box-shadow': 'none',
-          outline: 0,
-          transition: 'all 0.1s linear'
-        },
-        '&:hover': {
-          'background-size': '100% 1px',
-          border: 'none',
-          'box-shadow': 'none',
-          outline: 0,
-          transition: 'all 0.1s linear'
-        },
-        background: OVERSKYET,
-        'background-image': 'linear-gradient(0deg, #777, #777)',
-        'background-position': '0 100%',
-        'background-repeat': 'no-repeat',
-        'background-size': '0% 1px',
-        border: 'none',
-        'border-radius': 0,
-        'box-shadow': 'none',
-        'box-sizing': 'border-box',
-        color: BEKK_SORT,
-        'font-family': 'FFDINWebProLight',
-        height: '44px',
-        maxWidth: this.props.fieldWidth || 'initial',
-        outline: 0,
-        transition: 'all 0s linear',
-        width: '100%'
-      }),
-      menu: (optionBase: CSSProperties) => ({
-        ...optionBase,
-        'z-index': 3
-      })
-    };
-    const { label, selectedValues, options, placeholder } = this.props;
+    const {
+      label,
+      selectedValues,
+      options,
+      placeholder,
+      fieldWidth
+    } = this.props;
     const { inputField } = this.state;
     let components = {
       MultiValueContainer: () => null
     };
+
+    const customStyles = {
+      ...customStylesMultiSelect,
+      control: (base: React.CSSProperties) => ({
+        ...customStylesMultiSelect.control(base),
+        maxWidth: fieldWidth || 'initial'
+      })
+    };
+
     return (
       <div className={'multiSelectContainer'}>
         <label className={'multiSelectLabel'}>{label}</label>
@@ -119,10 +89,9 @@ class MultiSelect extends React.Component<IProps, IState> {
           backspaceRemovesValue={false}
           components={components}
           styles={customStyles}
+          theme={themeTransform}
         />
       </div>
     );
   }
 }
-
-export { MultiSelect };
