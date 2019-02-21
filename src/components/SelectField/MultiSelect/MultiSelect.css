@@ -30,8 +30,9 @@
   margin-right: 10px;
   color: var(--svart);
   background: inherit;
-  padding: 14px;
-  padding-bottom: 11px;
+  padding: 20px;
+  padding-top: 14px;
+  padding-bottom: 10px;
   font-family: FFDINWebProLight;
 }
 
