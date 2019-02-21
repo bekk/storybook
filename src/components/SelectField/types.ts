@@ -8,7 +8,7 @@ export interface IMultiSelectOption extends ISelectOption {
   value: number;
 }
 
-export interface IOption {
+export interface ICreateableMultiSelectOption {
   value: string;
   label: string;
   color: string;

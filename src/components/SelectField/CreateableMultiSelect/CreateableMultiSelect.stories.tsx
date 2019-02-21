@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, object } from '@storybook/addon-knobs/react';
 import { CreateableMultiSelect } from './CreateableMultiSelect';
-import { IOption } from '../types';
+import { ICreateableMultiSelectOption } from '../types';
 
 
 
@@ -24,7 +24,7 @@ export const colourOptions = [
 
 class CreateableSingleSelectWrapper extends React.Component<
     IProps,
-    { selected: IOption[] }
+    { selected: ICreateableMultiSelectOption[] }
     > {
     constructor(props: IProps) {
         super(props);
@@ -37,7 +37,7 @@ class CreateableSingleSelectWrapper extends React.Component<
                 label={text('label', 'Velg farger')}
                 placeholder={text('placeholder', 'Velg masse!')}
                 options={object('options', colourOptions)}
-                updateSelection={(s: IOption[]) =>
+                updateSelection={(s: ICreateableMultiSelectOption[]) =>
                     this.setState({ selected: s })
                 }
                 selectedValues={object('selectedValues', this.state.selected)}

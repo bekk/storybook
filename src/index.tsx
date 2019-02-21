@@ -14,7 +14,7 @@ export { MultiSelect } from './components/SelectField/MultiSelect/MultiSelect';
 export {
   IMultiSelectOption,
   ISelectOption,
-  IOption
+  ICreateableMultiSelectOption
 } from './components/SelectField/types';
 export { CreateableMultiSelect } from './components/SelectField/CreateableMultiSelect/CreateableMultiSelect';
 

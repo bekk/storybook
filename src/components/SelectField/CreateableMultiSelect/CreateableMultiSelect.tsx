@@ -1,6 +1,6 @@
 import * as React from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
-import { IOption } from '../types';
+import { ICreateableMultiSelectOption } from '../types';
 
 
 
@@ -8,15 +8,15 @@ interface IProps {
     label: string;
     placeholder: string;
     fieldWidth?: string;
-    options: IOption[]
-    selectedValues: IOption[]
-    updateSelection: (selected: IOption[]) => void;
+    options: ICreateableMultiSelectOption[]
+    selectedValues: ICreateableMultiSelectOption[]
+    updateSelection: (selected: ICreateableMultiSelectOption[]) => void;
 
 }
 
 interface IState {
     isLoading: boolean;
-    value: IOption;
+    value: ICreateableMultiSelectOption;
 }
 
 
@@ -27,7 +27,7 @@ export class CreateableMultiSelect extends React.Component<IProps, IState>{
         this.handleChange = this.handleChange.bind(this);
     }
 
-    public handleChange = (newValue: IOption[], actionMeta: any) => {
+    public handleChange = (newValue: ICreateableMultiSelectOption[], actionMeta: any) => {
         console.log(newValue);
         this.props.updateSelection(newValue);
     };
