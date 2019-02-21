@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, object } from '@storybook/addon-knobs/react';
+import { text, object, boolean } from '@storybook/addon-knobs/react';
 import { MultiSelect } from './MultiSelect';
 import { IMultiSelectOption } from '../types';
 
@@ -47,7 +47,8 @@ class MultiSelectWrapper extends React.Component<
         updateSelection={(s: IMultiSelectOption[]) =>
           this.setState({ selected: s })
         }
-        fieldWidth={text('fieldWidth', '1000px')}
+        fieldWidth={text('fieldWidth (optional)', '1000px')}
+        showSearchIcon={boolean('showSearchIcon (optional)', false)}
       />
     );
   }

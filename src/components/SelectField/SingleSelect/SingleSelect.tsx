@@ -3,6 +3,7 @@ import Select from 'react-select';
 import { ISelectOption } from '../types';
 import './SingleSelect.css';
 import { customStylesSingleSelect, themeTransform } from '../constants';
+import { Placeholder } from './Placeholder/Placeholder';
 
 interface IProps {
   selectedOption?: ISelectOption;
@@ -11,6 +12,7 @@ interface IProps {
   label: string;
   placeholder: string;
   disabled?: boolean;
+  showSearchIcon?: boolean;
 }
 
 export class SingleSelect extends React.PureComponent<IProps, {}> {
@@ -28,7 +30,8 @@ export class SingleSelect extends React.PureComponent<IProps, {}> {
       label,
       options,
       selectedOption,
-      placeholder
+      placeholder,
+      showSearchIcon
     } = this.props;
     return (
       <div className={'singleSelectContainer'}>
@@ -39,6 +42,7 @@ export class SingleSelect extends React.PureComponent<IProps, {}> {
           className={'singleSelectSelect'}
           options={options}
           placeholder={placeholder}
+          components={showSearchIcon ? { Placeholder } : {}}
           value={selectedOption || ('' as any)}
           onChange={this.handleChange}
           styles={customStylesSingleSelect}

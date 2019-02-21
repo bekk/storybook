@@ -5,6 +5,10 @@
   margin-top: 20px;
 }
 
+.multiSelectContainer:first-child {
+  margin-top: 0;
+}
+
 .multiSelectLabel {
   color: var(--morgendis);
   font-size: 14px;
@@ -16,7 +20,7 @@
 .multiSelectSelect {
   border-radius: 0;
   outline: 0;
-  font-family: FFDINWebProLight;
+  font-family: DINW01Regular;
 }
 
 .multiSelectSelectedValue {
@@ -40,12 +44,12 @@
 }
 
 .multiSelectPlaceholder {
+  display: flex;
   position: absolute;
   bottom: 0;
   height: 44px;
   line-height: 44px;
   vertical-align: middle;
-  margin-left: 10px;
   color: hsl(0, 0%, 50%);
   font-family: FFDINWebProLight;
   pointer-events: none;
@@ -63,4 +67,22 @@
 
 .multiSelectSelectedValue:hover .selectedValueRemoveIcon {
   visibility: visible;
+}
+
+.multiSelectPlaceholderIcon {
+  position: relative;
+  transform: translateY(-50%) scale(0.5, 0.5);
+  left: 0;
+  cursor: text;
+  pointer-events: none;
+  width: 39px;
+  height: 39px;
+  margin-top: 20px;
+  margin-right: -10px;
+}
+
+.multiSelectPlaceholderText {
+  display: inline;
+  white-space: nowrap;
+  margin-left: 10px;
 }
