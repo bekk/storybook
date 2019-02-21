@@ -28,7 +28,7 @@ class CreateableSingleSelectWrapper extends React.Component<
     > {
     constructor(props: IProps) {
         super(props);
-        this.state = { selected: [] };
+        this.state = { selected: [colourOptions[1], colourOptions[3]] };
     }
 
     public render() {

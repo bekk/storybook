@@ -33,13 +33,15 @@ export class CreateableMultiSelect extends React.Component<IProps, IState>{
     };
 
     public render() {
-        const { options } = this.props;
+        const { options, selectedValues } = this.props;
         return (
             <CreatableSelect
                 isMulti
+                defaultValue={selectedValues}
                 onChange={this.handleChange}
                 options={options}
             />
         );
     }
 }
+
