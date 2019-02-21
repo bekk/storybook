@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, object } from '@storybook/addon-knobs/react';
-import { CreatableMultiSelect } from './CreateableMultiSelect';
+import { CreateableMultiSelect } from './CreateableMultiSelect';
 import { IOption } from '../types';
 
 
@@ -33,7 +33,7 @@ class CreateableSingleSelectWrapper extends React.Component<
 
     public render() {
         return (
-            <CreatableMultiSelect
+            <CreateableMultiSelect
                 label={text('label', 'Velg farger')}
                 placeholder={text('placeholder', 'Velg masse!')}
                 options={object('options', colourOptions)}

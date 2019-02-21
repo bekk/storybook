@@ -20,7 +20,7 @@ interface IState {
 }
 
 
-export class CreatableMultiSelect extends React.Component<IProps, IState>{
+export class CreateableMultiSelect extends React.Component<IProps, IState>{
     constructor(props: IProps) {
         super(props);
         this.state = { value: { value: 'blue', label: 'Blue', color: '#0052CC' }, isLoading: false };
