@@ -7,3 +7,11 @@ export interface IMultiSelectOption {
   label: string;
   value: number;
 }
+
+export interface IOption {
+  value: string;
+  label: string;
+  color: string;
+  isFixed?: boolean;
+  __isNew__?: boolean;
+}
