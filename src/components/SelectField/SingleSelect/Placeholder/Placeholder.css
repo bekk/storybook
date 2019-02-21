@@ -1,0 +1,22 @@
+.selectPlaceholderIcon {
+  position: absolute;
+  transform: translateY(-50%) scale(0.5, 0.5);
+  left: 0;
+  cursor: text;
+  pointer-events: none;
+  width: 39px;
+  height: 39px;
+  margin-top: 10px;
+}
+
+.selectPlaceholderIconContainer {
+  width: 18px;
+}
+
+.selectPlaceholderTextContainer {
+  margin-left: 13px;
+}
+
+.flex {
+  display: flex;
+}

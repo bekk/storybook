@@ -4,6 +4,7 @@ import { IMultiSelectOption } from '../types';
 import './MultiSelect.css';
 import { SelectedValue } from './SelectedValue';
 import { customStylesMultiSelect, themeTransform } from '../constants';
+import { SearchIcon } from '../SearchIcon';
 
 interface IProps {
   label: string;
@@ -12,6 +13,7 @@ interface IProps {
   options: IMultiSelectOption[];
   updateSelection: (selected: IMultiSelectOption[]) => void;
   fieldWidth?: string;
+  showSearchIcon?: boolean;
 }
 
 interface IState {
@@ -47,7 +49,8 @@ export class MultiSelect extends React.Component<IProps, IState> {
       selectedValues,
       options,
       placeholder,
-      fieldWidth
+      fieldWidth,
+      showSearchIcon
     } = this.props;
     const { inputField } = this.state;
     let components = {
@@ -75,7 +78,14 @@ export class MultiSelect extends React.Component<IProps, IState> {
           ))}
         </div>
         <div className={'multiSelectPlaceholder'}>
-          {inputField ? '' : placeholder}
+          {!inputField && (
+            <>
+              {showSearchIcon && (
+                <SearchIcon className={'multiSelectPlaceholderIcon'} />
+              )}
+              <div className={'multiSelectPlaceholderText'}>{placeholder}</div>
+            </>
+          )}
         </div>
         <Select
           className={'multiSelectSelect'}

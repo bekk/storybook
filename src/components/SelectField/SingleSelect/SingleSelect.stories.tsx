@@ -33,7 +33,8 @@ class SingleSelectWrapper extends React.Component<
         updateSelectedOption={(s: ISelectOption) =>
           this.setState({ selected: s })
         }
-        disabled={boolean('disabled', false)}
+        disabled={boolean('disabled (optional)', false)}
+        showSearchIcon={boolean('showSearchIcon (optional)', false)}
       />
     );
   }
