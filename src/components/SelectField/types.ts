@@ -3,15 +3,9 @@ export interface ISelectOption {
   value: number;
 }
 export interface IMultiSelectOption extends ISelectOption {
-  shorthand: string;
-  label: string;
-  value: number;
+  shorthand?: string;
 }
 
-export interface ICreateableMultiSelectOption {
-  value: string;
-  label: string;
-  color: string;
-  isFixed?: boolean;
+export interface ICreateableMultiSelectOption extends IMultiSelectOption {
   __isNew__?: boolean;
 }

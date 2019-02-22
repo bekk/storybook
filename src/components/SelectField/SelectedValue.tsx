@@ -1,20 +1,20 @@
 import * as React from 'react';
-import RemoveIcon from '../RemoveIcon/RemoveIcon';
-import { IMultiSelectOption } from '../types';
-import './MultiSelect.css';
+import RemoveIcon from './RemoveIcon/RemoveIcon';
+import { IMultiSelectOption } from './types';
+import './MultiSelect/MultiSelect.css';
 
-interface IOwnProps {
+interface IProps {
   value: IMultiSelectOption;
   removeSelectedValue: (value: IMultiSelectOption) => void;
 }
 
-type IProps = IOwnProps;
-
 export function SelectedValue(props: IProps) {
   const { value, removeSelectedValue } = props;
+  const getLabel = (value: IMultiSelectOption) =>
+    value.shorthand ? value.shorthand : value.label;
   return (
     <div key={value.shorthand} className={'multiSelectSelectedValue'}>
-      <span className={'multiSelectShorthand'}>{value.shorthand}</span>
+      <span className={'multiSelectShorthand'}>{getLabel(value)}</span>
       <span className={'selectedValueRemoveIcon'}>
         <RemoveIcon onClick={() => removeSelectedValue(value)} />
       </span>

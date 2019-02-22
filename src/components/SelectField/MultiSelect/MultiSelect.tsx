@@ -2,7 +2,7 @@ import * as React from 'react';
 import Select from 'react-select';
 import { IMultiSelectOption } from '../types';
 import './MultiSelect.css';
-import { SelectedValue } from './SelectedValue';
+import { SelectedValue } from '../SelectedValue';
 import { customStylesMultiSelect, themeTransform } from '../constants';
 import { SearchIcon } from '../SearchIcon';
 
@@ -53,7 +53,7 @@ export class MultiSelect extends React.Component<IProps, IState> {
       showSearchIcon
     } = this.props;
     const { inputField } = this.state;
-    let components = {
+    const components = {
       MultiValueContainer: () => null
     };
 
@@ -91,7 +91,7 @@ export class MultiSelect extends React.Component<IProps, IState> {
           className={'multiSelectSelect'}
           isClearable={false}
           options={options}
-          isMulti={true}
+          isMulti
           placeholder={''}
           value={selectedValues}
           onChange={this.handleChange}

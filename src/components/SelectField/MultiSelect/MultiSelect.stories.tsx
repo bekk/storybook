@@ -16,14 +16,14 @@ const options: IMultiSelectOption[] = [
     shorthand: 'Også langt her, for å teste',
     value: 6
   },
-  { label: 'Brun', shorthand: 'Brun', value: 7 },
-  { label: 'Grønn', shorthand: 'Grønn', value: 8 },
-  { label: 'Oransje', shorthand: 'Oransje', value: 9 },
-  { label: 'Beige', shorthand: 'Beige', value: 10 },
-  { label: 'Lilla', shorthand: 'Lilla', value: 11 },
-  { label: 'Sort', shorthand: 'Sort', value: 12 },
-  { label: 'Soloppgang', shorthand: 'Soloppgang', value: 13 },
-  { label: 'Soloppgang kontrast', shorthand: 'Soloppgang kontrast', value: 14 }
+  { label: 'Brun', value: 7 },
+  { label: 'Grønn', value: 8 },
+  { label: 'Oransje', value: 9 },
+  { label: 'Beige', value: 10 },
+  { label: 'Lilla', value: 11 },
+  { label: 'Sort', value: 12 },
+  { label: 'Soloppgang', value: 13 },
+  { label: 'Soloppgang kontrast', value: 14 }
 ];
 
 type IProps = {};
@@ -34,7 +34,7 @@ class MultiSelectWrapper extends React.Component<
 > {
   constructor(props: IProps) {
     super(props);
-    this.state = { selected: [] };
+    this.state = { selected: [options[0], options[options.length - 1]] };
   }
 
   public render() {
