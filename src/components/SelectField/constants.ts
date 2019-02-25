@@ -3,7 +3,7 @@ import {
   BEKK_SORT,
   OVERSKYET,
   REGN_KONTRAST,
-  REGN
+  REGN,
 } from '../../constants/styles';
 import { Theme } from 'react-select/lib/types';
 
@@ -12,21 +12,21 @@ const control = (base: CSSProperties) => ({
   '& input': {
     'font-family': 'FFDINWebProLight',
     'font-size': '18px',
-    'line-height': '24px'
+    'line-height': '24px',
   },
   '&:focus-within': {
     'background-size': '100% 1px',
     border: 'none',
     'box-shadow': 'none',
     outline: 0,
-    transition: 'all 0.1s linear'
+    transition: 'all 0.1s linear',
   },
   '&:hover': {
     'background-size': '100% 1px',
     border: 'none',
     'box-shadow': 'none',
     outline: 0,
-    transition: 'all 0.1s linear'
+    transition: 'all 0.1s linear',
   },
   'line-height': '24px',
   background: OVERSKYET,
@@ -43,7 +43,7 @@ const control = (base: CSSProperties) => ({
   outline: 0,
   transition: 'all 0s linear',
   width: '100%',
-  'font-family': 'FFDINWebProLight'
+  'font-family': 'FFDINWebProLight',
 });
 
 export const customStylesSingleSelect = {
@@ -52,22 +52,29 @@ export const customStylesSingleSelect = {
     '&:focus': { border: 'none', outline: 0, 'box-shadow': 'none' },
     border: 'none',
     'box-shadow': 'none',
-    outline: 0
+    outline: 0,
   }),
   placeholder: (base: CSSProperties, state: any) => ({
-    color: state.isDisabled ? 'hsl(0, 0%, 60%)' : base.color
+    color: state.isDisabled ? 'hsl(0, 0%, 60%)' : base.color,
   }),
   menuList: (base: CSSProperties) => ({
-    padding: 0
-  })
+    padding: 0,
+    'max-height': '500px',
+    overflow: 'auto',
+  }),
 };
 
 export const customStylesMultiSelect = {
   control,
   menu: (optionBase: CSSProperties) => ({
     ...optionBase,
-    'z-index': 3
-  })
+    'z-index': 3,
+  }),
+  menuList: (base: CSSProperties) => ({
+    padding: 0,
+    'max-height': '500px',
+    overflow: 'auto',
+  }),
 };
 
 export const themeTransform = (theme: Theme): Theme => ({
@@ -77,6 +84,6 @@ export const themeTransform = (theme: Theme): Theme => ({
     ...theme.colors,
     primary: REGN_KONTRAST,
     primary25: REGN,
-    primary50: REGN_KONTRAST
-  }
+    primary50: REGN_KONTRAST,
+  },
 });

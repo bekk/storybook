@@ -9,7 +9,7 @@ const options: ISelectOption[] = [
   { label: 'Grønn', value: 1 },
   { label: 'Blå', value: 2 },
   { label: 'Gul', value: 3 },
-  { label: 'Terracotta', value: 4 }
+  { label: 'Terracotta', value: 4 },
 ];
 
 type IProps = {};

@@ -50,19 +50,23 @@ export class MultiSelect extends React.Component<IProps, IState> {
       options,
       placeholder,
       fieldWidth,
-      showSearchIcon
+      showSearchIcon,
     } = this.props;
     const { inputField } = this.state;
     const components = {
-      MultiValueContainer: () => null
+      MultiValueContainer: () => null,
     };
 
     const customStyles = {
       ...customStylesMultiSelect,
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
-        maxWidth: fieldWidth || 'initial'
-      })
+        maxWidth: fieldWidth || 'initial',
+      }),
+      menu: (base: React.CSSProperties) => ({
+        ...base,
+        maxWidth: fieldWidth || 'initial',
+      }),
     };
 
     return (
