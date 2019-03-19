@@ -12,13 +12,12 @@ function createDivStyle(color: string): any {
 }
 
 (storiesOf('Basic/Font', module) as any)
-  .addWithJSX(
-    'Om fontene',
-    wInfo(`
+  .add('Om fontene', () => <div style={createDivStyle('var(--svart)')} />, {
+    info: wInfo(`
         Viktig! Fontene er lisensiert :( . Sjekk med Forvaltning før du tar dem i bruk.
 
-  `)(() => <div style={createDivStyle('var(--svart)')} />)
-  )
+  `)
+  })
   .addWithJSX('FFDINWebProLight', () => (
     <div className="FFDINWebProLight">
       Gresshoppen sprang utover mens han sang "Quackquack pata laxa Ææ Øø Åå Zz"

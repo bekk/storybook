@@ -4,8 +4,8 @@ import { boolean, text } from '@storybook/addon-knobs/react';
 import { TextField } from './TextField';
 
 class TextFieldWrapper extends React.Component<{}, { value: string }> {
-  constructor() {
-    super({});
+  constructor(props: {}) {
+    super(props);
     this.state = { value: 'Tarjei' };
   }
 
@@ -22,8 +22,8 @@ class TextFieldWrapper extends React.Component<{}, { value: string }> {
 }
 
 (storiesOf('Components/TextField', module) as any)
-  .addWithJSX('Basic', () => <TextFieldWrapper />)
-  .addWithJSX('Length Validation', () => (
+  .add('Basic', () => <TextFieldWrapper />)
+  .add('Length Validation', () => (
     <TextField
       label={text('label', 'Navn')}
       value={text('value', 'Tarjei')}
@@ -39,7 +39,7 @@ class TextFieldWrapper extends React.Component<{}, { value: string }> {
       }}
     />
   ))
-  .addWithJSX('Numeric Validation', () => (
+  .add('Numeric Validation', () => (
     <TextField
       label={text('label', 'Tall')}
       value={text('value', '42')}

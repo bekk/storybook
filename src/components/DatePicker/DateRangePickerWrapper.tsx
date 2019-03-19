@@ -1,11 +1,11 @@
 import { ThemedStyledFunction } from 'styled-components';
 import styled from 'styled-components';
-import { HTMLAttributes, ClassAttributes } from 'react';
+import { HTMLAttributes, ClassAttributes, FunctionComponent } from 'react';
 
 function withProps<U>() {
-  return <P, T, O>(
-    fn: ThemedStyledFunction<P, T, O>
-  ): ThemedStyledFunction<P & U, T, O & U> => fn;
+  return <C extends FunctionComponent, T extends object, O extends object = {}>(
+    fn: ThemedStyledFunction<any, T, any>
+  ): ThemedStyledFunction<C & U, T, O & U> => fn;
 }
 
 interface IWrapProps {
