@@ -1,61 +1,46 @@
 import * as React from 'react';
-import { NotificationTypes } from './NotificationTypes';
 import { Icon } from '../../';
 import './Notification.css';
 
+type NotificationType = 'INFO' | 'WARNING' | 'ERROR';
+
 export interface Props {
-  message: string;
-  type: NotificationTypes;
-  closeFunc?: Function;
+  notification: {
+    type: NotificationType;
+    title: string;
+    message: string;
+  };
+  visible: boolean;
+  onClose?: () => void;
 }
 
-function getTitle(type: NotificationTypes): string {
+function getIcon(type: NotificationType): any {
   switch (type) {
-    case NotificationTypes.Information:
-      return 'Informasjon';
-    case NotificationTypes.Warning:
-      return 'Advarsel';
-    case NotificationTypes.Error:
-      return 'Noe gikk galt';
-    default:
-      return 'Melding';
-  }
-}
-
-function getIcon(type: NotificationTypes): any {
-  switch (type) {
-    case NotificationTypes.Information:
+    case 'INFO':
       return <Icon type="light" name="emoji_1" />;
-    case NotificationTypes.Warning:
+    case 'WARNING':
       return <Icon type="light" name="emoji_3" />;
-    case NotificationTypes.Error:
+    case 'ERROR':
       return <Icon type="light" name="emoji_2" />;
     default:
       return <Icon type="light" name="emoji_4" />;
   }
 }
 
-export const Notification = (props: Props) => {
-  const { message, type, closeFunc } = props;
-  const close = () => {
-    if (closeFunc) {
-      closeFunc();
-    }
-  };
-  const autoCloseClass = closeFunc ? '' : 'autoClose';
-  const notificationClass = `notification ${
-    type ? NotificationTypes[type].toLocaleLowerCase() : 'information'
-  } ${autoCloseClass}`;
+export const Notification = ({ notification, visible, onClose }: Props) => {
+  const { type, title, message } = notification;
+  const closeClass = visible ? '' : 'close';
+  const notificationClass = `notification ${notification.type} ${closeClass}`;
   return (
     <div className={notificationClass}>
       <div className="check">{getIcon(type)}</div>
       <div className="content">
-        <span className="title">{getTitle(type)}</span>
+        <span className="title">{title}</span>
         <span className="message">{message}</span>
       </div>
-      {closeFunc ? (
+      {onClose ? (
         <div className="close">
-          <button onClick={close}>Lukk</button>
+          <button onClick={onClose}>Lukk</button>
         </div>
       ) : null}
     </div>

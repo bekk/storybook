@@ -1,39 +1,43 @@
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { Notification } from "./Notification";
-import {NotificationTypes} from "./NotificationTypes";
-import { text } from "@storybook/addon-knobs/react";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Notification } from './Notification';
 
+var isVisible = true;
 
 const close = () => {
-  alert('Du trykte på lukk. Flinkis <3')
-}
+  isVisible = false;
+};
 
-(storiesOf("Components/Notification", module) as any)
-  .addWithJSX(
-    "Infomation",
-    (() => (
-      <Notification
-        message={text("message", "Timene dine ble låst")}
-        type={NotificationTypes.Information}
-      />
-    ))
-  ).addWithJSX(
-    "Warning",
-    (() => (
-      <Notification
-        message={text("message", "Husk å sjekk at alt stemmer!")}
-        type={NotificationTypes.Warning}
-      />
-    ))
-  )
-  .addWithJSX(
-  "Error",
-  (() => (
+(storiesOf('Components/Notification', module) as any)
+  .addWithJSX('Infomation', () => (
     <Notification
-      message={text("message", "Timekoden ADM1001 krever at du legger til kommentar før du låser")}
-      type={NotificationTypes.Error}
-      closeFunc={close}
+      notification={{
+        type: 'INFO',
+        title: 'Noe bra har skjedd',
+        message: 'Timene dine ble låst',
+      }}
+      visible={true}
     />
   ))
-);
+  .addWithJSX('Warning', () => (
+    <Notification
+      notification={{
+        type: 'WARNING',
+        title: 'Pass på!',
+        message: 'Husk å sjekke at alt stemmer!',
+      }}
+      visible={true}
+    />
+  ))
+  .addWithJSX('Error', () => (
+    <Notification
+      notification={{
+        type: 'ERROR',
+        title: 'Noe har gått galt!',
+        message:
+          'Timekoden ADM1001 krever at du legger til kommentar før du låser',
+      }}
+      visible={isVisible}
+      onClose={close}
+    />
+  ));
