@@ -7,15 +7,18 @@
   left: 50%;
   width: 100%;
   font-family: FFDINWebProLight, sans-serif;
-  transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, -150%, 0);
   height: auto;
   min-width: calc(100% - 1.5rem);
   transition: ease 0.05s;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  animation: notificationSlideIn 0.4s;
   z-index: 100;
+}
+
+.notification.open  {
+  animation: notificationSlideIn 0.4s;
 }
 
 .notification.close {

@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Icon } from '../../';
 import './Notification.css';
 
-type NotificationType = 'INFO' | 'WARNING' | 'ERROR';
+type NotificationTypes = 'INFO' | 'WARNING' | 'ERROR';
 
 export interface Props {
   notification: {
-    type: NotificationType;
+    type: NotificationTypes;
     title: string;
     message: string;
   };
@@ -14,7 +14,7 @@ export interface Props {
   onClose?: () => void;
 }
 
-function getIcon(type: NotificationType): any {
+function getIcon(type: NotificationTypes): any {
   switch (type) {
     case 'INFO':
       return <Icon type="light" name="emoji_1" />;
@@ -29,7 +29,7 @@ function getIcon(type: NotificationType): any {
 
 export const Notification = ({ notification, visible, onClose }: Props) => {
   const { type, title, message } = notification;
-  const closeClass = visible ? '' : 'close';
+  const closeClass = visible ? 'open' : 'close';
   const notificationClass = `notification ${notification.type} ${closeClass}`;
   return (
     <div className={notificationClass}>

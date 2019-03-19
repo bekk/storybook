@@ -2,11 +2,15 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Notification } from './Notification';
 
-var isVisible = true;
+var is = { visible: true };
 
 const close = () => {
-  isVisible = false;
+  is.visible = false;
 };
+
+setTimeout(() => {
+  is.visible = false;
+}, 10000);
 
 (storiesOf('Components/Notification', module) as any)
   .addWithJSX('Infomation', () => (
@@ -37,7 +41,7 @@ const close = () => {
         message:
           'Timekoden ADM1001 krever at du legger til kommentar før du låser',
       }}
-      visible={isVisible}
+      visible={is.visible}
       onClose={close}
     />
   ));
