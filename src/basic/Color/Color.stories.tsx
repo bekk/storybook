@@ -27,11 +27,6 @@ function createDivStyle(color: string): any {
     Bruk:
 
     Alle fargene ligger på css root (:root). Så alt du trenger å gjøre er å referere til variabelen i din css klasse.
-    ~~~css
-    .min-css {
-      background-color: var(--solnedgang);
-    }
-    ~~~
   `)
     }
   )
