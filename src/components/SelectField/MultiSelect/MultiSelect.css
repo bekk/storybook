@@ -1,4 +1,4 @@
-@import '../../../constants/styles.css';
+@import "../../../constants/styles.css";
 
 .multiSelectContainer {
   position: relative;
@@ -39,6 +39,7 @@
 .multiSelectShorthand {
   color: var(--svart);
   margin-right: 10px;
+  white-space: nowrap;
 }
 
 .multiSelectSelectedValuesContainer {
@@ -65,6 +66,8 @@
 .multiSelectSelectedValue:hover {
   background: var(--soloppgang);
   border-radius: 20px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .multiSelectSelectedValue:hover .selectedValueRemoveIcon {
