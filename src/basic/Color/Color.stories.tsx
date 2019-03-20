@@ -11,9 +11,11 @@ function createDivStyle(color: string): any {
 }
 
 (storiesOf('Basic/Color', module) as any)
-  .addWithJSX(
+  .add(
     'Om fargepaletten',
-    wInfo(`
+    () => <div style={createDivStyle('var(--svart)')} />,
+    {
+      info: wInfo(`
     Fargepaletten er delt inn i primær ogsekundærfarger.  
     Fargene bygger  på  et  Nordisk, rent, minimalistisk og usminket utrykk.
 
@@ -25,13 +27,8 @@ function createDivStyle(color: string): any {
     Bruk:
 
     Alle fargene ligger på css root (:root). Så alt du trenger å gjøre er å referere til variabelen i din css klasse.
-    ~~~css
-    .min-css {
-      background-color: var(--solnedgang);
+  `)
     }
-    ~~~
-
-  `)(() => <div style={createDivStyle('var(--svart)')} />)
   )
   .addWithJSX('Overskyet', () => (
     <div>

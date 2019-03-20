@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import moment from 'moment';
 function leftPad(num: number) {
   if (num < 10) {
     return `0${num}`;

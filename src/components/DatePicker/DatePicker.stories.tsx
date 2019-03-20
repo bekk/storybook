@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { DatePicker } from './DatePicker';
 import { MomentPicker } from './MomentPicker';
-import * as moment from 'moment';
+import moment from 'moment';
 import { boolean, date, text } from '@storybook/addon-knobs';
 import { DateRangePicker } from './DateRangePicker';
 import { MomentRangePicker } from './MomentRangePicker';

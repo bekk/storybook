@@ -21,50 +21,63 @@
   "bugs": {
     "url": "https://github.com/bekk/komponent-bibliotek/issues"
   },
+  "watch": {
+    "build-lib": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts,tsx,css,svg,json,eot,ttf,woff,woff2"
+    }
+  },
   "scripts": {
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build": "npm run build-lib && build-storybook",
-    "build-lib": "tsc && npm run copy-assets-to-lib",
+    "build-lib": "tsc --build .storybook/tsconfig.json && npm run copy-assets-to-lib",
     "build-storybook": "build-storybook",
     "copy-assets-to-lib": "npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-fonts-to-lib",
     "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
     "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
-    "copy-fonts-to-lib": "cpx \"./src/**/*.{eot,ttf,woff,woff2}\" ./build/lib"
+    "copy-fonts-to-lib": "cpx \"./src/**/*.{eot,ttf,woff,woff2}\" ./build/lib",
+    "link": "npm link && npm-watch build-lib"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.3",
+    "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.1",
-    "@storybook/addon-backgrounds": "^3.4.11",
-    "@storybook/addon-info": "^3.4.0",
+    "@storybook/addon-backgrounds": "^5.0.3",
+    "@storybook/addon-info": "^5.0.3",
     "@storybook/addon-knobs": "^3.4.0",
-    "@storybook/react": "^4.1.12",
+    "@storybook/addon-links": "^5.0.3",
+    "@storybook/react": "^5.0.3",
     "@storybook/storybook-deployer": "^2.3.0",
-    "@types/node": "^10.11.5",
     "@types/react": "16.8.4",
-    "@types/storybook__addon-backgrounds": "^3.2.1",
-    "@types/storybook__addon-info": "^3.2.3",
-    "@types/storybook__addon-knobs": "^3.3.1",
-    "@types/storybook__react": "^3.0.8",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^8.0.4",
+    "@types/react-dates": "^17.1.5",
+    "@types/react-select": "^2.0.15",
+    "@types/storybook__addon-backgrounds": "^4.1.1",
+    "@types/storybook__addon-knobs": "^4.0.4",
+    "@types/storybook__react": "^4.0.1",
+    "@types/styled-components": "^4.1.12",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
     "cpx": "^1.5.0",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "storybook-addon-jsx": "^5.4.0",
+    "npm-watch": "^0.6.0",
+    "react-docgen-typescript-loader": "^3.0.1",
+    "storybook-addon-jsx": "^7.0.0",
     "ts-loader": "^5.2.1",
-    "typescript": "^2.8.1",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
     "webpack": "^4.20.2"
   },
   "dependencies": {
-    "@types/react-dates": "^17.1.2",
-    "@types/react-select": "2.0.13",
-    "@types/styled-components": "4.0.2",
-    "autoprefixer": "^9.1.5",
-    "css-loader": "^1.0.0",
+    "@storybook/addons": "^5.0.3",
+    "autoprefixer": "^9.5.0",
+    "babel-plugin-root-import": "^6.1.0",
+    "css-loader": "^2.1.1",
+    "moment": "^2.24.0",
     "postcss-loader": "^3.0.0",
-    "react": "16.6.3",
-    "react-dates": "^18.1.1",
-    "react-dom": "16.6.3",
+    "react": "^16.8.4",
+    "react-dates": "^20.1.0",
+    "react-dom": "^16.8.4",
     "react-select": "2.4.1",
-    "styled-components": "4.0.2"
+    "styled-components": "4.0.2",
+    "typescript": "3.3.3333"
   }
 }
