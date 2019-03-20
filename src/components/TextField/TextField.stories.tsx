@@ -1,11 +1,16 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, text } from '@storybook/addon-knobs/react';
+import { boolean, text, number } from '@storybook/addon-knobs/react';
 import { TextField } from './TextField';
+import { NumberField } from './NumberField';
 
 interface IProps {
   value: string;
   validate?: (s: string) => boolean;
+}
+
+interface NumberProps {
+  value: number;
 }
 
 class TextFieldWrapper extends React.Component<IProps, { value: string }> {
@@ -30,6 +35,31 @@ class TextFieldWrapper extends React.Component<IProps, { value: string }> {
   }
 }
 
+class NumberFieldWrapper extends React.Component<
+  NumberProps,
+  { value: number }
+> {
+  constructor(props: NumberProps) {
+    super(props);
+    this.state = { value: props.value };
+  }
+
+  onChange = (value: number) => {
+    this.setState({ value });
+    console.log(value);
+  };
+
+  public render() {
+    return (
+      <NumberField
+        label={text('label', 'Navn')}
+        value={this.state.value}
+        onChange={this.onChange}
+      />
+    );
+  }
+}
+
 (storiesOf('Components/TextField', module) as any)
   .addWithJSX('Basic', () => <TextFieldWrapper value="Tarjei" />)
   .addWithJSX('Length Validation', () => (
@@ -43,4 +73,7 @@ class TextFieldWrapper extends React.Component<IProps, { value: string }> {
       value={text('value', '42')}
       validate={input => !isNaN(Number(input))}
     />
+  ))
+  .addWithJSX('NumberField', () => (
+    <NumberFieldWrapper value={number('value', 42)} />
   ));

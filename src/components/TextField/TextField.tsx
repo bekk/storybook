@@ -40,7 +40,7 @@ export function TextField({
         }`}
         size={size}
         maxLength={maxLength}
-        type="text"
+        type={'text'}
         onBlur={onBlur}
         onFocus={onFocus}
         ref={passedRef}
