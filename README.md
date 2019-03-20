@@ -62,6 +62,12 @@ npm link @bekk/storybook
 
 This creates a symlink of your local version of the Storybook to the `node_modules` of the dependent project. Changes done to the Storybook will then be automatically reflected in the project importing it.
 
+To remove the symlink from the dependent project run:
+
+```bash
+npm unlink --no-save @bekk/storybook
+```
+
 # Deployment and npm publish
 
 To deploy and publish a new version you have to create a release / tag.
