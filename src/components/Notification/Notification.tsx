@@ -10,7 +10,7 @@ export interface Props {
     title: string;
     message: string;
   };
-  visible: boolean;
+  visible?: boolean;
   onClose?: () => void;
 }
 
@@ -29,7 +29,8 @@ function getIcon(type: NotificationTypes): any {
 
 export const Notification = ({ notification, visible, onClose }: Props) => {
   const { type, title, message } = notification;
-  const closeClass = visible ? 'open' : 'close';
+  const closeClass =
+    visible === true ? 'open' : visible === false ? 'close' : '';
   const notificationClass = `notification ${notification.type} ${closeClass}`;
   return (
     <div className={notificationClass}>
