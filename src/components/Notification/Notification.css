@@ -1,48 +1,51 @@
 @import '../../constants/styles.css';
 
-
 .notification {
   color: black;
   position: fixed;
-  bottom: 30px;
+  bottom: 50px;
   left: 50%;
-  right: 50px;
+  width: 100%;
   font-family: FFDINWebProLight, sans-serif;
-  transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 150%, 0);
   height: auto;
   min-width: calc(100% - 1.5rem);
-  max-width: 40rem;
   transition: ease 0.05s;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  animation: notificationSlideIn 0.4s;
   z-index: 100;
 }
 
-.notification.autoClose {
-  animation: notificationSlideIn 0.4s ease-in, notificationSlideOut 0.4s ease-out 2s normal forwards;
+.notification.open {
+  animation: notificationSlideIn 0.4s normal forwards;
 }
 
-.notification.information {
+.notification.close {
+  animation: notificationSlideOut 0.4s ease-out normal forwards;
+}
+
+.notification.INFO {
   background-color: var(--grønn);
 }
 
-.notification.warning {
+.notification.WARNING {
   background-color: var(--soloppgang);
 }
 
-.notification.error {
+.notification.ERROR {
   background-color: var(--solnedgang);
 }
 
 .notification .check {
   display: flex;
   align-items: center;
-  padding-left: 1rem;
+  padding-left: 5%;
 }
 
 .notification .content {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
   padding-left: 2rem;
   width: 100%;
 }
@@ -50,8 +53,8 @@
 .notification .content .title {
   display: block;
   font-size: 1.2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
+  margin-block-start: 0.87em;
+  margin-block-end: 0.2em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
@@ -59,29 +62,22 @@
 
 .notification .content .message {
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
   margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-inline-end: 4rem;
 }
-
-.notification .close {
-  padding-right: 1em;
-  padding-top: 0.5em;
-}
-
 
 .notification .close button {
-  background:var(--natt)!important;
+  cursor: pointer;
+  background: var(--natt) !important;
   color: var(--hvit);
-  border:none; 
-  padding:0.3em;
+  border: none;
+  padding: 0.8em;
   font: inherit;
 }
 
-@media (max-width: 25em) { 
-
-
+@media (max-width: 25em) {
   .notification {
     flex-direction: column;
   }
@@ -89,10 +85,7 @@
   .notification .check {
     display: none;
   }
-
 }
-
-
 
 @keyframes notificationSlideIn {
   0% {

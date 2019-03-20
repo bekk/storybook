@@ -3,18 +3,18 @@ export { DateRangePicker } from './components/DatePicker/DateRangePicker';
 export { MomentPicker } from './components/DatePicker/MomentPicker';
 export { MomentRangePicker } from './components/DatePicker/MomentRangePicker';
 export { Notification } from './components/Notification/Notification';
-export { NotificationTypes } from './components/Notification/NotificationTypes';
 export { TextField } from './components/TextField/TextField';
 export { Icon } from './basic/Icon/Icon';
 export { Color } from './basic/Color/Color';
 export {
-  SingleSelect
+  SingleSelect,
 } from './components/SelectField/SingleSelect/SingleSelect';
 export { MultiSelect } from './components/SelectField/MultiSelect/MultiSelect';
 export {
   IMultiSelectOption,
   ISelectOption,
-  ICreateableMultiSelectOption
+  ICreateableMultiSelectOption,
 } from './components/SelectField/types';
-export { CreateableMultiSelect } from './components/SelectField/CreateableMultiSelect/CreateableMultiSelect';
-
+export {
+  CreateableMultiSelect,
+} from './components/SelectField/CreateableMultiSelect/CreateableMultiSelect';
