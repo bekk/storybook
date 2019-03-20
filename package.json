@@ -24,7 +24,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build": "npm run build-lib && build-storybook",
-    "build-lib": "tsc && npm run copy-assets-to-lib",
+    "build-lib": "tsc --build .storybook/tsconfig.json && npm run copy-assets-to-lib",
     "build-storybook": "build-storybook",
     "copy-assets-to-lib": "npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-fonts-to-lib",
     "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
@@ -39,7 +39,6 @@
     "@storybook/addon-backgrounds": "^5.0.3",
     "@storybook/addon-info": "^5.0.3",
     "@storybook/addon-links": "^5.0.3",
-    "@storybook/addons": "^5.0.3",
     "@storybook/addon-knobs": "^3.4.0",
     "@storybook/storybook-deployer": "^2.3.0",
     "@storybook/react": "^5.0.3",
@@ -58,16 +57,17 @@
     "cpx": "^1.5.0"
   },
   "dependencies": {
-    "@types/node": "11.11.3",
-    "autoprefixer": "^9.1.5",
+    "@storybook/addons": "^5.0.3",
+    "autoprefixer": "^9.5.0",
+    "babel-plugin-root-import": "^6.1.0",
     "css-loader": "^2.1.1",
+    "moment": "^2.24.0",
     "postcss-loader": "^3.0.0",
     "react": "^16.8.4",
     "react-dates": "^20.1.0",
     "react-dom": "^16.8.4",
     "react-select": "2.4.1",
     "styled-components": "4.0.2",
-    "typescript": "3.3.3333",
-    "moment": "^2.24.0"
+    "typescript": "3.3.3333"
   }
 }

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "../src",
     "allowSyntheticDefaultImports": true,
     "module": "es2015",
     "target": "es5",
@@ -9,8 +9,8 @@
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "../",
-    "outDir": "dist",
+    "rootDir": "../src",
+    "outDir": "../build/lib",
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitThis": true,
@@ -19,14 +19,13 @@
     "declaration": true,
     "noUnusedLocals": true,
     "resolveJsonModule": true,
-    "types": ["node"],
+    "types": ["react"],
     "isolatedModules": false
   },
-  "include": ["src/**/*"],
+  "include": ["../src/**/*"],
   "exclude": [
     "node_modules",
     "build",
-    "dist",
     "scripts",
     "acceptance-tests",
     "jest",
