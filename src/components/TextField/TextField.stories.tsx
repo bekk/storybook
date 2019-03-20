@@ -3,18 +3,27 @@ import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs/react';
 import { TextField } from './TextField';
 
-class TextFieldWrapper extends React.Component<{}, { value: string }> {
-  constructor(props: {}) {
+interface IProps {
+  value: string;
+  validate?: (s: string) => boolean;
+}
+
+class TextFieldWrapper extends React.Component<IProps, { value: string }> {
+  constructor(props: IProps) {
     super(props);
-    this.state = { value: 'Tarjei' };
+    this.state = { value: props.value };
   }
 
+  onChange = (value: string) => this.setState({ value });
+
   public render() {
+    const { validate } = this.props;
     return (
       <TextField
         label={text('label', 'Navn')}
         value={text('value', this.state.value)}
-        onChange={(v: string) => this.setState({ value: v })}
+        onChange={this.onChange}
+        validateInput={validate}
         disabled={boolean('disabled', false)}
       />
     );
@@ -22,34 +31,16 @@ class TextFieldWrapper extends React.Component<{}, { value: string }> {
 }
 
 (storiesOf('Components/TextField', module) as any)
-  .add('Basic', () => <TextFieldWrapper />)
-  .add('Length Validation', () => (
-    <TextField
-      label={text('label', 'Navn')}
+  .addWithJSX('Basic', () => <TextFieldWrapper value="Tarjei" />)
+  .addWithJSX('Length Validation', () => (
+    <TextFieldWrapper
       value={text('value', 'Tarjei')}
-      onChange={v => void v}
-      validateInput={input => {
-        if (input.length < 8) {
-          // Return the input if it is valid
-          return input;
-        } else {
-          // Return undefined if it is invalid
-          return undefined;
-        }
-      }}
+      validate={(input: string) => input.length < 8}
     />
   ))
-  .add('Numeric Validation', () => (
-    <TextField
-      label={text('label', 'Tall')}
+  .addWithJSX('Numeric Validation', () => (
+    <TextFieldWrapper
       value={text('value', '42')}
-      onChange={v => void v}
-      validateInput={input => {
-        const numberMaybe = Number(input);
-        if (!isNaN(numberMaybe)) {
-          return numberMaybe;
-        }
-        return undefined;
-      }}
+      validate={input => !isNaN(Number(input))}
     />
   ));
