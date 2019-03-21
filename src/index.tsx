@@ -19,3 +19,4 @@ export {
   CreateableMultiSelect,
 } from './components/SelectField/CreateableMultiSelect/CreateableMultiSelect';
 export { NumberField } from './components/TextField/NumberField';
+export { Checkbox } from './components/Checkbox/Checkbox';

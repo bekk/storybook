@@ -1,0 +1,108 @@
+:root {
+  --storybook-checkbox-box-size: 18px;
+  --storybook-checkbox-label-spacing: 10px;
+  --storybook-checkbox-vertical-margin: 16px;
+  --storybook-checkbox-pagePadding: 30px;
+  --storybook-checkbox-transitionLength: 0.2s;
+  --bekk-bezier-curve: cubic-bezier(0.77, 0.3, 0.39, 0.9);
+}
+
+.storybook-checkbox {
+  font-family: FFDINWebProLight;
+  position: relative;
+  padding-left: calc(
+    var(--storybook-checkbox-box-size) + var(--storybook-checkbox-label-spacing) +
+      1px
+  );
+  line-height: 1;
+  height: 20px;
+}
+.storybook-checkbox:not(:first-child) {
+  margin-top: var(--storybook-checkbox-vertical-margin);
+}
+
+.storybook-checkbox:hover {
+  font-weight: 600;
+}
+
+.storybook-checkbox input[type='checkbox'] {
+  opacity: 0;
+  margin: 0;
+  left: 0;
+}
+
+/* Checkbox fill, unchecked state */
+.storybook-checkbox::before {
+  content: '';
+  display: inline-block;
+  left: 0;
+  background: var(--natt);
+  transform: scale(0);
+  transition: transform 0.1s;
+}
+
+.storybook-checkbox.checked::before {
+  transform: scale(1);
+}
+
+.storybook-checkbox label {
+  position: relative;
+  font-size: 14px;
+  color: black;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.storybook-checkboxDarkBg label {
+  color: var(--overskyet-kontrast);
+  font-size: 16px;
+}
+
+.storybook-checkbox input[type='checkbox'],
+.storybook-checkbox label::before,
+.storybook-checkbox::before {
+  position: absolute;
+  height: var(--storybook-checkbox-box-size);
+  width: var(--storybook-checkbox-box-size);
+  box-sizing: border-box;
+}
+
+.storybook-checkbox:hover label::before {
+  border-width: 2px;
+}
+
+.storybook-checkbox label::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border: 1px solid;
+  left: calc(
+    -1px - var(--storybook-checkbox-label-spacing) - var(--storybook-checkbox-box-size)
+  );
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    display: flex;
+  }
+
+  99% {
+    display: flex;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
