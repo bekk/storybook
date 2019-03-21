@@ -44,6 +44,8 @@ const control = (base: CSSProperties) => ({
   transition: 'all 0s linear',
   width: '100%',
   'font-family': 'FFDINWebProLight',
+  'padding-top': '6px',
+  'padding-left': '10px',
 });
 
 export const customStylesSingleSelect = {
