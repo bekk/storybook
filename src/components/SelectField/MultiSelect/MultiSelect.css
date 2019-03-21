@@ -65,6 +65,7 @@
 .multiSelectSelectedValue:hover {
   background: var(--soloppgang);
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .multiSelectSelectedValue:hover .selectedValueRemoveIcon {

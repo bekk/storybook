@@ -78,6 +78,8 @@
     "react-dates": "^20.1.0",
     "react-dom": "^16.8.4",
     "react-select": "2.4.1",
-    "styled-components": "4.0.2"
+    "react-transition-group": "^2.6.1",
+    "styled-components": "4.0.2",
+    "typescript": "3.3.3333"
   }
 }

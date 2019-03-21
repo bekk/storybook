@@ -4,7 +4,9 @@ import { ICreateableMultiSelectOption } from '../types';
 import { SelectedValue } from '../SelectedValue';
 import '../MultiSelect/MultiSelect.css';
 import { customStylesMultiSelect, themeTransform } from '../constants';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { SearchIcon } from '../SearchIcon';
+import './CreateableMultiSelect.css';
 
 interface IProps {
   label: string;
@@ -76,15 +78,31 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
     return (
       <div className={'multiSelectContainer'}>
         <label className={'multiSelectLabel'}>{label}</label>
-        <div className={'multiSelectSelectedValuesContainer'}>
+        <TransitionGroup className={'multiSelectSelectedValuesContainer'}>
           {selectedValues.map(e => (
-            <SelectedValue
-              value={e}
-              removeSelectedValue={this.removeSelectedValue}
-              key={`${label}${e.value}${e.label}`}
-            />
+            <CSSTransition
+              key={e.value}
+              timeout={100}
+              classNames={{
+                enter: 'itemEnter',
+                enterActive: 'itemEnterActive',
+                enterDone: 'itemEnterDone',
+                exit: 'itemExit',
+                exitActive: 'itemExitActive',
+                exitDone: 'itemExitDone'
+              }}
+              appear
+              mountOnEnter
+              unmountOnExit
+            >
+              <SelectedValue
+                value={e}
+                removeSelectedValue={this.removeSelectedValue}
+                key={`${label}${e.value}${e.label}`}
+              />
+            </CSSTransition>
           ))}
-        </div>
+        </TransitionGroup>
         <div className={'multiSelectPlaceholder'}>
           {!inputField && (
             <>
