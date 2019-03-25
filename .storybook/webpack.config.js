@@ -13,8 +13,13 @@ module.exports = ({ config }) => {
           configFileName: './.storybook/tsconfig.json'
         }
       },
-      { loader: require.resolve('react-docgen-typescript-loader') }
-    ]
+      { loader: require.resolve('react-docgen-typescript-loader') },
+      {
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: { parser: 'typescript' }
+      }
+    ],
+    enforce: 'pre'
   });
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
