@@ -21,6 +21,7 @@ export class SingleSelect extends React.PureComponent<IProps, {}> {
     this.handleChange = this.handleChange.bind(this);
   }
   public handleChange(e: ISelectOption) {
+    debugger;
     this.props.updateSelectedOption(e);
   }
 
@@ -31,7 +32,7 @@ export class SingleSelect extends React.PureComponent<IProps, {}> {
       options,
       selectedOption,
       placeholder,
-      showSearchIcon,
+      showSearchIcon
     } = this.props;
     return (
       <div className={'singleSelectContainer'}>

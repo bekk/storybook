@@ -4,6 +4,12 @@
   margin-top: 20px;
 }
 
+/* DO NOT CHANGE, FIX IF ELEMENT STRUCTURE CHANGES !! */
+/* Needed for the dropdown to float over elements with z-index > 2 underneath it */
+.singleSelectContainer > div:nth-child(2) > div:nth-child(3) {
+  z-index: 40;
+}
+
 .singleSelectSelect {
   border-radius: 0;
   outline: 0;

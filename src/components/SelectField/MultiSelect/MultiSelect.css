@@ -9,6 +9,12 @@
   margin-top: 0;
 }
 
+/* DO NOT CHANGE, FIX IF ELEMENT STRUCTURE CHANGES !! */
+/* Needed for the dropdown to float over elements with z-index > 2 underneath it */
+.multiSelectContainer > div:nth-child(4) > div:nth-child(3) {
+  z-index: 40;
+}
+
 .multiSelectLabel {
   color: var(--morgendis);
   font-size: 14px;
