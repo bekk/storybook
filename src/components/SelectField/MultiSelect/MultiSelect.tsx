@@ -5,6 +5,8 @@ import './MultiSelect.css';
 import { SelectedValue } from '../SelectedValue';
 import { customStylesMultiSelect, themeTransform } from '../constants';
 import { SearchIcon } from '../SearchIcon';
+import '../CreateableMultiSelect/CreateableMultiSelect.css';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 interface IProps {
   label: string;
@@ -50,37 +52,53 @@ export class MultiSelect extends React.Component<IProps, IState> {
       options,
       placeholder,
       fieldWidth,
-      showSearchIcon,
+      showSearchIcon
     } = this.props;
     const { inputField } = this.state;
     const components = {
-      MultiValueContainer: () => null,
+      MultiValueContainer: () => null
     };
 
     const customStyles = {
       ...customStylesMultiSelect,
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
-        maxWidth: fieldWidth || 'initial',
+        maxWidth: fieldWidth || 'initial'
       }),
       menu: (base: React.CSSProperties) => ({
         ...base,
-        maxWidth: fieldWidth || 'initial',
-      }),
+        maxWidth: fieldWidth || 'initial'
+      })
     };
 
     return (
       <div className={'multiSelectContainer'}>
         <label className={'multiSelectLabel'}>{label}</label>
-        <div className={'multiSelectSelectedValuesContainer'}>
+        <TransitionGroup className={'multiSelectSelectedValuesContainer'}>
           {selectedValues.map(e => (
-            <SelectedValue
-              value={e}
-              removeSelectedValue={this.removeSelectedValue}
-              key={`${label}${e.value}${e.label}`}
-            />
+            <CSSTransition
+              key={e.value}
+              timeout={100}
+              classNames={{
+                enter: 'itemEnter',
+                enterActive: 'itemEnterActive',
+                enterDone: 'itemEnterDone',
+                exit: 'itemExit',
+                exitActive: 'itemExitActive',
+                exitDone: 'itemExitDone'
+              }}
+              appear
+              mountOnEnter
+              unmountOnExit
+            >
+              <SelectedValue
+                value={e}
+                removeSelectedValue={this.removeSelectedValue}
+                key={`${label}${e.value}${e.label}`}
+              />
+            </CSSTransition>
           ))}
-        </div>
+        </TransitionGroup>
         <div className={'multiSelectPlaceholder'}>
           {!inputField && (
             <>
