@@ -10,8 +10,12 @@ interface IProps {
   onDarkBackground?: boolean;
 }
 
-export function Checkbox(props: IProps) {
-  const { label, isChecked, onChange, onDarkBackground } = props;
+export function Checkbox({
+  label,
+  isChecked,
+  onChange,
+  onDarkBackground,
+}: IProps) {
   const onCheckboxChange = () => onChange(!isChecked);
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.keyCode === KEY_CODE_ENTER) {
@@ -23,7 +27,7 @@ export function Checkbox(props: IProps) {
       className={
         'storybook-checkbox' +
         ' ' +
-        (onDarkBackground ? 'checkboxDarkBg' : '') +
+        (onDarkBackground ? 'storybook-checkboxDarkBg' : '') +
         ' ' +
         (isChecked ? 'checked' : 'unChecked')
       }
