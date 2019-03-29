@@ -1,0 +1,4 @@
+.storybook-radiobuttons .storybook-checkbox::before,
+.storybook-radiobuttons .storybook-checkbox label::before {
+  border-radius: 100%;
+}

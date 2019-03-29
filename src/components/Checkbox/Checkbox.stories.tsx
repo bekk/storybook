@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
 import { Checkbox } from './Checkbox';
+import { RadioButtons } from './RadioButtons';
 
 interface IProps {
   label: string;
@@ -9,6 +10,10 @@ interface IProps {
 
 interface IState {
   isChecked: boolean;
+}
+
+interface IRadioState {
+  selected: number;
 }
 
 class CheckboxWrapper extends React.Component<IProps, IState> {
@@ -19,7 +24,7 @@ class CheckboxWrapper extends React.Component<IProps, IState> {
 
   onChange = (isChecked: boolean) => this.setState({ isChecked });
 
-  public render() {
+  render() {
     const { label } = this.props;
     const { isChecked } = this.state;
     return (
@@ -32,6 +37,35 @@ class CheckboxWrapper extends React.Component<IProps, IState> {
   }
 }
 
-(storiesOf('Components/Checkbox', module) as any).addWithJSX('Basic', () => (
-  <CheckboxWrapper label={'Dette er en sjekkboks'} />
-));
+class RadioButtonsWrapper extends React.Component<{}, IRadioState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      selected: -1,
+    };
+  }
+
+  onChange = (selected: number) => this.setState({ selected });
+
+  render() {
+    const { selected } = this.state;
+    const options = [
+      { label: 'Egen utgave' },
+      { label: 'NAV SVO' },
+      { label: 'NAV SBL' },
+    ];
+    return (
+      <RadioButtons
+        selected={selected}
+        options={options}
+        onChange={this.onChange}
+      />
+    );
+  }
+}
+
+(storiesOf('Components/Checkbox', module) as any)
+  .addWithJSX('Basic', () => (
+    <CheckboxWrapper label={'Dette er en sjekkboks'} />
+  ))
+  .addWithJSX('Radio buttons', () => <RadioButtonsWrapper />);
