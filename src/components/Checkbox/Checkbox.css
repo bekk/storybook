@@ -15,8 +15,8 @@
       1px
   );
   line-height: 1;
-  height: 20px;
 }
+
 .storybook-checkbox:not(:first-child) {
   margin-top: var(--storybook-checkbox-vertical-margin);
 }
