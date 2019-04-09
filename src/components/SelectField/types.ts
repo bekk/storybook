@@ -11,6 +11,6 @@ export interface ICreateableMultiSelectOption extends IMultiSelectOption {
 }
 
 export interface ISelectedValuesViewProps {
-  onDelete: (value: ICreateableMultiSelectOption) => void;
+  onDelete?: (value: ICreateableMultiSelectOption) => void;
   selectedValues: ICreateableMultiSelectOption[];
 }
