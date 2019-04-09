@@ -21,7 +21,6 @@ export class SingleSelect extends React.PureComponent<IProps, {}> {
     this.handleChange = this.handleChange.bind(this);
   }
   public handleChange(e: ISelectOption) {
-    debugger;
     this.props.updateSelectedOption(e);
   }
 
