@@ -1,15 +1,15 @@
-import * as React from "react";
-import CreatableSelect from "react-select/lib/Creatable";
+import * as React from 'react';
+import CreatableSelect from 'react-select/lib/Creatable';
 import {
   ICreateableMultiSelectOption,
   ISelectedValuesViewProps
-} from "../types";
-import { SelectedValue } from "../SelectedValue";
-import "../MultiSelect/MultiSelect.css";
-import { customStylesMultiSelect, themeTransform } from "../constants";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { SearchIcon } from "../SearchIcon";
-import "./CreateableMultiSelect.css";
+} from '../types';
+import { SelectedValue } from '../SelectedValue';
+import '../MultiSelect/MultiSelect.css';
+import { customStylesMultiSelect, themeTransform } from '../constants';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { SearchIcon } from '../SearchIcon';
+import './CreateableMultiSelect.css';
 
 interface IProps {
   label: string;
@@ -32,7 +32,7 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       isLoading: false,
-      inputField: ""
+      inputField: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -76,12 +76,12 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
       ...customStylesMultiSelect,
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
-        maxWidth: fieldWidth || "initial"
+        maxWidth: fieldWidth || 'initial'
       })
     };
 
     return (
-      <div className={"multiSelectContainer"}>
+      <div className={'multiSelectContainer'}>
         {SelectedValuesView ? (
           <SelectedValuesView
             onDelete={this.removeSelectedValue}
@@ -89,19 +89,19 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
           />
         ) : (
           <>
-            <label className={"multiSelectLabel"}>{label}</label>
-            <TransitionGroup className={"multiSelectSelectedValuesContainer"}>
+            <label className={'multiSelectLabel'}>{label}</label>
+            <TransitionGroup className={'multiSelectSelectedValuesContainer'}>
               {selectedValues.map(e => (
                 <CSSTransition
                   key={e.value}
                   timeout={100}
                   classNames={{
-                    enter: "itemEnter",
-                    enterActive: "itemEnterActive",
-                    enterDone: "itemEnterDone",
-                    exit: "itemExit",
-                    exitActive: "itemExitActive",
-                    exitDone: "itemExitDone"
+                    enter: 'itemEnter',
+                    enterActive: 'itemEnterActive',
+                    enterDone: 'itemEnterDone',
+                    exit: 'itemExit',
+                    exitActive: 'itemExitActive',
+                    exitDone: 'itemExitDone'
                   }}
                   appear
                   mountOnEnter
@@ -117,22 +117,22 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
             </TransitionGroup>
           </>
         )}
-        <div className={"multiSelectPlaceholder"}>
+        <div className={'multiSelectPlaceholder'}>
           {!inputField && (
             <>
               {showSearchIcon && (
-                <SearchIcon className={"multiSelectPlaceholderIcon"} />
+                <SearchIcon className={'multiSelectPlaceholderIcon'} />
               )}
-              <div className={"multiSelectPlaceholderText"}>{placeholder}</div>
+              <div className={'multiSelectPlaceholderText'}>{placeholder}</div>
             </>
           )}
         </div>
         <CreatableSelect
-          className={"multiSelectSelect"}
+          className={'multiSelectSelect'}
           isClearable={false}
           options={options}
           isMulti
-          placeholder={""}
+          placeholder={''}
           value={selectedValues}
           onChange={this.handleChange}
           onInputChange={this.handleInputChange}
