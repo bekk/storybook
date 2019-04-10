@@ -28,7 +28,7 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       isLoading: false,
-      inputField: ''
+      inputField: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -60,19 +60,20 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
       options,
       placeholder,
       fieldWidth,
-      showSearchIcon
+      showSearchIcon,
     } = this.props;
     const { inputField } = this.state;
     const components = {
-      MultiValueContainer: () => null
+      MultiValueContainer: () => null,
     };
 
     const customStyles = {
       ...customStylesMultiSelect,
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
-        maxWidth: fieldWidth || 'initial'
-      })
+        maxWidth: fieldWidth || 'initial',
+      }),
+      menu: (base: React.CSSProperties) => base,
     };
 
     return (
@@ -89,7 +90,7 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
                 enterDone: 'itemEnterDone',
                 exit: 'itemExit',
                 exitActive: 'itemExitActive',
-                exitDone: 'itemExitDone'
+                exitDone: 'itemExitDone',
               }}
               appear
               mountOnEnter
