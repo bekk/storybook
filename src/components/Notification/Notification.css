@@ -15,14 +15,17 @@
   flex-direction: row;
   justify-content: space-between;
   z-index: 100;
+  opacity: 0;
 }
 
 .notification.open {
   animation: notificationSlideIn 0.4s normal forwards;
+  opacity: 1;
 }
 
 .notification.close {
   animation: notificationSlideOut 0.4s ease-out normal forwards;
+  opacity: 1;
 }
 
 .notification.INFO {
