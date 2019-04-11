@@ -2,17 +2,17 @@ import * as React from 'react';
 import './TextField.css';
 
 interface IProps {
-  label: string;
+  label?: string;
   value: string;
   placeholder?: string;
   onChange: (newValue: string) => void;
   validateInput?: (input: string) => boolean;
-  className?: any;
-  size?: any;
+  className?: string;
+  size?: number;
   maxLength?: number;
-  onFocus?: any;
-  onBlur?: any;
-  passedRef?: any;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  ref?: React.RefObject<HTMLInputElement>;
   disabled?: boolean;
 }
 
@@ -27,13 +27,13 @@ export function TextField({
   maxLength,
   onFocus,
   onBlur,
-  passedRef,
+  ref,
   disabled,
 }: IProps) {
   const isValid = validateInput(value);
   return (
     <div className={'textFieldContainer'}>
-      <label className={'textFieldLabel'}>{label}</label>
+      {label && <label className={'textFieldLabel'}>{label}</label>}
       <input
         className={`textFieldInput ${className ? className : ''} ${
           isValid ? '' : 'textFieldInvalid'
@@ -43,7 +43,7 @@ export function TextField({
         type={'text'}
         onBlur={onBlur}
         onFocus={onFocus}
-        ref={passedRef}
+        ref={ref}
         placeholder={placeholder}
         value={value}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
