@@ -5,9 +5,17 @@ interface IProps {
   label: string;
   value: number;
   onChange: (newValue: number) => void;
+  onBlur?: any;
+  disabled?: boolean;
 }
 
-export function NumberField({ label, value, onChange }: IProps) {
+export function NumberField({
+  label,
+  value,
+  onChange,
+  onBlur,
+  disabled
+}: IProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value === '') {
       onChange(NaN);
@@ -23,6 +31,8 @@ export function NumberField({ label, value, onChange }: IProps) {
         type={'number'}
         value={value || ''}
         onChange={handleChange}
+        onBlur={onBlur}
+        disabled={disabled}
       />
     </div>
   );

@@ -77,7 +77,8 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
         maxWidth: fieldWidth || 'initial'
-      })
+      }),
+      menu: (base: React.CSSProperties) => base
     };
 
     return (

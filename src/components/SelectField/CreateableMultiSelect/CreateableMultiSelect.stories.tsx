@@ -16,7 +16,7 @@ export const colourOptions = [
   { value: 6, label: 'Green' },
   { value: 7, label: 'Forest' },
   { value: 8, label: 'Slate' },
-  { value: 9, label: 'Silver' }
+  { value: 9, label: 'Silver' },
 ];
 
 class CreateableSingleSelectWrapper extends React.Component<
