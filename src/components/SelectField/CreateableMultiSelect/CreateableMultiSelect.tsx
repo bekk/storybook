@@ -1,6 +1,9 @@
 import * as React from 'react';
 import CreatableSelect from 'react-select/lib/Creatable';
-import { ICreateableMultiSelectOption } from '../types';
+import {
+  ICreateableMultiSelectOption,
+  ISelectedValuesViewProps
+} from '../types';
 import { SelectedValue } from '../SelectedValue';
 import '../MultiSelect/MultiSelect.css';
 import { customStylesMultiSelect, themeTransform } from '../constants';
@@ -16,6 +19,7 @@ interface IProps {
   selectedValues: ICreateableMultiSelectOption[];
   updateSelection: (selected: ICreateableMultiSelectOption[]) => void;
   showSearchIcon?: boolean;
+  SelectedValuesView?: (props: ISelectedValuesViewProps) => JSX.Element;
 }
 
 interface IState {
@@ -28,7 +32,7 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       isLoading: false,
-      inputField: '',
+      inputField: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -61,49 +65,59 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
       placeholder,
       fieldWidth,
       showSearchIcon,
+      SelectedValuesView
     } = this.props;
     const { inputField } = this.state;
     const components = {
-      MultiValueContainer: () => null,
+      MultiValueContainer: () => null
     };
 
     const customStyles = {
       ...customStylesMultiSelect,
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
-        maxWidth: fieldWidth || 'initial',
+        maxWidth: fieldWidth || 'initial'
       }),
-      menu: (base: React.CSSProperties) => base,
+      menu: (base: React.CSSProperties) => base
     };
 
     return (
       <div className={'multiSelectContainer'}>
-        <label className={'multiSelectLabel'}>{label}</label>
-        <TransitionGroup className={'multiSelectSelectedValuesContainer'}>
-          {selectedValues.map(e => (
-            <CSSTransition
-              key={e.value}
-              timeout={100}
-              classNames={{
-                enter: 'itemEnter',
-                enterActive: 'itemEnterActive',
-                enterDone: 'itemEnterDone',
-                exit: 'itemExit',
-                exitActive: 'itemExitActive',
-                exitDone: 'itemExitDone',
-              }}
-              appear
-              mountOnEnter
-              unmountOnExit
-            >
-              <SelectedValue
-                value={e}
-                removeSelectedValue={this.removeSelectedValue}
-                key={`${label}${e.value}${e.label}`}
-              />
-            </CSSTransition>
-          ))}
-        </TransitionGroup>
+        {SelectedValuesView ? (
+          <SelectedValuesView
+            onDelete={this.removeSelectedValue}
+            selectedValues={selectedValues}
+          />
+        ) : (
+          <>
+            <label className={'multiSelectLabel'}>{label}</label>
+            <TransitionGroup className={'multiSelectSelectedValuesContainer'}>
+              {selectedValues.map(e => (
+                <CSSTransition
+                  key={e.value}
+                  timeout={100}
+                  classNames={{
+                    enter: 'itemEnter',
+                    enterActive: 'itemEnterActive',
+                    enterDone: 'itemEnterDone',
+                    exit: 'itemExit',
+                    exitActive: 'itemExitActive',
+                    exitDone: 'itemExitDone'
+                  }}
+                  appear
+                  mountOnEnter
+                  unmountOnExit
+                >
+                  <SelectedValue
+                    value={e}
+                    removeSelectedValue={this.removeSelectedValue}
+                    key={`${label}${e.value}${e.label}`}
+                  />
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
+          </>
+        )}
         <div className={'multiSelectPlaceholder'}>
           {!inputField && (
             <>
