@@ -30,6 +30,8 @@ class TextFieldWrapper extends React.Component<IProps, { value: string }> {
         onChange={this.onChange}
         validateInput={validate}
         disabled={boolean('disabled', false)}
+        placeholder={text('placeholder', 'placeholder tekst')}
+        onDarkBackground={boolean('onDarkBackground', false)}
       />
     );
   }

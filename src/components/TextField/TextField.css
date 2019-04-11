@@ -17,6 +17,10 @@
   font-family: FFDINWebProLight, sans-serif;
 }
 
+.textFieldLabel.dark {
+  color: var(--overskyet);
+}
+
 .textFieldInput {
   background: var(--overskyet);
   color: var(--svart);
@@ -53,6 +57,12 @@
     ),
     linear-gradient(0deg, var(--morgendis), var(--morgendis));
   transition: all 0s linear;
+}
+
+.textFieldInput.dark {
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  color: white;
 }
 
 .textFieldInput:focus {

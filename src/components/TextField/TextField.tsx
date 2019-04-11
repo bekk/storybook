@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './TextField.css';
+import { classnames } from '../../utils';
 
 interface IProps {
   label?: string;
@@ -14,6 +15,7 @@ interface IProps {
   onBlur?: () => void;
   ref?: React.RefObject<HTMLInputElement>;
   disabled?: boolean;
+  onDarkBackground?: boolean;
 }
 
 export function TextField({
@@ -29,15 +31,28 @@ export function TextField({
   onBlur,
   ref,
   disabled,
+  onDarkBackground = false,
 }: IProps) {
   const isValid = validateInput(value);
+  const textFieldContainer = classnames({
+    textFieldContainer: true,
+    dark: onDarkBackground,
+  });
+  const textFieldLabel = classnames({
+    textFieldLabel: true,
+    dark: onDarkBackground,
+  });
+  const textFieldInput = classnames({
+    textFieldInput: true,
+    dark: onDarkBackground,
+    [className || '']: className !== undefined,
+    textFieldInvalid: !isValid,
+  });
   return (
-    <div className={'textFieldContainer'}>
-      {label && <label className={'textFieldLabel'}>{label}</label>}
+    <div className={textFieldContainer}>
+      {label && <label className={textFieldLabel}>{label}</label>}
       <input
-        className={`textFieldInput ${className ? className : ''} ${
-          isValid ? '' : 'textFieldInvalid'
-        }`}
+        className={textFieldInput}
         size={size}
         maxLength={maxLength}
         type={'text'}
