@@ -9,3 +9,8 @@ export interface IMultiSelectOption extends ISelectOption {
 export interface ICreateableMultiSelectOption extends IMultiSelectOption {
   __isNew__?: boolean;
 }
+
+export interface ISelectedValuesViewProps {
+  onDelete?: (value: ICreateableMultiSelectOption) => void;
+  selectedValues: ICreateableMultiSelectOption[];
+}
