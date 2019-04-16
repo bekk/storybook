@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import { Checkbox } from './Checkbox';
 import { RadioButtons } from './RadioButtons';
 
@@ -41,7 +41,7 @@ class RadioButtonsWrapper extends React.Component<{}, IRadioState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      selected: -1,
+      selected: -1
     };
   }
 
@@ -52,13 +52,14 @@ class RadioButtonsWrapper extends React.Component<{}, IRadioState> {
     const options = [
       { label: 'Egen utgave' },
       { label: 'NAV SVO' },
-      { label: 'NAV SBL' },
+      { label: 'NAV SBL' }
     ];
     return (
       <RadioButtons
         selected={selected}
         options={options}
         onChange={this.onChange}
+        inline={boolean('inline', true)}
       />
     );
   }

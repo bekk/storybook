@@ -89,6 +89,19 @@
   z-index: 2;
 }
 
+.storybook-checkboxInline {
+  display: inline;
+  margin-right: 25px;
+}
+
+.storybook-checkboxInline::before {
+  margin-top: 4px;
+}
+
+.storybook-checkboxInline label::before {
+  margin-top: 4px;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

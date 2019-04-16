@@ -9,6 +9,7 @@ interface ILabelProps {
   isChecked: boolean;
   onChange: (value: boolean) => void;
   onDarkBackground?: boolean;
+  inline?: boolean;
 }
 
 interface IWrapperProps {
@@ -16,12 +17,14 @@ interface IWrapperProps {
   isChecked: boolean;
   onChange: (value: boolean) => void;
   onDarkBackground?: boolean;
+  inline?: boolean;
 }
 
 export function Checkbox({
   isChecked,
   onChange,
   onDarkBackground,
+  inline,
   ...labelOrChildren
 }: ILabelProps | IWrapperProps) {
   const label =
@@ -37,8 +40,9 @@ export function Checkbox({
   const classes = classnames({
     'storybook-checkbox': true,
     'storybook-checkboxDarkBg': onDarkBackground || false,
+    'storybook-checkboxInline': inline || false,
     checked: isChecked,
-    unChecked: !isChecked,
+    unChecked: !isChecked
   });
   return (
     <div className={classes}>
