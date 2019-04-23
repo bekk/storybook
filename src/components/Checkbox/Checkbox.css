@@ -1,5 +1,5 @@
 :root {
-  --storybook-checkbox-box-size: 18px;
+  --storybook-checkbox-box-size: 1em;
   --storybook-checkbox-label-spacing: 10px;
   --storybook-checkbox-vertical-margin: 20px;
   --storybook-checkbox-pagePadding: 30px;
@@ -14,7 +14,8 @@
     var(--storybook-checkbox-box-size) + var(--storybook-checkbox-label-spacing) +
       1px
   );
-  line-height: 1;
+  line-height: calc(var(--storybook-checkbox-box-size) * 1.25);
+  height: var(--storybook-checkbox-box-size);
 }
 
 .storybook-checkbox:not(:first-child) {
@@ -53,14 +54,12 @@
 
 .storybook-checkbox label {
   position: relative;
-  font-size: 14px;
   color: black;
   user-select: none;
 }
 
 .storybook-checkboxDarkBg label {
   color: var(--overskyet-kontrast);
-  font-size: 16px;
 }
 
 .storybook-checkbox.storybook-checkboxDarkBg label::before {
