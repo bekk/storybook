@@ -25,6 +25,10 @@
   font-weight: 600;
 }
 
+.storybook-checkbox:focus-within {
+  font-weight: 600;
+}
+
 .storybook-checkbox input[type='checkbox'] {
   opacity: 0;
   margin: 0;
@@ -75,6 +79,10 @@
 }
 
 .storybook-checkbox:hover label::before {
+  border-width: 2px;
+}
+
+.storybook-checkbox:focus-within label::before {
   border-width: 2px;
 }
 
