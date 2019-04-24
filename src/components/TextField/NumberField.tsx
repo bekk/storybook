@@ -3,7 +3,7 @@ import './TextField.css';
 
 interface IProps {
   label: string;
-  value: number;
+  value?: number;
   onChange: (newValue: number) => void;
   onBlur?: any;
   disabled?: boolean;
