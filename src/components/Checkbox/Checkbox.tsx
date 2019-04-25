@@ -42,7 +42,7 @@ export function Checkbox({
     'storybook-checkboxDarkBg': onDarkBackground || false,
     'storybook-checkboxInline': inline || false,
     checked: isChecked,
-    unChecked: !isChecked
+    unChecked: !isChecked,
   });
   return (
     <div className={classes}>

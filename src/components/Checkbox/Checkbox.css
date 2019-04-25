@@ -15,7 +15,6 @@
       1px
   );
   line-height: calc(var(--storybook-checkbox-box-size) * 1.25);
-  height: var(--storybook-checkbox-box-size);
 }
 
 .storybook-checkbox:not(:first-child) {
