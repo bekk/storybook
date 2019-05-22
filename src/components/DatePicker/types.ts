@@ -1,7 +1,7 @@
 import * as moment from 'moment';
 
 interface ICommonDatePickerProps<T> {
-  label: string;
+  label?: string;
   isDateRequired?: boolean;
   isDateOutsideRange?: (date: T) => boolean;
   disabled?: boolean;

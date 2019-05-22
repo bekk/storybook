@@ -34,12 +34,16 @@ export class DatePicker extends React.Component<
       isDateRequired,
       isDateOutsideRange
     } = this.props;
+    const hasLabel = label !== undefined;
+    const containerClass = `DatePickerContainer ${
+      hasLabel ? 'DatePickerContainerWithLabel' : ''
+    }`;
     return (
       <DatePickerWrapper
         invalid={isDateRequired === true && this.state.date === null}
       >
-        <div className={'DatePickerContainer'}>
-          <label className={'DatePickerLabel'}>{label}</label>
+        <div className={containerClass}>
+          {hasLabel && <label className={'DatePickerLabel'}>{label}</label>}
           <SingleDatePicker
             numberOfMonths={1}
             firstDayOfWeek={1}
@@ -59,7 +63,7 @@ export class DatePicker extends React.Component<
                 onFocusChange(focused);
               }
             }}
-            id={label}
+            id={`${label}${Math.random()}`}
             isOutsideRange={
               isDateOutsideRange ? isDateOutsideRange : () => false
             }
