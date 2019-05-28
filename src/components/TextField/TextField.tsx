@@ -16,6 +16,7 @@ interface IProps {
   ref?: React.RefObject<HTMLInputElement>;
   disabled?: boolean;
   onDarkBackground?: boolean;
+  autoFocus?: boolean;
 }
 
 export function TextField({
@@ -32,6 +33,7 @@ export function TextField({
   ref,
   disabled,
   onDarkBackground = false,
+  autoFocus,
 }: IProps) {
   const isValid = validateInput(value);
   const textFieldContainer = classnames({
@@ -52,6 +54,7 @@ export function TextField({
     <div className={textFieldContainer}>
       {label && <label className={textFieldLabel}>{label}</label>}
       <input
+        autoFocus={autoFocus}
         className={textFieldInput}
         size={size}
         maxLength={maxLength}
