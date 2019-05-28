@@ -34,12 +34,16 @@ export class MomentPicker extends React.Component<
       isDateRequired,
       isDateOutsideRange
     } = this.props;
+    const hasLabel = label !== undefined;
+    const containerClass = `DatePickerContainer ${
+      hasLabel ? 'DatePickerContainerWithLabel' : ''
+    }`;
     return (
       <DatePickerWrapper
         invalid={isDateRequired === true && this.state.date === null}
       >
         <div className={'DatePickerContainer'}>
-          <label className={'DatePickerLabel'}>{label}</label>
+          {hasLabel && <label className={containerClass}>{label}</label>}
           <SingleDatePicker
             numberOfMonths={1}
             firstDayOfWeek={1}
@@ -56,7 +60,7 @@ export class MomentPicker extends React.Component<
                 onFocusChange(focused);
               }
             }}
-            id={label}
+            id={`${label}${Math.random()}`}
             isOutsideRange={
               isDateOutsideRange ? isDateOutsideRange : () => false
             }

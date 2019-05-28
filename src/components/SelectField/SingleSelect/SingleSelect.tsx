@@ -9,8 +9,8 @@ interface IProps {
   selectedOption?: ISelectOption;
   options: ISelectOption[];
   updateSelectedOption: (option: ISelectOption) => void;
-  label: string;
-  placeholder: string;
+  label?: string;
+  placeholder?: string;
   disabled?: boolean;
   showSearchIcon?: boolean;
 }
@@ -33,15 +33,14 @@ export class SingleSelect extends React.PureComponent<IProps, {}> {
       placeholder,
       showSearchIcon
     } = this.props;
+    const hasLabel = label !== undefined;
     return (
       <div className={'singleSelectContainer'}>
-        <div>
-          <label className={'singleSelectLabel'}>{label}</label>
-        </div>
+        {hasLabel && <label className={'singleSelectLabel'}>{label}</label>}
         <Select
           className={'singleSelectSelect'}
           options={options}
-          placeholder={placeholder}
+          placeholder={placeholder || ''}
           components={showSearchIcon ? { Placeholder } : {}}
           value={selectedOption || ('' as any)}
           onChange={this.handleChange}

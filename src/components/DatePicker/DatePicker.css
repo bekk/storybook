@@ -8,6 +8,9 @@
 }
 
 .DatePickerContainer {
-  margin-top: 20px;
   font-family: DINW01Regular;
+}
+
+.DatePickerContainerWithLabel {
+  margin-top: 20px;
 }
