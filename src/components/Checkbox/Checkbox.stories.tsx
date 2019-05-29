@@ -13,7 +13,7 @@ interface IState {
 }
 
 interface IRadioState {
-  selected: number;
+  selected: { label: string };
 }
 
 class CheckboxWrapper extends React.Component<IProps, IState> {
@@ -40,24 +40,23 @@ class CheckboxWrapper extends React.Component<IProps, IState> {
 class RadioButtonsWrapper extends React.Component<{}, IRadioState> {
   constructor(props: IProps) {
     super(props);
-    this.state = {
-      selected: -1
-    };
   }
-
-  onChange = (selected: number) => this.setState({ selected });
+  componentWillMount() {
+    this.setState({ selected: this.options[0] });
+  }
+  onChange = (selected: { label: string }) => this.setState({ selected });
+  options = [
+    { label: 'Egen utgave' },
+    { label: 'NAV SVO' },
+    { label: 'NAV SBL' }
+  ];
 
   render() {
     const { selected } = this.state;
-    const options = [
-      { label: 'Egen utgave' },
-      { label: 'NAV SVO' },
-      { label: 'NAV SBL' }
-    ];
     return (
       <RadioButtons
         selected={selected}
-        options={options}
+        options={this.options}
         onChange={this.onChange}
         inline={boolean('inline', true)}
       />

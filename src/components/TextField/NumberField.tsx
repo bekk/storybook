@@ -2,7 +2,7 @@ import * as React from 'react';
 import './TextField.css';
 
 interface IProps {
-  label: string;
+  label?: string;
   value?: number;
   onChange: (newValue: number) => void;
   onBlur?: any;
@@ -23,9 +23,10 @@ export function NumberField({
       onChange(Number(event.target.value));
     }
   };
+  const hasLabel = label !== undefined;
   return (
     <div className={'textFieldContainer'}>
-      <label className={'textFieldLabel'}>{label}</label>
+      {hasLabel && <label className={'textFieldLabel'}>{label}</label>}
       <input
         className={`textFieldInput`}
         type={'number'}

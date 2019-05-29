@@ -3,15 +3,20 @@ import { Checkbox } from './Checkbox';
 import './RadioButtons.css';
 import { classnames } from '../../utils';
 
-interface IProps<T extends { label: string }> {
-  selected: number;
+interface IProps<T> {
+  selected: T;
   options: T[];
-  onChange: (selected: number, option: T) => void;
+  onChange: (option: T) => void;
   onDarkBackground?: boolean;
   inline?: boolean;
 }
 
-export function RadioButtons<T extends { label: string }>({
+interface IOptionBase {
+  label: string;
+  id?: string | number;
+}
+
+export function RadioButtons<T extends IOptionBase>({
   selected,
   options,
   onChange,
@@ -22,14 +27,16 @@ export function RadioButtons<T extends { label: string }>({
     'storybook-radiobuttons': true,
     'storybook-radioInline': inline || false
   });
+  const isChecked = (x: T) =>
+    'id' in x ? x.id === selected.id : x.label === selected.label;
   return (
     <div className={classes}>
       {options.map((x, i) => (
         <Checkbox
           key={i}
           label={x.label}
-          isChecked={i === selected}
-          onChange={() => onChange(i, x)}
+          isChecked={isChecked(x)}
+          onChange={() => onChange(x)}
           onDarkBackground={onDarkBackground}
           inline={inline}
         />
