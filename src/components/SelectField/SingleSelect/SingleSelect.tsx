@@ -5,22 +5,25 @@ import './SingleSelect.css';
 import { customStylesSingleSelect, themeTransform } from '../constants';
 import { Placeholder } from './Placeholder/Placeholder';
 
-interface IProps {
-  selectedOption?: ISelectOption;
-  options: ISelectOption[];
-  updateSelectedOption: (option: ISelectOption) => void;
+interface IProps<T> {
+  selectedOption?: T;
+  options: T[];
+  updateSelectedOption: (option: T) => void;
   label?: string;
   placeholder?: string;
   disabled?: boolean;
   showSearchIcon?: boolean;
 }
 
-export class SingleSelect extends React.PureComponent<IProps, {}> {
-  constructor(props: IProps) {
+export class SingleSelect<T extends ISelectOption> extends React.PureComponent<
+  IProps<T>,
+  {}
+> {
+  constructor(props: IProps<T>) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
-  public handleChange(e: ISelectOption) {
+  public handleChange(e: T) {
     this.props.updateSelectedOption(e);
   }
 
