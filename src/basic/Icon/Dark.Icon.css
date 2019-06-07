@@ -1,117 +1,128 @@
+.dark.unlocked {
+  background: url('./svg/dark/unlocked.svg') no-repeat top left;
+}
+
+.dark.comment {
+  background: url('./svg/dark/comment.svg') no-repeat top left;
+}
+
+.dark.lock {
+  background: url('./svg/dark/lock.svg') no-repeat top left;
+}
 
 .dark.bart {
-    background: url('./svg/dark/bart.svg') no-repeat top left;
+  background: url('./svg/dark/bart.svg') no-repeat top left;
 }
 
 .dark.bursdag {
-    background: url('./svg/dark/bursdag.svg') no-repeat top left;
+  background: url('./svg/dark/bursdag.svg') no-repeat top left;
 }
 
 .dark.design {
-    background: url('./svg/dark/design.svg') no-repeat top left;
+  background: url('./svg/dark/design.svg') no-repeat top left;
 }
 
 .dark.erfaren {
-    background: url('./svg/dark/erfaren.svg') no-repeat top left;
+  background: url('./svg/dark/erfaren.svg') no-repeat top left;
 }
 
 .dark.fest {
-    background: url('./svg/dark/fest.svg') no-repeat top left;
+  background: url('./svg/dark/fest.svg') no-repeat top left;
 }
 .dark.filter {
-    background: url('./svg/dark/filter.svg') no-repeat top left;
+  background: url('./svg/dark/filter.svg') no-repeat top left;
 }
 
 .dark.foosball {
-    background: url('./svg/dark/foosball.svg') no-repeat top left;
+  background: url('./svg/dark/foosball.svg') no-repeat top left;
 }
 
 .dark.fra_studier {
-    background: url('./svg/dark/fra_studier.svg') no-repeat top left;
+  background: url('./svg/dark/fra_studier.svg') no-repeat top left;
 }
 
 .dark.ide_konsept {
-    background: url('./svg/dark/ide_konsept.svg') no-repeat top left;
+  background: url('./svg/dark/ide_konsept.svg') no-repeat top left;
 }
 
 .dark.innsikt_analyse {
-    background: url('./svg/dark/innsikt_analyse.svg') no-repeat top left;
+  background: url('./svg/dark/innsikt_analyse.svg') no-repeat top left;
 }
 .dark.kode {
-    background: url('./svg/dark/kode.svg') no-repeat top left;
+  background: url('./svg/dark/kode.svg') no-repeat top left;
 }
 
 .dark.konsulent {
-    background: url('./svg/dark/konsulent.svg') no-repeat top left;
+  background: url('./svg/dark/konsulent.svg') no-repeat top left;
 }
 
 .dark.loop {
-    background: url('./svg/dark/loop.svg') no-repeat top left;
+  background: url('./svg/dark/loop.svg') no-repeat top left;
 }
 
 .dark.lunsj {
-    background: url('./svg/dark/lunsj.svg') no-repeat top left;
+  background: url('./svg/dark/lunsj.svg') no-repeat top left;
 }
 
 .dark.manager {
-    background: url('./svg/dark/manager.svg') no-repeat top left;
+  background: url('./svg/dark/manager.svg') no-repeat top left;
 }
 .dark.målet {
-    background: url('./svg/dark/målet.svg') no-repeat top left;
+  background: url('./svg/dark/målet.svg') no-repeat top left;
 }
 
 .dark.passord {
-    background: url('./svg/dark/passord.svg') no-repeat top left;
+  background: url('./svg/dark/passord.svg') no-repeat top left;
 }
 
 .dark.prototype_utvikling {
-    background: url('./svg/dark/prototype_utvikling.svg') no-repeat top left;
+  background: url('./svg/dark/prototype_utvikling.svg') no-repeat top left;
 }
 
 .dark.samarbeid {
-    background: url('./svg/dark/samarbeid.svg') no-repeat top left;
+  background: url('./svg/dark/samarbeid.svg') no-repeat top left;
 }
 
 .dark.senior {
-    background: url('./svg/dark/senior.svg') no-repeat top left;
+  background: url('./svg/dark/senior.svg') no-repeat top left;
 }
 
 .dark.sol {
-    background: url('./svg/dark/sol.svg') no-repeat top left;
+  background: url('./svg/dark/sol.svg') no-repeat top left;
 }
 
 .dark.soloppgang {
-    background: url('./svg/dark/soloppgang.svg') no-repeat top left;
+  background: url('./svg/dark/soloppgang.svg') no-repeat top left;
 }
 
 .dark.sommerjobb {
-    background: url('./svg/dark/sommerjobb.svg') no-repeat top left;
+  background: url('./svg/dark/sommerjobb.svg') no-repeat top left;
 }
 
 .dark.søk {
-    background: url('./svg/dark/søk.svg') no-repeat top left;
+  background: url('./svg/dark/søk.svg') no-repeat top left;
 }
 
 .dark.teste_lære {
-    background: url('./svg/dark/teste_lære.svg') no-repeat top left;
+  background: url('./svg/dark/teste_lære.svg') no-repeat top left;
 }
 
 .dark.ulemper {
-    background: url('./svg/dark/ulemper.svg') no-repeat top left;
+  background: url('./svg/dark/ulemper.svg') no-repeat top left;
 }
 
 .dark.veien {
-    background: url('./svg/dark/veien.svg') no-repeat top left;
+  background: url('./svg/dark/veien.svg') no-repeat top left;
 }
 
 .dark.verktøy_2 {
-    background: url('./svg/dark/verktøy_2.svg') no-repeat top left;
+  background: url('./svg/dark/verktøy_2.svg') no-repeat top left;
 }
 
 .dark.verktøy_3 {
-    background: url('./svg/dark/verktøy_3.svg') no-repeat top left;
+  background: url('./svg/dark/verktøy_3.svg') no-repeat top left;
 }
 
 .dark.verktøy {
-    background: url('./svg/dark/verktøy.svg') no-repeat top left;
+  background: url('./svg/dark/verktøy.svg') no-repeat top left;
 }

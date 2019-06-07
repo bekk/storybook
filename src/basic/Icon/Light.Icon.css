@@ -1,136 +1,148 @@
 .darkbackground {
-    background-color: black;
+  background-color: black;
+}
+
+.light.unlocked {
+  background: url('./svg/light/unlocked.svg') no-repeat top left;
+}
+
+.light.comment {
+  background: url('./svg/light/comment.svg') no-repeat top left;
+}
+
+.light.lock {
+  background: url('./svg/light/lock.svg') no-repeat top left;
 }
 
 .light.bart {
-    background: url('./svg/light/bart.svg') no-repeat top left;
+  background: url('./svg/light/bart.svg') no-repeat top left;
 }
 
 .light.bursdag {
-    background: url('./svg/light/bursdag.svg') no-repeat top left;
+  background: url('./svg/light/bursdag.svg') no-repeat top left;
 }
 
 .light.design {
-    background: url('./svg/light/design.svg') no-repeat top left;
+  background: url('./svg/light/design.svg') no-repeat top left;
 }
 
 .light.erfaren {
-    background: url('./svg/light/erfaren.svg') no-repeat top left;
+  background: url('./svg/light/erfaren.svg') no-repeat top left;
 }
 
 .light.fest {
-    background: url('./svg/light/fest.svg') no-repeat top left;
+  background: url('./svg/light/fest.svg') no-repeat top left;
 }
 .light.filter {
-    background: url('./svg/light/filter.svg') no-repeat top left;
+  background: url('./svg/light/filter.svg') no-repeat top left;
 }
 
 .light.foosball {
-    background: url('./svg/light/foosball.svg') no-repeat top left;
+  background: url('./svg/light/foosball.svg') no-repeat top left;
 }
 
 .light.fra_studier {
-    background: url('./svg/light/fra_studier.svg') no-repeat top left;
+  background: url('./svg/light/fra_studier.svg') no-repeat top left;
 }
 
 .light.ide_konsept {
-    background: url('./svg/light/ide_konsept.svg') no-repeat top left;
+  background: url('./svg/light/ide_konsept.svg') no-repeat top left;
 }
 
 .light.innsikt_analyse {
-    background: url('./svg/light/innsikt_analyse.svg') no-repeat top left;
+  background: url('./svg/light/innsikt_analyse.svg') no-repeat top left;
 }
 .light.kode {
-    background: url('./svg/light/kode.svg') no-repeat top left;
+  background: url('./svg/light/kode.svg') no-repeat top left;
 }
 
 .light.konsulent {
-    background: url('./svg/light/konsulent.svg') no-repeat top left;
+  background: url('./svg/light/konsulent.svg') no-repeat top left;
 }
 
 .light.loop {
-    background: url('./svg/light/loop.svg') no-repeat top left;
+  background: url('./svg/light/loop.svg') no-repeat top left;
 }
 
 .light.lunsj {
-    background: url('./svg/light/lunsj.svg') no-repeat top left;
+  background: url('./svg/light/lunsj.svg') no-repeat top left;
 }
 
 .light.manager {
-    background: url('./svg/light/manager.svg') no-repeat top left;
+  background: url('./svg/light/manager.svg') no-repeat top left;
 }
 .light.målet {
-    background: url('./svg/light/målet.svg') no-repeat top left;
+  background: url('./svg/light/målet.svg') no-repeat top left;
 }
 
 .light.passord {
-    background: url('./svg/light/passord.svg') no-repeat top left;
+  background: url('./svg/light/passord.svg') no-repeat top left;
 }
 
 .light.prototype_utvikling {
-    background: url('./svg/light/prototype_utvikling.svg') no-repeat top left;
+  background: url('./svg/light/prototype_utvikling.svg') no-repeat top left;
 }
 
 .light.samarbeid {
-    background: url('./svg/light/samarbeid.svg') no-repeat top left;
+  background: url('./svg/light/samarbeid.svg') no-repeat top left;
 }
 
 .light.senior {
-    background: url('./svg/light/senior.svg') no-repeat top left;
+  background: url('./svg/light/senior.svg') no-repeat top left;
 }
 
 .light.sol {
-    background: url('./svg/light/sol.svg') no-repeat top left;
+  background: url('./svg/light/sol.svg') no-repeat top left;
 }
 
 .light.soloppgang {
-    background: url('./svg/light/soloppgang.svg') no-repeat top left;
+  background: url('./svg/light/soloppgang.svg') no-repeat top left;
 }
 
 .light.sommerjobb {
-    background: url('./svg/light/sommerjobb.svg') no-repeat top left;
+  background: url('./svg/light/sommerjobb.svg') no-repeat top left;
 }
 
 .light.søk {
-    background: url('./svg/light/søk.svg') no-repeat top left;
+  background: url('./svg/light/søk.svg') no-repeat top left;
 }
 
 .light.teste_lære {
-    background: url('./svg/light/teste_lære.svg') no-repeat top left;
+  background: url('./svg/light/teste_lære.svg') no-repeat top left;
 }
 
 .light.ulemper {
-    background: url('./svg/light/ulemper.svg') no-repeat top left;
+  background: url('./svg/light/ulemper.svg') no-repeat top left;
 }
 
 .light.veien {
-    background: url('./svg/light/veien.svg') no-repeat top left;
+  background: url('./svg/light/veien.svg') no-repeat top left;
 }
 
 .light.verktøy_2 {
-    background: url('./svg/light/verktøy_2.svg') no-repeat top left;
+  background: url('./svg/light/verktøy_2.svg') no-repeat top left;
 }
 
 .light.verktøy_3 {
-    background: url('./svg/light/verktøy_3.svg') no-repeat top left;
+  background: url('./svg/light/verktøy_3.svg') no-repeat top left;
 }
 
 .light.verktøy {
-    background: url('./svg/light/verktøy.svg') no-repeat top left;
+  background: url('./svg/light/verktøy.svg') no-repeat top left;
 }
 
 .light.emoji_1 {
-    background: url('./svg/light/emoji_1.svg') no-repeat top left;
+  background: url('./svg/light/emoji_1.svg') no-repeat top left;
 }
 
 .light.emoji_2 {
-    background: url('./svg/light/emoji_2.svg') no-repeat top left;
+  background: url('./svg/light/emoji_2.svg') no-repeat top left;
 }
 
 .light.emoji_3 {
-    background: url('./svg/light/emoji_3.svg') no-repeat top left;
+  background: url('./svg/light/emoji_3.svg') no-repeat top left;
 }
 
 .light.emoji_4 {
-    background: url('./svg/light/emoji_4.svg') no-repeat top left;
+  background: url('./svg/light/emoji_4.svg') no-repeat top left;
 }

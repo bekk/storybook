@@ -1,216 +1,160 @@
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { Icon } from "./Icon";
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Icon } from './Icon';
 
-(storiesOf("Basic/Icons/Dark", module) as any)
-  .addWithJSX(
-    "bart",
-    (() => (
-      <div>
-      <Icon type="dark" name="bart"/>
+(storiesOf('Basic/Icons/Dark', module) as any)
+  .addWithJSX('bart', () => (
+    <div>
+      <Icon type='dark' name='bart' />
     </div>
-    ))
-  ).addWithJSX(
-    "bursdag",
-    (() => (
-      <div>
-      <Icon type="dark" name="bursdag"/>
+  ))
+  .addWithJSX('lock', () => (
+    <div>
+      <Icon type='dark' name='lock' />
     </div>
-    ))
-  ).addWithJSX(
-    "design",
-    (() => (
-      <div>
-      <Icon type="dark" name="design"/>
+  ))
+  .addWithJSX('bursdag', () => (
+    <div>
+      <Icon type='dark' name='bursdag' />
     </div>
-    ))
-  ).addWithJSX(
-    "erfaren",
-    (() => (
-      <div>
-      <Icon type="dark" name="erfaren"/>
+  ))
+  .addWithJSX('design', () => (
+    <div>
+      <Icon type='dark' name='design' />
     </div>
-    ))
-  ).addWithJSX(
-    "fest",
-    (() => (
-      <div>
-      <Icon type="dark" name="fest"/>
+  ))
+  .addWithJSX('erfaren', () => (
+    <div>
+      <Icon type='dark' name='erfaren' />
     </div>
-    ))
-  ).addWithJSX(
-    "filter",
-    (() => (
-      <div>
-      <Icon type="dark" name="filter"/>
+  ))
+  .addWithJSX('fest', () => (
+    <div>
+      <Icon type='dark' name='fest' />
     </div>
-    ))
-  ).addWithJSX(
-    "foosball",
-    (() => (
-      <div>
-      <Icon type="dark" name="foosball"/>
+  ))
+  .addWithJSX('filter', () => (
+    <div>
+      <Icon type='dark' name='filter' />
     </div>
-    ))
-  ).addWithJSX(
-    "fordeler",
-    (() => (
-      <div>
-      <Icon type="dark" name="fordeler"/>
+  ))
+  .addWithJSX('foosball', () => (
+    <div>
+      <Icon type='dark' name='foosball' />
     </div>
-    ))
-  ).addWithJSX(
-    "fra_studier",
-    (() => (
-      <div>
-      <Icon type="dark" name="fra_studier"/>
+  ))
+  .addWithJSX('fordeler', () => (
+    <div>
+      <Icon type='dark' name='fordeler' />
     </div>
-    ))
-  ).addWithJSX(
-    "ide_konsept",
-    (() => (
-      <div>
-      <Icon type="dark" name="ide_konsept"/>
+  ))
+  .addWithJSX('fra_studier', () => (
+    <div>
+      <Icon type='dark' name='fra_studier' />
     </div>
-    ))
-  ).addWithJSX(
-    "innsikt_analyse",
-    (() => (
-      <div>
-      <Icon type="dark" name="innsikt_analyse"/>
+  ))
+  .addWithJSX('ide_konsept', () => (
+    <div>
+      <Icon type='dark' name='ide_konsept' />
     </div>
-    ))
-  ).addWithJSX(
-    "kode",
-    (() => (
-      <div>
-      <Icon type="dark" name="kode"/>
+  ))
+  .addWithJSX('innsikt_analyse', () => (
+    <div>
+      <Icon type='dark' name='innsikt_analyse' />
     </div>
-    ))
-  ).addWithJSX(
-    "konsulent",
-    (() => (
-      <div>
-      <Icon type="dark" name="konsulent"/>
+  ))
+  .addWithJSX('kode', () => (
+    <div>
+      <Icon type='dark' name='kode' />
     </div>
-    ))
-  ).addWithJSX(
-    "loop",
-    (() => (
-      <div>
-      <Icon type="dark" name="loop"/>
+  ))
+  .addWithJSX('konsulent', () => (
+    <div>
+      <Icon type='dark' name='konsulent' />
     </div>
-    ))
-  ).addWithJSX(
-    "lunsj",
-    (() => (
-      <div>
-      <Icon type="dark" name="lunsj"/>
+  ))
+  .addWithJSX('loop', () => (
+    <div>
+      <Icon type='dark' name='loop' />
     </div>
-    ))
-  ).addWithJSX(
-    "manager",
-    (() => (
-      <div>
-      <Icon type="dark" name="manager"/>
+  ))
+  .addWithJSX('lunsj', () => (
+    <div>
+      <Icon type='dark' name='lunsj' />
     </div>
-    ))
-  ).addWithJSX(
-    "målet",
-    (() => (
-      <div>
-      <Icon type="dark" name="målet"/>
+  ))
+  .addWithJSX('manager', () => (
+    <div>
+      <Icon type='dark' name='manager' />
     </div>
-    ))
-  ).addWithJSX(
-    "passord",
-    (() => (
-      <div>
-      <Icon type="dark" name="passord"/>
+  ))
+  .addWithJSX('målet', () => (
+    <div>
+      <Icon type='dark' name='målet' />
     </div>
-    ))
-  ).addWithJSX(
-    "prototype_utvikling",
-    (() => (
-      <div>
-      <Icon type="dark" name="prototype_utvikling"/>
+  ))
+  .addWithJSX('passord', () => (
+    <div>
+      <Icon type='dark' name='passord' />
     </div>
-    ))
-  ).addWithJSX(
-    "samarbeid",
-    (() => (
-      <div>
-      <Icon type="dark" name="samarbeid"/>
+  ))
+  .addWithJSX('prototype_utvikling', () => (
+    <div>
+      <Icon type='dark' name='prototype_utvikling' />
     </div>
-    ))
-  ).addWithJSX(
-    "senior",
-    (() => (
-      <div>
-      <Icon type="dark" name="senior"/>
+  ))
+  .addWithJSX('samarbeid', () => (
+    <div>
+      <Icon type='dark' name='samarbeid' />
     </div>
-    ))
-  ).addWithJSX(
-    "sol",
-    (() => (
-      <div>
-      <Icon type="dark" name="sol"/>
+  ))
+  .addWithJSX('senior', () => (
+    <div>
+      <Icon type='dark' name='senior' />
     </div>
-    ))
-  ).addWithJSX(
-    "soloppgang",
-    (() => (
-      <div>
-      <Icon type="dark" name="soloppgang"/>
+  ))
+  .addWithJSX('sol', () => (
+    <div>
+      <Icon type='dark' name='sol' />
     </div>
-    ))
-  ).addWithJSX(
-    "sommerjobb",
-    (() => (
-      <div>
-      <Icon type="dark" name="sommerjobb"/>
+  ))
+  .addWithJSX('soloppgang', () => (
+    <div>
+      <Icon type='dark' name='soloppgang' />
     </div>
-    ))
-  ).addWithJSX(
-    "teste_lære",
-    (() => (
-      <div>
-      <Icon type="dark" name="teste_lære"/>
+  ))
+  .addWithJSX('sommerjobb', () => (
+    <div>
+      <Icon type='dark' name='sommerjobb' />
     </div>
-    ))
-  ).addWithJSX(
-    "ulemper",
-    (() => (
-      <div>
-      <Icon type="dark" name="ulemper"/>
+  ))
+  .addWithJSX('teste_lære', () => (
+    <div>
+      <Icon type='dark' name='teste_lære' />
     </div>
-    ))
-  ).addWithJSX(
-    "veien",
-    (() => (
-      <div>
-      <Icon type="dark" name="veien"/>
+  ))
+  .addWithJSX('ulemper', () => (
+    <div>
+      <Icon type='dark' name='ulemper' />
     </div>
-    ))
-  ).addWithJSX(
-    "verktøy",
-    (() => (
-      <div>
-      <Icon type="dark" name="verktøy"/>
+  ))
+  .addWithJSX('veien', () => (
+    <div>
+      <Icon type='dark' name='veien' />
     </div>
-    ))
-  ).addWithJSX(
-    "verktøy 1",
-    (() => (
-      <div>
-      <Icon type="dark" name="verktøy_2"/>
+  ))
+  .addWithJSX('verktøy', () => (
+    <div>
+      <Icon type='dark' name='verktøy' />
     </div>
-    ))
-  ).addWithJSX(
-    "verktøy 2",
-    (() => (
-      <div>
-      <Icon type="dark" name="verktøy_3"/>
+  ))
+  .addWithJSX('verktøy 1', () => (
+    <div>
+      <Icon type='dark' name='verktøy_2' />
     </div>
-    ))
-  );
+  ))
+  .addWithJSX('verktøy 2', () => (
+    <div>
+      <Icon type='dark' name='verktøy_3' />
+    </div>
+  ));
