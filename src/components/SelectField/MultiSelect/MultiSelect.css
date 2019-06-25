@@ -25,6 +25,7 @@
 
 .multiSelectSelect {
   border-radius: 0;
+  z-index: 30;
   outline: 0;
   font-family: DINW01Regular;
 }
