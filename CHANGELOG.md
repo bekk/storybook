@@ -1,3 +1,7 @@
+### 1.10.0
+
+- Add a BekkLogo component
+
 ### 1.9.63
 
 - Add DatePicker
