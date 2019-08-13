@@ -9,20 +9,64 @@ Check us out at [bekk.no](https://bekk.no)!
 
 You can see the app live at [storybook.bekk.no](http://storybook.bekk.no)
 
-# How to use it
+# Usage
 
 In your project, run:
 
 ```
-npm i --save @bekk/storybook
+npm install @bekk/storybook
 ```
 
-This is how you use it
+This will fetch and install the files in your `node_modules` folder. You can then import the files you require as you please.
 
-# Run it
+## React Components
 
-Clone the the repository  
-Go to root of project  
+You can import the components you need as named imports.
+
+```js
+import { DatePicker, TextField } from '@bekk/storybook';
+```
+
+For a full list of available components, please refer to [the documentation](http://storybook.bekk.no) or [source code](https://github.com/bekk/storybook/blob/master/src/index.tsx)
+
+## Usage with Webpack, Parcel et al
+
+Most popular web application bundler provide ways to load CSS files into their dependency graphs. Parcel lets you do this by default, and Webpack requires a loader ([see this article on how to set that up](https://medium.com/a-beginners-guide-for-webpack-2/webpack-loaders-css-and-sass-2cc0079b5b3a)). If you're using `create-react-app`, this is already set up for you.
+
+Once you can specify CSS files as dependencies, you might want to include the following ones:
+
+### Color variables
+
+```js
+import '@bekk/storybook/build/lib/constants/styles.css';
+```
+
+This will set all our colors as CSS variables globally. To see which ones are available, please see [the source code](https://github.com/bekk/storybook/blob/master/src/constants/styles.css).
+
+You can also access (at least some of) these variables from JavaScript (or TypeScript):
+
+```js
+import * as colors from '@bekk/storybook/build/lib/constants/styles';
+```
+
+### Fonts
+
+```js
+import '@bekk/storybook/build/lib/fonts/webfonts.css';
+```
+
+This will load our web fonts, and make them available to use in your CSS. Note that font weights aren't supported, so you have to specify different font-families instead. The ones that are available are:
+
+- `FFDINWebProLight` - our basic body text font (sans-serif).
+- `DINW01LightItalic` - same as above, but italic. Use instead of `font-style: italic`
+- `DINW01Regular` - same as above, but bold. Use instead of `font-weight: bold`
+- `DINW01Medium` - same as above, but black (super-bold).
+- `NewZaldBook` - our large heading font (serif)
+
+# Development
+
+Clone the the repository
+Go to root of project
 Run:
 
 ```bash
@@ -40,7 +84,7 @@ npm run build
 
 Go to folder `storyboard-static` and open index.html in browser.
 
-# NB: TSconfig
+# Note: TSconfig
 
 Storybook requires a `tsconfig.json` in the `.storybook` directory to correctly compile TS on `npm run storybook`, while most text editors requires it at the root directory for correct linting. Thus the `"compilerOptions"` are to be defined in [./tsconfig.json](./tsconfig.json) and [.storybook/tsconfig.json](.storybook/tsconfig.json) extends this file and contains the relative paths to the `"baseUrl"`, `"rootDir"` and `"outDir"` as well as the `"include"`and `"exclude"` options.
 
