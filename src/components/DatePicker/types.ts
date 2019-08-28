@@ -1,10 +1,13 @@
-import * as moment from 'moment';
+import * as moment from "moment";
+
+type Direction = "up" | "down";
 
 interface ICommonDatePickerProps<T> {
   label?: string;
   isDateRequired?: boolean;
   isDateOutsideRange?: (date: T) => boolean;
   disabled?: boolean;
+  openDirection?: Direction;
 }
 
 export interface ISinglePickerProps<T> extends ICommonDatePickerProps<T> {
@@ -28,7 +31,7 @@ export interface ISinglePickerState {
 export interface IRangePickerState {
   startDate: moment.Moment | null;
   endDate: moment.Moment | null;
-  focusedInput: 'startDate' | 'endDate' | null;
+  focusedInput: "startDate" | "endDate" | null;
   timeZone: string;
   endDateId: string;
   startDateId: string;

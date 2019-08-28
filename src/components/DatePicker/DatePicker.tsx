@@ -1,15 +1,15 @@
-import moment from 'moment';
-import 'moment/locale/nb';
-import * as React from 'react';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-import { DatePickerHeader } from './DatePickerHeader/DatePickerHeader';
-import { SingleDatePicker } from 'react-dates';
-import { DatePickerWrapper } from './DatePickerWrapper';
-import { ISinglePickerProps, ISinglePickerState } from './types';
+import moment from "moment";
+import "moment/locale/nb";
+import * as React from "react";
+import "react-dates/initialize";
+import "react-dates/lib/css/_datepicker.css";
+import { DatePickerHeader } from "./DatePickerHeader/DatePickerHeader";
+import { SingleDatePicker } from "react-dates";
+import { DatePickerWrapper } from "./DatePickerWrapper";
+import { ISinglePickerProps, ISinglePickerState } from "./types";
 
-import './DatePicker.css';
-import { getDateAtMidnightUtc } from './utils';
+import "./DatePicker.css";
+import { getDateAtMidnightUtc } from "./utils";
 
 export class DatePicker extends React.Component<
   ISinglePickerProps<Date>,
@@ -17,7 +17,7 @@ export class DatePicker extends React.Component<
 > {
   public constructor(props: ISinglePickerProps<Date>) {
     super(props);
-    const _timeZone = moment.locale('nb');
+    const _timeZone = moment.locale("nb");
     this.state = {
       date: props.initialDate ? moment(props.initialDate) : null,
       focused: false,
@@ -32,22 +32,23 @@ export class DatePicker extends React.Component<
       onChange,
       onFocusChange,
       isDateRequired,
-      isDateOutsideRange
+      isDateOutsideRange,
+      openDirection
     } = this.props;
     const hasLabel = label !== undefined;
     const containerClass = `DatePickerContainer ${
-      hasLabel ? 'DatePickerContainerWithLabel' : ''
+      hasLabel ? "DatePickerContainerWithLabel" : ""
     }`;
     return (
       <DatePickerWrapper
         invalid={isDateRequired === true && this.state.date === null}
       >
         <div className={containerClass}>
-          {hasLabel && <label className={'DatePickerLabel'}>{label}</label>}
+          {hasLabel && <label className={"DatePickerLabel"}>{label}</label>}
           <SingleDatePicker
             numberOfMonths={1}
             firstDayOfWeek={1}
-            displayFormat={'DD.MM.YYYY'}
+            displayFormat={"DD.MM.YYYY"}
             date={this.state.date}
             onDateChange={date => {
               const dateAsDateObject = date
@@ -68,9 +69,10 @@ export class DatePicker extends React.Component<
               isDateOutsideRange ? isDateOutsideRange : () => false
             }
             hideKeyboardShortcutsPanel={true}
-            placeholder={'dd.mm.yyyy'}
+            placeholder={"dd.mm.yyyy"}
             renderMonthElement={DatePickerHeader}
             disabled={disabled}
+            direction={openDirection ? openDirection : "down"}
           />
         </div>
       </DatePickerWrapper>
