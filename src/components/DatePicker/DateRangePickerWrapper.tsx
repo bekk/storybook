@@ -63,7 +63,9 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
     background-image: none, none, linear-gradient(0deg, var(--solnedgang-kontrast), var(--solnedgang-kontrast)), none, linear-gradient(0deg, var(--morgendis), var(--morgendis));
     transition: all 0s linear;
   }
-
+  .DateRangePicker_picker {
+    z-index: 999;
+  }
   .DateInput_input:focus {
     background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%, 100% 1px;
     transition: all 0.1s linear;
