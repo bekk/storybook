@@ -1,6 +1,6 @@
-import { ThemedStyledFunction } from 'styled-components';
-import styled from 'styled-components';
-import { HTMLAttributes, ClassAttributes, FunctionComponent } from 'react';
+import { ThemedStyledFunction } from "styled-components";
+import styled from "styled-components";
+import { HTMLAttributes, ClassAttributes, FunctionComponent } from "react";
 
 function withProps<U>() {
   return <C extends FunctionComponent, T extends object, O extends object = {}>(
@@ -93,6 +93,9 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
   .DayPickerNavigation_button {
     visibility: hidden;
   }
+  .DateRangePicker {
+    display: block;
+  }
 
   ${props => {
     return props.startDateInvalid
@@ -105,7 +108,7 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
     background-size: 0% 1px, 1px 0%, 100% 1px, 1px 0%, 0% 1px;
     transition: all 0s linear;
   }`
-      : '';
+      : "";
   }} ${props =>
   props.endDateInvalid
     ? `
@@ -117,5 +120,5 @@ export const DateRangePickerWrapper = withProps<IWrapProps>()(styled.div)`
       background-size: 0% 1px, 1px 0%, 100% 1px, 1px 0%, 0% 1px;
       transition: all 0s linear;
     }`
-    : ''}}
+    : ""}}
 `;
