@@ -1,16 +1,20 @@
-export interface ISelectOption {
+export type Equatable = string | number;
+
+export interface ISelectOption<Eq extends Equatable> {
   label: string;
-  value: number;
+  value: Eq;
 }
-export interface IMultiSelectOption extends ISelectOption {
+export interface IMultiSelectOption<Eq extends Equatable>
+  extends ISelectOption<Eq> {
   shorthand?: string;
 }
 
-export interface ICreateableMultiSelectOption extends IMultiSelectOption {
+export interface ICreateableMultiSelectOption<Eq extends Equatable>
+  extends IMultiSelectOption<Eq> {
   __isNew__?: boolean;
 }
 
-export interface ISelectedValuesViewProps {
-  onDelete?: (value: ICreateableMultiSelectOption) => void;
-  selectedValues: ICreateableMultiSelectOption[];
+export interface ISelectedValuesViewProps<Eq extends Equatable> {
+  onDelete?: (value: ICreateableMultiSelectOption<Eq>) => void;
+  selectedValues: ICreateableMultiSelectOption<Eq>[];
 }

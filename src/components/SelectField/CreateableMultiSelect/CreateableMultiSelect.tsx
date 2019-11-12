@@ -1,25 +1,26 @@
-import * as React from 'react';
-import CreatableSelect from 'react-select/lib/Creatable';
+import * as React from "react";
+import CreatableSelect from "react-select/lib/Creatable";
 import {
   ICreateableMultiSelectOption,
-  ISelectedValuesViewProps
-} from '../types';
-import { SelectedValue } from '../SelectedValue';
-import '../MultiSelect/MultiSelect.css';
-import { customStylesMultiSelect, themeTransform } from '../constants';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { SearchIcon } from '../SearchIcon';
-import './CreateableMultiSelect.css';
+  ISelectedValuesViewProps,
+  Equatable
+} from "../types";
+import { SelectedValue } from "../SelectedValue";
+import "../MultiSelect/MultiSelect.css";
+import { customStylesMultiSelect, themeTransform } from "../constants";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { SearchIcon } from "../SearchIcon";
+import "./CreateableMultiSelect.css";
 
-interface IProps {
+interface IProps<Eq extends Equatable> {
   label: string;
   placeholder: string;
   fieldWidth?: string;
-  options: ICreateableMultiSelectOption[];
-  selectedValues: ICreateableMultiSelectOption[];
-  updateSelection: (selected: ICreateableMultiSelectOption[]) => void;
+  options: ICreateableMultiSelectOption<Eq>[];
+  selectedValues: ICreateableMultiSelectOption<Eq>[];
+  updateSelection: (selected: ICreateableMultiSelectOption<Eq>[]) => void;
   showSearchIcon?: boolean;
-  SelectedValuesView?: (props: ISelectedValuesViewProps) => JSX.Element;
+  SelectedValuesView?: (props: ISelectedValuesViewProps<Eq>) => JSX.Element;
 }
 
 interface IState {
@@ -27,12 +28,14 @@ interface IState {
   inputField: string;
 }
 
-export class CreateableMultiSelect extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export class CreateableMultiSelect<
+  Eq extends Equatable
+> extends React.Component<IProps<Eq>, IState> {
+  constructor(props: IProps<Eq>) {
     super(props);
     this.state = {
       isLoading: false,
-      inputField: ''
+      inputField: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -44,13 +47,13 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
   }
 
   public handleChange = (
-    newValue: ICreateableMultiSelectOption[],
+    newValue: ICreateableMultiSelectOption<Eq>[],
     actionMeta: any
   ) => {
     this.props.updateSelection(newValue);
   };
 
-  public removeSelectedValue(value: ICreateableMultiSelectOption) {
+  public removeSelectedValue(value: ICreateableMultiSelectOption<Eq>) {
     const filteredValues = this.props.selectedValues.filter(
       t => t.value !== value.value
     );
@@ -76,13 +79,13 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
       ...customStylesMultiSelect,
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
-        maxWidth: fieldWidth || 'initial'
+        maxWidth: fieldWidth || "initial"
       }),
       menu: (base: React.CSSProperties) => base
     };
 
     return (
-      <div className={'multiSelectContainer'}>
+      <div className={"multiSelectContainer"}>
         {SelectedValuesView ? (
           <SelectedValuesView
             onDelete={this.removeSelectedValue}
@@ -90,19 +93,19 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
           />
         ) : (
           <>
-            <label className={'multiSelectLabel'}>{label}</label>
-            <TransitionGroup className={'multiSelectSelectedValuesContainer'}>
+            <label className={"multiSelectLabel"}>{label}</label>
+            <TransitionGroup className={"multiSelectSelectedValuesContainer"}>
               {selectedValues.map(e => (
                 <CSSTransition
                   key={e.value}
                   timeout={100}
                   classNames={{
-                    enter: 'itemEnter',
-                    enterActive: 'itemEnterActive',
-                    enterDone: 'itemEnterDone',
-                    exit: 'itemExit',
-                    exitActive: 'itemExitActive',
-                    exitDone: 'itemExitDone'
+                    enter: "itemEnter",
+                    enterActive: "itemEnterActive",
+                    enterDone: "itemEnterDone",
+                    exit: "itemExit",
+                    exitActive: "itemExitActive",
+                    exitDone: "itemExitDone"
                   }}
                   appear
                   mountOnEnter
@@ -118,22 +121,22 @@ export class CreateableMultiSelect extends React.Component<IProps, IState> {
             </TransitionGroup>
           </>
         )}
-        <div className={'multiSelectPlaceholder'}>
+        <div className={"multiSelectPlaceholder"}>
           {!inputField && (
             <>
               {showSearchIcon && (
-                <SearchIcon className={'multiSelectPlaceholderIcon'} />
+                <SearchIcon className={"multiSelectPlaceholderIcon"} />
               )}
-              <div className={'multiSelectPlaceholderText'}>{placeholder}</div>
+              <div className={"multiSelectPlaceholderText"}>{placeholder}</div>
             </>
           )}
         </div>
         <CreatableSelect
-          className={'multiSelectSelect'}
+          className={"multiSelectSelect"}
           isClearable={false}
           options={options}
           isMulti
-          placeholder={''}
+          placeholder={""}
           value={selectedValues}
           onChange={this.handleChange}
           onInputChange={this.handleInputChange}
