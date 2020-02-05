@@ -1,16 +1,17 @@
-import * as React from "react";
-import CreatableSelect from "react-select/lib/Creatable";
+import * as React from 'react';
+import CreatableSelect from 'react-select/lib/Creatable';
 import {
   ICreateableMultiSelectOption,
   ISelectedValuesViewProps,
   Equatable
-} from "../types";
-import { SelectedValue } from "../SelectedValue";
-import "../MultiSelect/MultiSelect.css";
-import { customStylesMultiSelect, themeTransform } from "../constants";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { SearchIcon } from "../SearchIcon";
-import "./CreateableMultiSelect.css";
+} from '../types';
+import { SelectedValue } from '../SelectedValue';
+import '../MultiSelect/MultiSelect.css';
+import { customStylesMultiSelect, themeTransform } from '../constants';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { SearchIcon } from '../SearchIcon';
+import './CreateableMultiSelect.css';
+import matchSorter from 'match-sorter';
 
 interface IProps<Eq extends Equatable> {
   label: string;
@@ -35,7 +36,7 @@ export class CreateableMultiSelect<
     super(props);
     this.state = {
       isLoading: false,
-      inputField: ""
+      inputField: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -75,17 +76,19 @@ export class CreateableMultiSelect<
       MultiValueContainer: () => null
     };
 
+    const sortedOptions = matchSorter(options, inputField, { keys: ['label'] });
+
     const customStyles = {
       ...customStylesMultiSelect,
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
-        maxWidth: fieldWidth || "initial"
+        maxWidth: fieldWidth || 'initial'
       }),
       menu: (base: React.CSSProperties) => base
     };
 
     return (
-      <div className={"multiSelectContainer"}>
+      <div className={'multiSelectContainer'}>
         {SelectedValuesView ? (
           <SelectedValuesView
             onDelete={this.removeSelectedValue}
@@ -93,19 +96,19 @@ export class CreateableMultiSelect<
           />
         ) : (
           <>
-            <label className={"multiSelectLabel"}>{label}</label>
-            <TransitionGroup className={"multiSelectSelectedValuesContainer"}>
+            <label className={'multiSelectLabel'}>{label}</label>
+            <TransitionGroup className={'multiSelectSelectedValuesContainer'}>
               {selectedValues.map(e => (
                 <CSSTransition
                   key={e.value}
                   timeout={100}
                   classNames={{
-                    enter: "itemEnter",
-                    enterActive: "itemEnterActive",
-                    enterDone: "itemEnterDone",
-                    exit: "itemExit",
-                    exitActive: "itemExitActive",
-                    exitDone: "itemExitDone"
+                    enter: 'itemEnter',
+                    enterActive: 'itemEnterActive',
+                    enterDone: 'itemEnterDone',
+                    exit: 'itemExit',
+                    exitActive: 'itemExitActive',
+                    exitDone: 'itemExitDone'
                   }}
                   appear
                   mountOnEnter
@@ -121,22 +124,22 @@ export class CreateableMultiSelect<
             </TransitionGroup>
           </>
         )}
-        <div className={"multiSelectPlaceholder"}>
+        <div className={'multiSelectPlaceholder'}>
           {!inputField && (
             <>
               {showSearchIcon && (
-                <SearchIcon className={"multiSelectPlaceholderIcon"} />
+                <SearchIcon className={'multiSelectPlaceholderIcon'} />
               )}
-              <div className={"multiSelectPlaceholderText"}>{placeholder}</div>
+              <div className={'multiSelectPlaceholderText'}>{placeholder}</div>
             </>
           )}
         </div>
         <CreatableSelect
-          className={"multiSelectSelect"}
+          className={'multiSelectSelect'}
           isClearable={false}
-          options={options}
+          options={sortedOptions}
           isMulti
-          placeholder={""}
+          placeholder={''}
           value={selectedValues}
           onChange={this.handleChange}
           onInputChange={this.handleInputChange}

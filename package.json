@@ -71,9 +71,11 @@
     "webpack": "^4.20.2"
   },
   "dependencies": {
+    "@types/match-sorter": "^4.0.0",
     "@types/react-dates": "^17.1.5",
     "@types/react-select": "^2.0.15",
     "@types/styled-components": "^4.1.12",
+    "match-sorter": "^4.0.2",
     "moment": "^2.24.0",
     "react": "^16.8.4",
     "react-dates": "^20.1.0",
