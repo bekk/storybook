@@ -24,6 +24,7 @@
 
 @font-face {
   font-family: 'FFDINWebProLight';
+  font-display: swap;
   src: url('32ABFA_0_0.eot');
   src: url('32ABFA_0_0.eot?#iefix') format('embedded-opentype'),
     url('32ABFA_0_0.woff2') format('woff2'),
@@ -33,6 +34,7 @@
 
 @font-face {
   font-family: 'NewZaldBook';
+  font-display: swap;
   src: url('NewzaldWeb-Book.eot');
   src: url('NewzaldWeb-Book.eot?#iefix') format('embedded-opentype'),
     url('NewzaldWeb-Book.woff2') format('woff2'),
@@ -41,6 +43,7 @@
 
 @font-face {
   font-family: 'DINW01LightItalic';
+  font-display: swap;
   src: url('5590883/e0df2bb1-32d4-4f28-a889-9e712e9e5032.eot?#iefix');
   src: url('5590883/e0df2bb1-32d4-4f28-a889-9e712e9e5032.eot?#iefix')
       format('eot'),
@@ -50,6 +53,7 @@
 }
 @font-face {
   font-family: 'DINW01Regular';
+  font-display: swap;
   src: url('5591097/9b63158c-0e74-4751-966c-d749c5d31cce.eot?#iefix');
   src: url('5591097/9b63158c-0e74-4751-966c-d749c5d31cce.eot?#iefix')
       format('eot'),
@@ -59,6 +63,7 @@
 }
 @font-face {
   font-family: 'DINW01Medium';
+  font-display: swap;
   src: url('5591111/90744ee6-df8b-4daf-924d-e84a33fa139c.eot?#iefix');
   src: url('5591111/90744ee6-df8b-4daf-924d-e84a33fa139c.eot?#iefix')
       format('eot'),
