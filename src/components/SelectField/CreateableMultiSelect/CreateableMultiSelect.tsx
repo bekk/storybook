@@ -8,9 +8,7 @@ import {
 import { SelectedValue } from '../SelectedValue';
 import '../MultiSelect/MultiSelect.css';
 import { customStylesMultiSelect, themeTransform } from '../constants';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { SearchIcon } from '../SearchIcon';
-import './CreateableMultiSelect.css';
 import matchSorter from 'match-sorter';
 
 interface IProps<Eq extends Equatable> {
@@ -88,68 +86,54 @@ export class CreateableMultiSelect<
     };
 
     return (
-      <div className={'multiSelectContainer'}>
-        {SelectedValuesView ? (
-          <SelectedValuesView
-            onDelete={this.removeSelectedValue}
-            selectedValues={selectedValues}
-          />
-        ) : (
-          <>
-            <label className={'multiSelectLabel'}>{label}</label>
-            <TransitionGroup className={'multiSelectSelectedValuesContainer'}>
-              {selectedValues.map(e => (
-                <CSSTransition
-                  key={e.value}
-                  timeout={100}
-                  classNames={{
-                    enter: 'itemEnter',
-                    enterActive: 'itemEnterActive',
-                    enterDone: 'itemEnterDone',
-                    exit: 'itemExit',
-                    exitActive: 'itemExitActive',
-                    exitDone: 'itemExitDone'
-                  }}
-                  appear
-                  mountOnEnter
-                  unmountOnExit
-                >
+      <React.StrictMode>
+        <div className="multiSelectContainer">
+          {SelectedValuesView ? (
+            <SelectedValuesView
+              onDelete={this.removeSelectedValue}
+              selectedValues={selectedValues}
+            />
+          ) : (
+            <>
+              <label className="multiSelectLabel">{label}</label>
+              <div className="multiSelectSelectedValuesContainer">
+                {selectedValues.map(e => (
                   <SelectedValue
                     value={e}
                     removeSelectedValue={this.removeSelectedValue}
                     key={`${label}${e.value}${e.label}`}
                   />
-                </CSSTransition>
-              ))}
-            </TransitionGroup>
-          </>
-        )}
-        <div className={'multiSelectPlaceholder'}>
-          {!inputField && (
-            <>
-              {showSearchIcon && (
-                <SearchIcon className={'multiSelectPlaceholderIcon'} />
-              )}
-              <div className={'multiSelectPlaceholderText'}>{placeholder}</div>
+                ))}
+              </div>
             </>
           )}
+          <div className="multiSelectPlaceholder">
+            {!inputField && (
+              <>
+                {showSearchIcon && (
+                  <SearchIcon className="multiSelectPlaceholderIcon" />
+                )}
+                <div className="multiSelectPlaceholderText">{placeholder}</div>
+              </>
+            )}
+          </div>
+          <CreatableSelect
+            className="multiSelectSelect"
+            isClearable={false}
+            options={sortedOptions}
+            isMulti
+            placeholder={''}
+            value={selectedValues}
+            onChange={this.handleChange}
+            onInputChange={this.handleInputChange}
+            backspaceRemovesValue={false}
+            components={components}
+            styles={customStyles}
+            theme={themeTransform}
+            formatCreateLabel={v => `Opprett "${v}"`}
+          />
         </div>
-        <CreatableSelect
-          className={'multiSelectSelect'}
-          isClearable={false}
-          options={sortedOptions}
-          isMulti
-          placeholder={''}
-          value={selectedValues}
-          onChange={this.handleChange}
-          onInputChange={this.handleInputChange}
-          backspaceRemovesValue={false}
-          components={components}
-          styles={customStyles}
-          theme={themeTransform}
-          formatCreateLabel={v => `Opprett "${v}"`}
-        />
-      </div>
+      </React.StrictMode>
     );
   }
 }

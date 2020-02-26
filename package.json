@@ -77,12 +77,11 @@
     "@types/styled-components": "^4.1.12",
     "match-sorter": "^4.0.2",
     "moment": "^2.24.0",
-    "react": "^16.8.4",
-    "react-dates": "^20.1.0",
-    "react-dom": "^16.8.4",
-    "react-select": "2.4.1",
-    "react-transition-group": "^2.6.1",
-    "styled-components": "4.0.2",
+    "react": "0.0.0-experimental-5de5b6150",
+    "react-dates": "^21.8.0",
+    "react-dom": "0.0.0-experimental-5de5b6150",
+    "react-select": "^3.0.8",
+    "styled-components": "^5.0.0",
     "typescript": "3.3.3333"
   }
 }

@@ -1,9 +1,9 @@
-import * as React from "react";
-import Select from "react-select";
-import { ISelectOption, Equatable } from "../types";
-import "./SingleSelect.css";
-import { customStylesSingleSelect, themeTransform } from "../constants";
-import { Placeholder } from "./Placeholder/Placeholder";
+import * as React from 'react';
+import Select from 'react-select';
+import { ISelectOption, Equatable } from '../types';
+import './SingleSelect.css';
+import { customStylesSingleSelect, themeTransform } from '../constants';
+import { Placeholder } from './Placeholder/Placeholder';
 
 interface IProps<T> {
   selectedOption?: T;
@@ -38,20 +38,22 @@ export class SingleSelect<
     } = this.props;
     const hasLabel = label !== undefined;
     return (
-      <div className={"singleSelectContainer"}>
-        {hasLabel && <label className={"singleSelectLabel"}>{label}</label>}
-        <Select
-          className={"singleSelectSelect"}
-          options={options}
-          placeholder={placeholder || ""}
-          components={showSearchIcon ? { Placeholder } : {}}
-          value={selectedOption || ("" as any)}
-          onChange={this.handleChange}
-          styles={customStylesSingleSelect}
-          isDisabled={disabled}
-          theme={themeTransform}
-        />
-      </div>
+      <React.StrictMode>
+        <div className={'singleSelectContainer'}>
+          {hasLabel && <label className={'singleSelectLabel'}>{label}</label>}
+          <Select
+            className={'singleSelectSelect'}
+            options={options}
+            placeholder={placeholder || ''}
+            components={showSearchIcon ? { Placeholder } : {}}
+            value={selectedOption || ('' as any)}
+            onChange={this.handleChange}
+            styles={customStylesSingleSelect}
+            isDisabled={disabled}
+            theme={themeTransform}
+          />
+        </div>
+      </React.StrictMode>
     );
   }
 }

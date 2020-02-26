@@ -6,9 +6,7 @@ export { Notification } from './components/Notification/Notification';
 export { TextField } from './components/TextField/TextField';
 export { Icon } from './basic/Icon/Icon';
 export { Color } from './basic/Color/Color';
-export {
-  SingleSelect
-} from './components/SelectField/SingleSelect/SingleSelect';
+export { SingleSelect } from './components/SelectField/SingleSelect/SingleSelect';
 export { MultiSelect } from './components/SelectField/MultiSelect/MultiSelect';
 export {
   IMultiSelectOption,
@@ -16,9 +14,7 @@ export {
   ICreateableMultiSelectOption,
   ISelectedValuesViewProps
 } from './components/SelectField/types';
-export {
-  CreateableMultiSelect
-} from './components/SelectField/CreateableMultiSelect/CreateableMultiSelect';
+export { CreateableMultiSelect } from './components/SelectField/CreateableMultiSelect/CreateableMultiSelect';
 export { NumberField } from './components/TextField/NumberField';
 export { Checkbox } from './components/Checkbox/Checkbox';
 export { RadioButtons } from './components/Checkbox/RadioButtons';

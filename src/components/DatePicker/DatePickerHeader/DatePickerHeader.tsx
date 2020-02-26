@@ -62,7 +62,6 @@ export const DatePickerHeader = ({
         }}
         onChange={(e: { value: number; label: string }) => {
           if (e.value !== undefined) {
-            console.log(e.value);
             onMonthSelect(month, e.value.toString());
           }
         }}

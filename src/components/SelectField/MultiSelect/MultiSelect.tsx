@@ -1,12 +1,10 @@
-import * as React from "react";
-import Select from "react-select";
-import { IMultiSelectOption, Equatable } from "../types";
-import "./MultiSelect.css";
-import { SelectedValue } from "../SelectedValue";
-import { customStylesMultiSelect, themeTransform } from "../constants";
-import { SearchIcon } from "../SearchIcon";
-import "../CreateableMultiSelect/CreateableMultiSelect.css";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import * as React from 'react';
+import Select from 'react-select';
+import { IMultiSelectOption, Equatable } from '../types';
+import './MultiSelect.css';
+import { SelectedValue } from '../SelectedValue';
+import { customStylesMultiSelect, themeTransform } from '../constants';
+import { SearchIcon } from '../SearchIcon';
 
 interface IProps<Eq extends Equatable> {
   label: string;
@@ -28,7 +26,7 @@ export class MultiSelect<Eq extends Equatable> extends React.Component<
 > {
   constructor(props: IProps<Eq>) {
     super(props);
-    this.state = { inputField: "" };
+    this.state = { inputField: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.removeSelectedValue = this.removeSelectedValue.bind(this);
@@ -66,67 +64,55 @@ export class MultiSelect<Eq extends Equatable> extends React.Component<
       ...customStylesMultiSelect,
       control: (base: React.CSSProperties) => ({
         ...customStylesMultiSelect.control(base),
-        maxWidth: fieldWidth || "initial"
+        maxWidth: fieldWidth || 'initial'
       }),
       menu: (base: React.CSSProperties) => ({
         ...base,
-        maxWidth: fieldWidth || "initial"
+        maxWidth: fieldWidth || 'initial'
       })
     };
 
     return (
-      <div className={"multiSelectContainer"}>
-        <label className={"multiSelectLabel"}>{label}</label>
-        <TransitionGroup className={"multiSelectSelectedValuesContainer"}>
-          {selectedValues.map(e => (
-            <CSSTransition
-              key={e.value}
-              timeout={100}
-              classNames={{
-                enter: "itemEnter",
-                enterActive: "itemEnterActive",
-                enterDone: "itemEnterDone",
-                exit: "itemExit",
-                exitActive: "itemExitActive",
-                exitDone: "itemExitDone"
-              }}
-              appear
-              mountOnEnter
-              unmountOnExit
-            >
+      <React.StrictMode>
+        <div className={'multiSelectContainer'}>
+          <label className={'multiSelectLabel'}>{label}</label>
+          <div className={'multiSelectSelectedValuesContainer'}>
+            {selectedValues.map(e => (
               <SelectedValue
                 value={e}
                 removeSelectedValue={this.removeSelectedValue}
                 key={`${label}${e.value}${e.label}`}
               />
-            </CSSTransition>
-          ))}
-        </TransitionGroup>
-        <div className={"multiSelectPlaceholder"}>
-          {!inputField && (
-            <>
-              {showSearchIcon && (
-                <SearchIcon className={"multiSelectPlaceholderIcon"} />
-              )}
-              <div className={"multiSelectPlaceholderText"}>{placeholder}</div>
-            </>
-          )}
+            ))}
+          </div>
+          <div className={'multiSelectPlaceholder'}>
+            {!inputField && (
+              <>
+                {showSearchIcon && (
+                  <SearchIcon className={'multiSelectPlaceholderIcon'} />
+                )}
+                <div className={'multiSelectPlaceholderText'}>
+                  {placeholder}
+                </div>
+              </>
+            )}
+          </div>
+          <Select
+            className={'multiSelectSelect'}
+            isClearable={false}
+            options={options}
+            isMulti
+            placeholder={''}
+            value={selectedValues}
+            onChange={this.handleChange}
+            onInputChange={this.handleInputChange}
+            backspaceRemovesValue={false}
+            components={components}
+            styles={customStyles}
+            theme={themeTransform}
+          />
         </div>
-        <Select
-          className={"multiSelectSelect"}
-          isClearable={false}
-          options={options}
-          isMulti
-          placeholder={""}
-          value={selectedValues}
-          onChange={this.handleChange}
-          onInputChange={this.handleInputChange}
-          backspaceRemovesValue={false}
-          components={components}
-          styles={customStyles}
-          theme={themeTransform}
-        />
-      </div>
+      </React.StrictMode>
     );
   }
 }

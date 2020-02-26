@@ -92,6 +92,10 @@ NNB!! The `.storybook/tsconfig` is the correct file to use when compiling to cre
 
 # Local testing in dependent project
 
+**WARNING: Known issue with the following approach**
+
+_After the introduction of hooks in this storybook (in the code base and its dependencies) you will get the `Invalid Hook Call` React ERROR in a project using hooks importing the storybook by a symlink. This is caused by the symlink also linking to this storybook's node_modules, giving two versions of React in the dependent project. **The only way I have managed to mitigate this is by making sure the React versions of the storybook and the project importing it are the same. NOTE: This behaviour is caused by the symlink and should have no impact on production.** See [this issue](https://github.com/facebook/react/issues/13991) for possible other fixes._
+
 In the root folder of the Storybook run:
 
 ```bash
